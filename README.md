@@ -1,4 +1,4 @@
-Hướng dẫn chạy chương trình:
+#*Hướng dẫn chạy chương trình:*
   B1: Tải file nén về sau đó giải nén 
   B2: Mở phần Script.sql tạo một Database xong đó chạy file Script.SQL này
   B3: Mở file TechWeb.sln vào phần 2 file đó là dbTechContext.cs trong Models và appsettings.json Tìm chữ Server Xong đó đổi thành Server Database của bạn 
@@ -6,6 +6,3 @@ Hướng dẫn chạy chương trình:
   B4: Tiến hành Chạy chương trình 
   B5: Vào mục đăng nhập-đăng ký 1 tài khoản khách hàng sau đó tại mục tài khoản của tôi sẽ xuất hiện hiện 2 mục thay thế là Thông tin tài khoản và Đăng Xuất
   Nếu muốn vao trang admin thì nhập (đường ban đầu)/Admin
-  
-![image](https://github.com/ICWYM/TheGoat/assets/103774858/af1eb955-8b5a-4dc1-8c04-3ccd5cbceb67)
-
