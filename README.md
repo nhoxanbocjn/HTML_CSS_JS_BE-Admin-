@@ -1,4 +1,4 @@
-#*Hướng dẫn chạy chương trình:*
+# *Hướng dẫn chạy chương trình:*
   B1: Tải file nén về sau đó giải nén 
   B2: Mở phần Script.sql tạo một Database xong đó chạy file Script.SQL này
   B3: Mở file TechWeb.sln vào phần 2 file đó là dbTechContext.cs trong Models và appsettings.json Tìm chữ Server Xong đó đổi thành Server Database của bạn 
