@@ -200,14 +200,15 @@ $("#sparkline-revenue4").sparkline([6, 5, 3, 4, 2, 5, 3, 8, 6, 4, 5, 1], {
 // Total Revenue
 // ============================================================== 
 Morris.Area({
-    element: 'morris_totalrevenue2',
+    element: 'morris_totalrevenue',
     behaveLikeLine: true,
     data: [
-        { x: '2021 ', y: 100000000 },
-        { x: '2022 ', y: 2200000000, },
-        { x: '2023 ', y: 260000000, },
-
-
+        { x: '2016 Q1', y: 0, },
+        { x: '2016 Q2', y: 7500, },
+        { x: '2017 Q3', y: 15000, },
+        { x: '2017 Q4', y: 22500, },
+        { x: '2018 Q5', y: 30000, },
+        { x: '2018 Q6', y: 40000, }
     ],
     xkey: 'x',
     ykeys: ['y'],

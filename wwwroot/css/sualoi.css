@@ -1,0 +1,19 @@
+﻿/* Ẩn biểu tượng dropdown khi màn hình lớn */
+.dropdown-btn {
+    display: none;
+}
+/* Ẩn danh sách khi màn hình nhỏ */
+@media screen and (max-width: 768px) {
+    .category-list {
+        display: none;
+    }
+    /* Hiển thị biểu tượng dropdown chỉ khi màn hình nhỏ */
+    .dropdown-btn {
+        display: inline-block;
+    }
+}
+
+/* Hiển thị danh sách khi .dropdown-active được thêm vào */
+.category-list.dropdown-active {
+    display: block;
+}
