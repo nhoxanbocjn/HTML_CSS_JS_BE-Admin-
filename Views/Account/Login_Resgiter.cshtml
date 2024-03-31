@@ -1,0 +1,104 @@
+﻿@model TechWeb.ModelViews.Login_RegisterViewModel
+@{
+    ViewData["Title"] = "Login_Resgiter";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*Phàn giới thiệu nội dung trang *@
+<link href="~/css/login.css" rel="stylesheet" />
+    <div class="page-style-a">
+        <div class="container">
+            <div class="page-intro">
+            <h2>Đăng nhập - Đăng ký</h2>
+                <ul class="bread-crumb">
+                    <li class="has-separator">
+                        <i class="ion ion-md-home"></i>
+                        <a asp-controller="Home" asp-action="Index">Trang chủ</a>
+                    </li>
+                    <li class="is-marked">
+                        <a asp-controller="Account" asp-action="Login_Resgiter">Đăng nhập - Đăng ký</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+ <!--Hai form đăng nhập và đăng ký -->
+<div class="si-su container-fluid"> 
+    <div class = "row justify-content-between">
+    <div class="form_are col-lg-12 col-md-12 col-sm-12">
+    <div class="ctn" id="ctn">
+        <div class="form-ctn sign-up-ctn col-lg-6 col-md-6 col-sm-6">
+           @* Các trường để tạo tài khoản*@
+             <form class="form_lg" asp-action="Login_Resgiter" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <h1>Tạo tài khoản</h1>
+                <div class="social-ctn">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span style="color: white;"> hoặc sử dụng gmail để đăng ký</span>
+                        <input type="text" asp-for="RegistreViewModel.FullName" id="user-name" class="text-field" placeholder="Họ Tên">
+                        <span asp-validation-for="RegistreViewModel.FullName" class="text-danger"></span>
+                        <input type="text" asp-for="RegistreViewModel.Email" itemid="email" class="text-field" placeholder="Email">
+                        <span asp-validation-for="RegistreViewModel.Email" class="text-danger"></span>
+                        <input type="text" asp-for="RegistreViewModel.Phone" id="tel" class="text-field" placeholder="Số điện thoại">
+                        <span asp-validation-for="RegistreViewModel.Phone" class="text-danger"></span>
+                        <input type="password" asp-for="RegistreViewModel.Password" id="password" class="text-field" placeholder="Mật khẩu">
+                        <span asp-validation-for="RegistreViewModel.Password" class="text-danger"></span>
+                        <input type="password" asp-for="RegistreViewModel.ConfirmPassword" id="password" class="text-field" placeholder="Nhập lại mật khẩu ">
+                        <span asp-validation-for="RegistreViewModel.ConfirmPassword" class="text-danger"></span>
+                <button class="btn_lg">Đăng ký</button>
+            </form>
+        </div>
+        <div class="form-ctn sign-in-ctn col-lg-6 col-md-6 col-sm-6">
+           @* Các trường để đăng nhập*@
+                    <form class="form_lg" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <h1>Đăng nhập</h1>
+                <div class="social-ctn">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>hoặc sử dụng tài khoản của bạn</span>
+                        <input type="email" asp-for="LoginViewModel.UserName" placeholder="Địa chỉ Email">
+                        <span asp-validation-for="LoginViewModel.UserName" class="text-danger"></span>
+                        <input type="password" asp-for="LoginViewModel.Password" placeholder="Mật khẩu">
+                        <span asp-validation-for="LoginViewModel.Password" class="text-danger"></span>
+                <a style="color: white;" href="#">Quên mật khẩu?</a>
+                <br>
+                <button class="btn_lg">Đăng nhập</button>
+            </form>
+        </div>
+        <div class="overlay-ctn col-lg-6 col-md-6 col-sm-6">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Chào mừng trở lại</h1>
+                    <p>Hãy đăng nhập để nhận những ưu đãi độc quyền từ The Goat</p>
+                    <button class="btn_lg" class="ghost" id="signIn">Đăng nhập</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>The Goat kính chào quý khách!</h1>
+                    <p>Điền thông tin cá nhân và bắt đầu trải nghiệm mua sắm thôi nào</p>
+                    <button class="btn_lg" class="ghost" id="signUp">Đăng ký</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+    <script>
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('ctn');
+
+        signUpButton.addEventListener('click', () => {
+            container.classList.add('right-panel-active');
+        });
+
+        signInButton.addEventListener('click', () => {
+            container.classList.remove('right-panel-active');
+        });
+    </script>

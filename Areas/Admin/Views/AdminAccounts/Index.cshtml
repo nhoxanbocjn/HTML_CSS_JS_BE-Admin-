@@ -1,0 +1,96 @@
+﻿
+@model IEnumerable<TechWeb.Models.Account>
+
+@{
+	ViewData["Title"] = "Quản lý tài khoản quản trị";
+	Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<h2 class="pageheader-title">Quản lý tài khoản quản trị </h2>
+<div class="card">
+	<h5 class="card-header">Danh Sách</h5>
+	<div class="card-body p-0">
+		<div class="row m-b-30">
+
+			<div class="col-lg-8">
+				<div class="d-md-flex">
+					<div class="m-l-15 m-r-15">
+						<select class="custom-select" id="idrole" name="idrole" style="min-width: 200px;" asp-items="ViewBag.QuyenTruyCap">
+							<option value="" disabled selected>Chọn quyền truy cập</option>
+						</select>
+					</div>
+					<div class="">
+						<select class="custom-select" id="idstatus" name="idstatus" style="min-width: 200px;" asp-items="ViewBag.lsTrangThai">
+							<option value="" disabled selected>Chọn trạng thái</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 text-right">
+				<div class="m-r-20">
+					<a class="btn btn-rounded btn-primary" asp-area="Admin" asp-controller="AdminAccounts" asp-action="Create">
+						<i class=" fas fa-plus-circle m-r-10"></i><span>Thêm tài khoản quản trị </span>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="table-responsive">
+			<table class="table">
+				<thead class="bg-light">
+					<tr class="border-0">
+						<th class="border-0">ID</th>
+						<th class="border-0">Họ Tên</th>
+						<th class="border-0">Email</th>
+						<th class="border-0">SĐT</th>
+						<th class="border-0">Lần Đăng Nhập Cuối</th>
+						<th class="border-0">Quyền Truy Cập</th>
+						<th class="border-0">Trạng Thái</th>
+						<th class="border-0">Thao Tác</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (Model != null)
+					{
+						foreach (var item in Model)
+						{
+							<tr>
+								<td>@item.AccountId</td>
+								<td>@item.FullName</td>
+								<td>@item.Email </td>
+								<td>@item.Phone</td>
+								<td>@item.LastLogin</td>
+								<td>@item.Role.RoleName</td>
+								<td>
+									@if (item.Active)
+									{
+										<div class="d-flex align-items-center">
+											<div class="badge-dot badge-success  m-r-10"></div>
+											<div>Hiệu Lực</div>
+										</div>
+									}
+									else
+									{
+										<div class="d-flex align-items-center">
+											<div class="badge-dot badge-danger  m-r-10"></div>
+											<div>Vô Hiệu </div>
+										</div>
+
+
+									}
+								</td>
+								<td>
+									<a class="btn btn-success" asp-area="Admin" asp-controller="AdminAccounts" asp-action="Details" asp-route-id="@item.AccountId">Chi tiết</a>
+									<a class="btn btn-warning" asp-area="Admin" asp-controller="AdminAccounts" asp-action="Edit" asp-route-id="@item.AccountId">Sửa</a>
+									<a class="btn btn-danger" asp-area="Admin" asp-controller="AdminAccounts" asp-action="Delete" asp-route-id="@item.AccountId">Xóa</a>
+
+								</td>
+							</tr>
+						}
+					}
+
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

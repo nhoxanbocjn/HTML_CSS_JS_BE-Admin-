@@ -1,0 +1,160 @@
+﻿
+/* CSS cho layout */
+.page-style-a .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.about-social {
+    display: flex;
+    justify-content: center; /* Canh giữa các biểu tượng */
+    margin-top: 20px;
+}
+
+.social-media-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+    .social-media-list li {
+        margin-right: 10px; /* Khoảng cách giữa các biểu tượng */
+    }
+
+        .social-media-list li:last-child {
+            margin-right: 0; /* Loại bỏ khoảng cách ở biểu tượng cuối cùng */
+        }
+
+    .social-media-list a {
+        color: #333;
+        font-size: 24px;
+        transition: color 0.3s ease;
+    }
+
+        .social-media-list a:hover {
+            color: #007bff; /* Màu khi hover */
+        }
+
+<!-- Logo mạng xã hội -->
+.branch-title {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+/* PHẦN CHI NHÁNH*/
+
+/* CSS cho layout */
+.container1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* CSS cho các chi nhánh */
+.branch {
+    text-align: center; /* Canh giữa tiêu đề và nội dung của mỗi chi nhánh */
+    margin-bottom: 40px; /* Điều chỉnh khoảng cách giữa các chi nhánh */
+}
+
+    .branch img {
+        max-width: 100%;
+        height: auto;
+    }
+
+.hover-text {
+    display: none; /* Ẩn phần hover-text mặc định */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+}
+
+.branch:hover .hover-text {
+    display: block; /* Hiển thị phần hover-text khi hover vào chi nhánh */
+    opacity: 1;
+}
+
+.branch-title {
+    margin-bottom: 60px; /* Điều chỉnh khoảng cách dưới của tiêu đề */
+}
+
+
+.branch-address {
+    margin-top: 15px; /* Điều chỉnh khoảng cách trên của phần nội dung địa chỉ */
+}
+/* Responsive CSS */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px; /* Thêm padding cho phần container */
+    }
+
+    .branch {
+        margin-bottom: 20px; /* Điều chỉnh khoảng cách giữa các chi nhánh trên điện thoại */
+    }
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.founder-introduction-container {
+    text-align: center; /* Căn giữa nội dung */
+    padding: 20px;
+    font-size: 15px;
+}
+
+.founder-introduction {
+    padding: 20px;
+    text-align: justify; /* Căn trái cho nội dung */
+    border-radius: 10px; /* Bo tròn góc */
+    max-width: 800px; /* Giới hạn chiều rộng */
+    margin: 0 auto; /* Canh giữa trên trình duyệt */
+    font-size: 16px;
+}
+
+.founder-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.founder {
+    flex: 0 0 calc(10% - 30px); /* 33.33% width for each founder with increased space between */
+    text-align: center;
+    margin-bottom: 60px; /* Increased margin bottom for spacing */
+}
+
+    .founder img {
+        width: 200px;
+        height: 300px;
+        border: 2px solid black; /* Khung màu đen cho ảnh */
+        border-radius: 50%; /* Bo tròn góc cho ảnh */
+        margin-top: 30px;
+    }
+
+.caption {
+    margin-top: 10px;
+    white-space: nowrap; /* Ngăn caption bị ngắt dòng */
+}
+
+/* Responsive CSS */
+@media (max-width: 768px) {
+    .founder {
+        flex: 0 0 calc(50% - 20px); /* 50% width for each founder on smaller screens */
+    }
+}
+

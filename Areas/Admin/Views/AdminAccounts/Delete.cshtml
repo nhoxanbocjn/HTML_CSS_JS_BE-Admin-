@@ -1,0 +1,66 @@
+﻿@model TechWeb.Models.Account
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="page-header">
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a asp-area="Admin" asp-controller="AdminAccounts" asp-action="Index" class="breadcrumb-item">Quản lý tài khoản quản trị</a>
+            <span class="breadcrumb-item active">Xác nhận xóa tài khoản quản trị</span>
+        </nav>
+    </div>
+</div>
+<div class="card">
+    <h5 class="card-header"> Xóa quyền truy cập</h5>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>ID:</td>
+                        <td class="">@Model.AccountId</td>
+                    </tr>
+                    <tr>
+                        <td>Họ tên:</td>
+                        <td>@Model.FullName</td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td>@Model.Email</td>
+                    </tr>
+                    <tr>
+                        <td>SĐT:</td>
+                        <td>@Model.Phone</td>
+                    </tr>
+                    <tr>
+                        <td>Lần đăng nhập cuối:</td>
+                        <td>@Model.LastLogin</td>
+                    </tr>
+                    <tr>
+                        <td>Tên quyền truy cập:</td>
+                        <td>@Model.Role.RoleName</td>
+                    </tr>
+                    <tr>
+                    <tr>
+                        <td>Hiệu lực</td>
+                        <td>@Model.Active</td>
+                    </tr>
+                    <tr>
+
+                        <td>Xác nhận xóa:</td>
+                        <td>
+                            <form asp-action="Delete" asp-route-id="@Model.AccountId">
+                                <input type="hidden" asp-for="AccountId" />
+                                <input type="submit" value="Xác nhận xóa" class="btn btn-danger" />
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

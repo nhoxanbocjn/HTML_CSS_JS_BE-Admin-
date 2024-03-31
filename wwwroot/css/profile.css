@@ -1,0 +1,391 @@
+
+
+/* ---------------------------profile----------------- */
+.dash{
+margin-top: 50px;
+margin-left: 30px;
+margin-right: 30px;
+}
+
+.dash__box{
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.dash__w-icon{
+    color: red;
+    font-size: 40px;
+}
+
+.dash_name{
+    font-size: larger;
+    color: black
+}
+
+.dash__w-list , .dash__f-list{
+    list-style: none;
+    color: black
+}
+
+
+h1{
+    font-size: larger;
+}
+
+/* Hiệu ứng nút "Chỉnh sửa hồ sơ" */
+
+    #chinhsuahoso_button:hover{
+        color:red ;
+    }
+
+    #chinhsuahoso_button{
+
+        color: blue;
+        font-weight: bold;
+    }
+    #doimatkhau_button{
+
+        color: blue;
+        font-weight: bold;
+    }
+
+/* Hiệu ứng nút "Đổi mật khẩu" */
+
+    #doimatkhau_button:hover{
+        color: red
+    }
+
+/* Hiệu ứng khi hover "Thay đổi" và "Trở thành thành viên" */
+    #thaydoi,#member{
+        color: blue;
+        font-weight: bold;
+    }
+    #thaydoi:hover,#member:hover{
+        color: red
+    }
+
+    /* <!-- Hiệu ứng khi hoover lên Menu điều hướng của trang tài khoản --> */
+                            
+    .dash__f-list li {
+        color: blue;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .dash__f-list li a:hover {
+        color: red
+    }
+
+    .dash__f-list li .dash-active{
+        color: #0c18c0;
+        font-weight: bold;
+    }
+
+
+    /* ---------------------------edit_profile----------------- */
+ 
+    /* Hiệu ứng nút "Lưu" */
+    #luu_button{
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        background-color: black;
+        padding: 10px 30px;
+    }
+    #luu_button:hover{
+        color: red
+
+    }
+
+    /* <!-- Đổi màu cho tiêu đề "Chỉnh sửa hồ sơ"  --> */
+                                
+        h1 span{
+        color: #0c18c0;
+        font-weight: bold;
+    }
+     
+    /* Hiệu ứng khi hover "Thay đổi" và "Trở thành thành viên Retrodx" */
+    #thaydoi{
+        color: blue;
+        font-weight: bold;
+    }
+    #thaydoi:hover{
+        color: red;
+    }
+
+
+
+
+    /* Tô đậm viền của từng block */
+    .dash__box--bg-white{
+        border: 1px solid rgb(116, 115, 115);
+        border-radius: 8px;
+    }
+
+    .gl-inline{
+        display: inline-block;
+        margin-right: 100px;
+    }
+    .hoten{
+
+        width: 45%;
+    }
+   .edit{
+    display: flex;
+    justify-content: space-between;
+   }
+   .sinhnhat{
+    padding-top:3px ;
+   }
+   /* Các media query cho các thiết bị có kích thước nhỏ hơn 768px (điện thoại di động) */
+@media screen and (max-width: 768px) {
+    .gl-inline {
+        display: block; /* Chuyển sang hiển thị dạng block để các phần tử được xếp chồng lên nhau */
+        margin-right: 0; /* Xóa khoảng cách giữa các phần tử */
+        margin-bottom: 10px; /* Thêm khoảng cách dưới cho các phần tử */
+        width: 100%; /* Chiếm toàn bộ chiều rộng của container */
+    }
+
+    .hoten, .sinhnhat {
+        width: 100%; /* Chiếm toàn bộ chiều rộng của container */
+    }
+
+    .edit {
+        flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+    }
+
+    .sinhnhat {
+        padding-top: 0; /* Xóa padding trên */
+    }
+}
+
+
+   /* ----------------------------myorder--------------------- */
+
+   /* <!-- Đổi màu cho tiêu đề "Đơn hàng của tôi"  --> */
+   .description-title{
+    font-weight: bold;
+    color: black;
+   }
+   h1 span{
+       color: #0c18c0;
+       font-weight: bold;
+   }
+
+   /* Hiệu ứng khi hover "Chi tiết" */
+   #chitiet_button{
+    color: blue;
+    font-weight: bold;
+    cursor: pointer;
+ 
+   }
+   #chitiet_button:hover{
+    color: red;
+   }
+
+   /* <!-- Hiệu ứng khi hoover lên Menu điều hướng của trang tài khoản --> */                                  
+
+   .dash__f-list li .dash-active{
+       color: #0c18c0;
+       font-weight: bold;
+   }
+   
+   /* Tô đậm viền của từng block */
+   .dash__box--bg-white{
+       border: 1px solid rgb(116, 115, 115);
+       border-radius: 8px;
+   }
+
+   .m-order__get{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px rgb(116, 115, 115);
+   }
+
+   .description__img-wrap img {
+    max-width: 100%;
+    max-height: 40px; /* Đặt chiều cao tối đa của hình ảnh */
+    height: auto;
+}
+
+   @media screen and (max-width: 768px) {
+    .m-order__get {
+        flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+        border: none; /* Xóa viền */
+        padding: 0; /* Xóa padding */
+        margin-bottom: 20px; /* Thêm khoảng cách dưới cho mỗi đơn hàng */
+    }
+
+    .m-order__get .manage-o__header {
+        display: flex; /* Hiển thị header theo hàng */
+        justify-content: space-between; /* Canh chỉnh các phần tử trong header */
+        margin-bottom: 10px; /* Thêm khoảng cách dưới cho header */
+    }
+
+    .description__img-wrap img {
+        width: auto; /* Kích thước ảnh sẽ chiếm toàn bộ chiều rộng của container */
+        height: auto; /* Chiều cao tự động tính theo tỷ lệ */
+        margin-bottom: 10px; /* Thêm khoảng cách dưới cho ảnh */
+    }
+
+    .description-title {
+        font-size: 18px; /* Đổi kích thước font cho tiêu đề */
+    }
+
+    .description__info-wrap {
+        display: flex; /* Hiển thị các thông tin theo hàng */
+        flex-direction: column; /* Sắp xếp các thông tin theo chiều dọc */
+    }
+
+    .description__info-wrap div {
+        margin-bottom: 5px; /* Thêm khoảng cách dưới cho mỗi thông tin */
+    }
+}
+
+/* ---------------------------detail_order------------- */
+/* Tô đậm viền của từng block */
+
+.dash__box--bg-white {
+    border: 1px solid rgb(116, 115, 115);
+    border-radius: 8px;
+}
+
+h1 span {
+    color: #0c18c0;
+    font-weight: bold;
+}
+
+/* < !-- Hiệu ứng khi hoover lên Menu điều hướng của trang tài khoản --> */
+.dash-l-r{
+    display: flex;
+    justify-content: space-between;
+}
+
+.timeline-row{
+padding: 20px;
+display: flex;
+justify-content: space-evenly;
+}
+
+.dash__h2{
+    font-size: 17px;
+    font-weight: bold;
+}
+.muiten{
+    margin-left: 50px;
+}
+
+
+
+/* Responsive cho các box chứa thông tin giao hàng và thanh toán */
+@media (max-width: 991px) {
+    .col-lg-9 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Responsive cho timeline row */
+@media (max-width: 767px) {
+    .timeline-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .timeline-row .col-lg-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+    .muiten {
+        margin-left: 0;
+        margin-top: 10px; /* Điều chỉnh khoảng cách giữa icon và văn bản trong responsive */
+    }
+}
+
+/* Responsive cho các box địa chỉ giao hàng và thanh toán */
+@media (max-width: 767px) {
+    .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 20px; /* Điều chỉnh khoảng cách giữa các box khi responsive */
+    }
+}
+
+
+/* ------------------------------------------manage_profile------------ */
+.qltk{
+    display: flex;
+    justify-content: space-between;
+}
+/* .dash__pad-3{
+    border: 1px rgb(116, 115, 115) solid;
+    padding: 20px;
+    height: 250px;
+} */
+.dash__table td, th{
+    padding: 40px;
+}
+.dash__table th{
+    color: black;
+}
+
+.dash__table-img-wrap img{
+    height: 50px;
+    width: 50px;
+    transition: transform 0.3s ease;
+}
+.dash__table-img-wrap img:hover{
+    transform: scale(1.1); 
+}
+
+#chinhsua:hover{
+    color:red ;
+}
+
+#chinhsua{
+
+    color: blue;
+    font-weight: bold;
+}
+@media screen and (max-width: 768px) {
+    .qltk {
+        flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+    }
+    .hoso, .giaohang, .thanhtoan {
+        width: 100%; /* Chiếm toàn bộ chiều rộng */
+        margin-bottom: 20px; /* Thêm khoảng cách dưới cho mỗi phần tử */
+    }
+
+    /* Hiệu ứng hover cho nút "Chỉnh sửa" */
+    #chinhsua:hover {
+        color: red;
+    }
+
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .col-lg-4 {
+        width: 100%;
+    }
+    
+    /* Chỉ hiển thị 2 cột đầu và 2 cột cuối trong bảng */
+    .dash__table td:nth-child(3),
+    .dash__table th:nth-child(3),
+    .dash__table td:nth-child(4),
+    .dash__table th:nth-child(4) {
+        display: none;
+    }
+    
+    /* Padding trong bảng */
+    .dash__table td, .dash__table th {
+        padding: 10px;
+    }
+    
+    /* Resize ảnh trong bảng */
+    .dash__table-img-wrap img {
+        height: 30px;
+        width: 30px;
+    }
+}

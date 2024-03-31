@@ -1,0 +1,183 @@
+﻿
+@{
+    ViewData["Title"] = "Về Chúng Tôi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/About.css" rel="stylesheet" />
+<body>
+
+
+    <!-- Phần tiêu đề Giới thiệu trang vể chúng tôi -->
+        <div class="page-style-a">
+            <div class="container">
+                <div class="page-intro">
+                    <h2>Về chúng tôi</h2>
+                <!--Thông tin bread-crumb -->
+                    <ul class="bread-crumb">
+                        <li class="has-separator">
+                            <i class="ion ion-md-home"></i>
+                            <a asp-controller="Home" asp-action="Index">Trang chủ</a>
+                        </li>
+                    <!--Phần Thông tin bread-crumb được đánh dấu -->
+                        <li class="is-marked">
+                            <a asp-controller="Home" asp-action="About">Về chúng tôi</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    <!-- Phần tiêu đề Giới thiệu trang vể chúng tôi -->
+    <!-- Nội dung trang vể chúng tôi   -->
+        <div class="page-about u-s-p-t-80">
+            <div class="container">
+                <div class="row">
+                    <!-- Layout Ảnh 1 bên phải, chữ giới thiệu bên trái -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="about-me-info u-s-m-b-30" style="text-align: justify;">
+                        <!--Định dạng chữ và nội dung giới thiệu the goat -->
+                            <h1>
+                                Thương hiệu <span>The Goat</span> - Nơi trải nghiệm công nghệ tuyệt vời
+                            </h1>
+                            <p>Chào mừng đến với "The Goat" - điểm đến lý tưởng cho những ai đam mê công nghệ và tìm kiếm những sản phẩm độc đáo và tiên tiến nhất trên thị trường. Được thành lập vào tháng 9 năm 2023. Với cam kết cung cấp sự đa dạng về điện thoại di động, laptop, phụ kiện công nghệ và nhiều sản phẩm khác, chúng tôi tự hào là địa chỉ mua sắm hàng đầu dành cho các đối tác yêu công nghệ.</p>
+                            <p><strong>Uy tín và chất lượng hàng đầu</strong></p>
+                            <p>Với nhiều năm kinh nghiệm trong ngành và sự hiểu biết sâu rộng về thị trường công nghệ, "The Goat" không chỉ là nơi bạn mua sắm, mà còn là người bạn đồng hành tin cậy. Chúng tôi luôn đặt <strong style="color: red;">uy tín và chất lượng hàng đầu</strong>, từ việc chọn lựa sản phẩm cho đến dịch vụ chăm sóc khách hàng. Đội ngũ nhân viên giàu kinh nghiệm của chúng tôi sẽ luôn sẵn lòng hỗ trợ bạn trong mọi khía cạnh, từ việc tư vấn chọn sản phẩm phù hợp đến giải đáp mọi thắc mắc của bạn.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="about-me-image u-s-m-b-30">
+                            <div class="banner-hover effect-border-scaling-gray">
+
+                                <img class="img-fluid" src="~/images/about/THE.jpg" alt="About Picture">
+                            </div>
+                        </div>
+                    </div>
+
+                        <!-- Ảnh 2 bên trái, chữ giới thiệu bên phải -->
+                        <div class="col-lg-6 col-md-12">
+                        <div class="about-me-image u-s-m-b-30">
+                            <div class="banner-hover effect-border-scaling-gray">
+                                <!-- Thay đổi src của ảnh để hiển thị hình ảnh khác -->
+                                <img class="img-fluid" src="~/images/about/Store.jpg" alt="About Picture">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="about-me-info u-s-m-b-30" style="text-align: justify;">
+                        <!--Định dạng chữ và nội dung giới thiệu the goat -->
+
+                            <h1><strong>Sứ mệnh</strong> của The Goat</h1>
+                            <p><strong>Quy trình phục vụ khách hàng chất lượng</strong></p>
+                            <p>Tại "The Goat", chúng tôi luôn đặt khách hàng lên hàng đầu. Quy trình phục vụ khách hàng của chúng tôi được xây dựng dựa trên sự chu đáo, nhanh nhẹn và chất lượng. Chúng tôi cam kết mang đến cho bạn trải nghiệm mua sắm thoải mái và tiện lợi nhất, từ khi bước vào cửa hàng cho đến khi rời khỏi với sản phẩm ưng ý.</p>
+                            <p><strong>Nhân viên được đào tạo chuyên nghiệp</strong></p>
+                            <p>Chúng tôi tự hào về đội ngũ nhân viên giàu kinh nghiệm và được đào tạo chuyên nghiệp tại "The Goat". Mỗi nhân viên không chỉ là chuyên gia về sản phẩm mà còn là người đồng hành tin cậy của bạn trong quá trình mua sắm. Chúng tôi cam kết cung cấp cho khách hàng sự tư vấn chân thành và chuyên nghiệp, giúp bạn chọn lựa sản phẩm phù hợp nhất với nhu cầu và mong muốn của mình.</p>
+                            <p>Hãy đến với "The Goat" để trải nghiệm không gian mua sắm công nghệ đẳng cấp và thỏa mãn niềm đam mê của bạn!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logo mạng xã hội -->
+            <!-- Dẫn link cho các logo MXH -->
+                <div class="container">
+
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="about-social text-center u-s-m-b-30">
+                                <ul class="social-media-list">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fab fa-google-plus-g"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fas fa-rss"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fab fa-pinterest"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Logo mạng xã hội -->
+            <!-- PHẦN CHI NHÁNH-->
+            <!-- Tạo hình ảnh link tới các chi nánh -->
+
+                    <div class="container1">
+                    <h2 class="text-center branch-title"><strong>Chi nhánh The Goat</strong></h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="branch">
+                                <div class="branch-content">
+                                    <img src="~/images/about/CN1.jpg" alt="Branch 1">
+                                    <div class="hover-text" style="text-align:justify">
+                                        <a href="https://www.google.com/maps/dir//279+Đường+Nguyễn+Tri+Phương,+Quận+10,+TP.+Hồ+Chí+Minh/" target="_blank">Nhấn để xem chi tiết đường đi</a>
+                                    </div>
+                                </div>
+                                <p class="text-center branch-address"style="text-align:justify"><strong>Chi nhánh 1 - Địa chỉ: 279 Đường Nguyễn Tri Phương, Quận 10, TP. Hồ Chí Minh</strong></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="branch">
+                                <div class="branch-content">
+                                    <img src="~/images/about/CN2.jpg" alt="Branch 2">
+                                    <div class="hover-text" style="text-align:justify">
+                                        <a href="https://www.google.com/maps/dir//96+Đường+Trần+Quang+Diệu,+Quận+3,+TP.+Hồ+Chí+Minh/" target="_blank">Nhấn để xem chi tiết đường đi</a>
+                                    </div>
+                                </div>
+                                <p class="text-center branch-address"style="text-align:justify"><strong>Chi nhánh 2 - Địa chỉ: 96 Đường Trần Quang Diệu, Quận 3, TP. Hồ Chí Minh</strong></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="branch">
+                                <div class="branch-content">
+                                    <img src="~/images/about/CN3.jpg" alt="Branch 3">
+                                    <div class="hover-text" style="text-align:justify">
+                                        <a href="https://www.google.com/maps/dir//107+Đường+Lê+Hồng+Phong,+TP.+Hà+Nội/" target="_blank">Nhấn để xem chi tiết đường đi</a>
+                                    </div>
+                                </div>
+                                <p class="text-center branch-address" style="text-align:justify"><strong>Chi nhánh 3 - Địa chỉ: 107 Đường Lê Hồng Phong, TP. Hà Nội</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- PHẦN CHI NHÁNH-->
+                <!-- PHẦN GIỚI THIỆU Thành viên -->
+                <div class="founder-introduction-container" style="font-size:10px">
+                    <h1><strong>Các thành viên thành lập The Goat</strong></h1>
+                    <div class="founder-introduction" style="text-align:justify">
+                            <p>The Goat là trang web bán hàng điện tử được đồng sáng lập bởi cô C và anh A, họ là những doanh nhân tài năng và có tầm nhìn. Với mục tiêu mang đến trải nghiệm mua sắm trực tuyến tuyệt vời nhất cho khách hàng. Thành công lớn nhất của "chúng tôi" là mang đến niềm vui cho khách hàng. </p>
+                            <div class="founder-row">
+                            <div class="founder">
+                                <img src="~/images/about/TVNHOM.png" alt="Member 1">
+                                <div class="caption">Co - founder: Lê Thị C </div>
+                            </div>
+                            <div class="founder">
+                                <img src="~/images/about/TVNHOM.png" alt="Member 2">
+                                <div class="caption">Co - founder: Nguyễn Văn A</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- PHẦN GIỚI THIỆU Thành viên -->
+              
+            </div>
+            </div>
+
+    <!-- Hết page về chúng tôi-->
+           
+</body>

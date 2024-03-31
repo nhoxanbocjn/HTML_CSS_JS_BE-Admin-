@@ -1,0 +1,39 @@
+﻿
+@model List<Product>
+@if (Model != null)
+{
+	foreach (var item in Model)
+	{
+		<tr>
+			<td>@item.ProductId</td>
+			<td>@item.ProductName</td>
+			<td>@item.Cat.CatName </td>
+			<td>@item.Price.Value.ToString("#,##0") VNĐ</td>
+			<td>@item.UnitsInStock</td>
+			<td>
+				@if (item.UnitsInStock > 0)
+				{
+					<div class="d-flex align-items-center">
+						<div class="badge-dot badge-success  m-r-10"></div>
+						<div>Còn bán </div>
+					</div>
+				}
+				else
+				{
+					<div class="d-flex align-items-center">
+						<div class="badge-dot badge-danger  m-r-10"></div>
+						<div>Hết hàng </div>
+					</div>
+
+
+				}
+			</td>
+			<td>
+				<a class="btn btn-success" asp-area="Admin" asp-controller="AdminProducts" asp-action="Details" asp-route-id="@item.ProductId">Chi tiết</a>
+				<a class="btn btn-warning" asp-area="Admin" asp-controller="AdminProducts" asp-action="Edit" asp-route-id="@item.ProductId">Sửa</a>
+				<a class="btn btn-danger" asp-area="Admin" asp-controller="AdminProducts" asp-action="Delete" asp-route-id="@item.ProductId">Xóa</a>
+
+			</td>
+		</tr>
+	}
+}

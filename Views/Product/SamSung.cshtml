@@ -1,0 +1,475 @@
+﻿@model TechWeb.Models.Product
+
+@{
+    ViewData["Title"] = "Product SamSung";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    #filter-btn, #clear-filter-btn {
+        width: 260px;
+        font-weight: bold;
+    }
+</style>
+<!--Giới thiệu loại sản phẩm sam sung -->
+<div class="page-style-a">
+    <div class="container">
+        <div class="page-intro">
+            <h2>Samsung</h2>
+            <!--Thông tin bread-crumb -->
+            <ul class="bread-crumb">
+                <li class="has-separator">
+                    <i class="ion ion-md-home"></i>
+                    <a asp-controller="Home" asp-action="Index">Trang chủ</a>
+                </li>
+                <li class="has-separator">
+                    <a asp-controller="Product" asp-action="Index">Sản Phẩm</a>
+                </li>
+                <li class="has-separator">
+                    <a asp-controller="Product" asp-action="Phone">Điện Thoại</a>
+                </li>
+                <!--Phần Thông tin bread-crumb được đánh dấu -->
+                <li class="is-marked">
+                    <a asp-controller="Product" asp-action="Samsung">Samsung</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--Giới thiệu loại sản phẩm sam sung -->
+
+<!-- Nội dung chính -->
+<div class="page-shop u-s-p-t-80">
+    <div class="container">
+        <!-- Đường dẫn-->
+        <div class="shop-intro">
+            <ul class="bread-crumb">
+                <li class="has-separator">
+                    <a asp-controller="Product" asp-action="Index">Sản phẩm </a>
+                </li>
+                <li class="has-separator">
+                    <a asp-controller="Product" asp-action="Phone">Điện Thoại</a>
+                </li>
+                <li class="is-marked">
+                    <a asp-controller="Product" asp-action="Samsung">Samsung</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Đường dẫn/- -->
+        <div class="row">
+            <!-- Thanh thông tin danh mục sản phẩm bên trái -->
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <div class="fetch-categories">
+                    <h3 class="title-name" style="font-size: 18px">Danh mục sản phẩm</h3>
+                    <!-- Mức 2 -->
+                    <h3 class="fetch-mark-category">
+                        <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                    </h3>
+                    <!-- Mức 2 /- -->
+                    <!-- Mức 3 -->
+                    <ul>
+                        <li>
+                            <a asp-controller="Product" asp-action="IPhone">iPhone</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Product" asp-action="SamSung" style="color:red">Samsung </a>
+                        </li>
+                        <li>
+                            <a asp-controller="Product" asp-action="IPhone">Xiaomi</a>
+                        </li>
+
+                    </ul>
+                    <!-- Mức 3 /- -->
+                    <!-- Mức 2 -->
+                    <h3 class="fetch-mark-category">
+                        <a asp-controller="Product" asp-action="IPhone">Laptop</a>
+                    </h3>
+                    <!-- Mức 2 /- -->
+                    <!-- Mức 3 -->
+                    <ul>
+                        <li>
+                            <a asp-controller="Product" asp-action="IPhone"> Macbook </a>
+                        </li>
+                        <li>
+                            <a asp-controller="Product" asp-action="IPhone">ASUS </a>
+                        </li>
+                        <li>
+                            <a asp-controller="Product" asp-action="IPhone"> Dell</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Product" asp-action="IPhone">HP</a>
+                        </li>
+                    </ul>
+                    <!-- Mức 3 /- -->
+                    <!-- Mức 2 -->
+                    <h3 class="fetch-mark-category">
+                        <a asp-controller="Product" asp-action="IPhone">Tablet </a>
+                    </h3>
+                    <!-- Mức 2 /- -->
+                    <!-- Mức 3 -->
+                    <ul>
+                        <li>
+                            <a asp-controller="Product" asp-action="IPhone">iPad</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Product" asp-action="SamSung">Samsung Tab</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Product" asp-action="SamSung">Xiaomi Pad</a>
+                        </li>
+                    </ul>
+                    <!-- Mức 3 /- -->
+                    <!-- Mức 2 -->
+                    <h3 class="fetch-mark-category">
+                        <a asp-controller="Product" asp-action="IPhone">Tai nghe</a>
+                    </h3>
+                    <!-- Mức 2 /- -->
+                    <!-- Mức 3 -->
+                    <ul>
+                        <li>
+                            <a asp-controller="Product" asp-action="SamSung">Tai nghe Bluetooth</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Product" asp-action="SamSung"> Tai nghe có dây </a>
+                        </li>
+                    </ul>
+                    <!-- Mức 3 /- -->
+                    <!-- Mức 2 -->
+                    <h3 class="fetch-mark-category">
+                        <a asp-controller="Product" asp-action="IPhone">Phụ kiện</a>
+                    </h3>
+                    <!-- Mức 2 /- -->
+                    <!-- Mức 3 -->
+                    <ul>
+                        <li>
+                            <a asp-controller="Product" asp-action="SamSung"> Phụ kiện điện thoại </a>
+                        </li>
+                        <li>
+                            <a asp-controller="Product" asp-action="SamSung"> Phụ kiện máy tính</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Product" asp-action="SamSung">Phụ kiện tablet</a>
+                        </li>
+                    </ul>
+                    <!-- Mức 3 /- -->
+                    <!-- Mức 2 -->
+                    <!-- Lọc theo giá-->
+                    <div class="facet-filter-by-price">
+                        <h3 class="title-name">Khoảng giá</h3>
+                        <div>
+                            <input type="text" id="min-price" placeholder="đ TỪ" style="float:left; width:100px; font-size:14px">
+                            <input type="text" id="max-price" placeholder="đ ĐẾN" style="float: right; width: 100px; font-size: 14px">
+                        </div>
+                        <br />
+                        <br />
+                        <button type="submit" id="filter-btn" class="button button-primary">Áp dụng</button>
+                        <button type="button" id="clear-filter-btn" class="button">Xóa bộ lọc</button>
+
+                    </div>
+                    <!-- Lọc theo giá-->
+
+                </div>
+
+           
+            </div>
+            <!-- Thanh thông tin danh mục sản phẩm bên trái /- -->
+            <!-- Thông tin sản phẩm bên phải -->
+            <div class="col-lg-9 col-md-9 col-sm-12">
+                <!-- Thanh trang-->
+                <div class="Thanh trangclearfix">
+                    <div class="shop-settings">
+                        <a id="list-anchor" class="active">
+                            <i class="fas fa-th-list"></i>
+                        </a>
+                        <a id="grid-anchor">
+                            <i class="fas fa-th"></i>
+                        </a>
+                    </div>
+                    <!-- Thanh sắp xếp 1  -->
+                    <div class="toolbar-sorter">
+                        <div class="select-box-wrapper">
+                            <label class="sr-only" for="sort-by">Sắp xếp theo</label>
+                            <select class="select-box" id="sort-by">
+                                <option selected="selected" value="no-sort">Sắp xếp theo: Ban đầu</option>
+                                <option value="sales_high_to_low">Sắp xếp theo: Bán chạy nhất</option>
+                                <option value="price_low_to_high">Sắp xếp theo: Giá thấp nhất</option>
+                                <option value="price_high_to_low">Sắp xếp theo: Giá cao nhất</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- //end Thanh sắp xếp 1  -->
+
+                </div>
+                <!-- Thanh trang/- -->
+                <!--Các dòng chưa sản phẩm -->
+                <div class="row product-container list-style">
+                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                        <div class="item">
+                            <div class="image-container">
+                                <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                    <img class="img-fluid" src="~/images/anhsp/samsungZflip.jpg" alt="Product">
+                                </a>
+                                <div class="item-action-behaviors">
+                                    <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                    <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                    <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                    <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <div class="what-product-is">
+                                    <ul class="bread-crumb">
+                                        <li class="has-separator">
+                                            <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                        </li>
+                                        <li>
+                                            <a asp-controller="Product" asp-action="SamSung">Samsung</a>
+                                        </li>
+                                    </ul>
+                                    <h6 class="item-title">
+                                        <a asp-controller="Product" asp-action="Details"> Điện Thoại Samsung Galaxy Z Flip4 256GB</a>
+                                    </h6>
+                                    <div class="item-description">
+                                        <p>
+                                            Nhỏ gọn và tinh tế, Samsung Galaxy Z Flip4 là chiếc smartphone sinh ra dành cho các tín đồ thời trang.
+                                            Cơ chế gập duyên dáng, bộ màu sắc nhẹ nhàng và loạt chức năng quay chụp sẽ làm say lòng những người yêu cái đẹp
+                                        </p>
+                                    </div>
+                                    <div class="item-stars">
+                                        <div class='star' title="4.7 out of 5 - based on 74 Reviews">
+                                            <span style='width:69px'></span>
+                                        </div>
+                                        <span>(74)</span>
+                                    </div>
+                                </div>
+                                <div class="price-template">
+                                    <div class="item-new-price">
+                                        15.690.000đ
+                                    </div>
+                                    <div class="item-old-price">
+                                        20.990.000₫
+                                    </div>
+                                </div>
+                                <div style="text-align:end">
+                                    <span>Đã bán:</span>
+                                    <span class="data-sales">88</span>
+                                </div>
+                            </div>
+                            <div class="tag hot">
+                                <span>HOT</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                        <div class="item">
+                            <div class="image-container">
+                                <a class="item-img-wrapper-link"asp-controller="Product" asp-action="Details">
+                                    <img class="img-fluid" src="~/images/anhsp/samsungZfold.jpg" alt="Product">
+                                </a>
+                                <div class="item-action-behaviors">
+                                    <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                    <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                    <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                    <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <div class="what-product-is">
+                                    <ul class="bread-crumb">
+                                        <li class="has-separator">
+                                            <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                        </li>
+                                        <li>
+                                            <a asp-controller="Product" asp-action="SamSung">Samsung</a>
+                                        </li>
+                                    </ul>
+                                    <h6 class="item-title">
+                                        <a asp-controller="Product" asp-action="Details"> Điện thoại Samsung Galaxy Z Fold5 5G 512GB</a>
+                                    </h6>
+                                    <div class="item-description">
+                                        <p>
+                                            Samsung Galaxy Z Fold5 khẳng định vị thế điện thoại gập tiên phong, mạnh dạn bứt phá ranh giới cũ,
+                                            dẫn đầu với công nghệ bản lề Flex tiên tiến. Thiết bị còn mở ra loạt trải nghiệm thông minh toàn diện
+                                            nhất thông qua màn hình lớn, hiệu năng vượt trội, tương thích bút S-Pen.
+                                        </p>
+                                    </div>
+                                    <div class="item-stars">
+                                        <div class='star' title="4.6 out of 5 - based on  R65eviews">
+                                            <span style='width:67px'></span>
+                                        </div>
+                                        <span>(65)</span>
+                                    </div>
+                                </div>
+                                <div class="price-template">
+                                    <div class="item-new-price">
+                                        41.990.000đ
+                                    </div>
+                                    <div class="item-old-price">
+                                        44.990.000₫
+                                    </div>
+                                </div>
+                                <div style="text-align:end">
+                                    <span>Đã bán:</span>
+                                    <span class="data-sales">80</span>
+                                </div>
+                            </div>
+                            <div class="tag hot">
+                                <span>HOT</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                        <div class="item">
+                            <div class="image-container">
+                                <a class="item-img-wrapper-link"asp-controller="Product" asp-action="Details">
+                                    <img class="img-fluid" src="~/images/anhsp/samsungS24U.jpg" alt="Product">
+                                </a>
+                                <div class="item-action-behaviors">
+                                    <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                    <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                    <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                    <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <div class="what-product-is">
+                                    <ul class="bread-crumb">
+                                        <li class="has-separator">
+                                            <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                        </li>
+                                        <li>
+                                            <a asp-controller="Product" asp-action="SamSung">Samsung</a>
+                                        </li>
+                                    </ul>
+                                    <h6 class="item-title">
+                                        <a asp-controller="Product" asp-action="Details">Samsung Galaxy S24 Ultra 5G 12GB/1TB</a>
+                                    </h6>
+                                    <div class="item-description">
+                                        <p>
+                                            Samsung Galaxy S24 Ultra là chiếc điện thoại Galaxy thông minh nhất từ trước đến nay
+                                            với quyền năng kết nối, quyền năng sáng tạo và quyền năng giải trí đều được hỗ trợ bởi
+                                            trí tuệ nhân tạo Galaxy AI. Thiết kế hoàn toàn mới từ bộ khung Titan đẳng cấp, siêu camera độ phân giải lên tới 200MP
+                                        </p>
+                                    </div>
+                                    <div class="item-stars">
+                                        <div class='star' title="4.9 out of 5 - based on 22 Reviews">
+                                            <span style='width:73px'></span>
+                                        </div>
+                                        <span>(22)</span>
+                                    </div>
+                                </div>
+                                <div class="price-template">
+                                    <div class="item-new-price">
+                                        32,600,000₫
+                                    </div>
+                                    <div class="item-old-price">
+                                        44,490,000₫
+                                    </div>
+                                </div>
+                                <div style="text-align:end">
+                                    <span>Đã bán:</span>
+                                    <span class="data-sales">31</span>
+                                </div>
+                            </div>
+                            <div class="tag hot">
+                                <span>HOT</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                        <div class="item">
+                            <div class="image-container">
+                                <a class="item-img-wrapper-link"asp-controller="Product" asp-action="Details">
+                                    <img class="img-fluid" src="~/images/anhsp/samsungS24.jpg" alt="Product">
+                                </a>
+                                <div class="item-action-behaviors">
+                                    <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                    <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                    <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                    <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <div class="what-product-is">
+                                    <ul class="bread-crumb">
+                                        <li class="has-separator">
+                                            <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                        </li>
+                                        <li>
+                                            <a asp-controller="Product" asp-action="SamSung">Samsung</a>
+                                        </li>
+                                    </ul>
+                                    <h6 class="item-title">
+                                        <a asp-controller="Product" asp-action="Details">Samsung Galaxy S24 5G 8GB/512GB</a>
+                                    </h6>
+                                    <div class="item-description">
+                                        <p>
+                                            Galaxy S24 là sản phẩm hoàn hảo cho những người thích sự nhỏ gọn và mượt mà trong lòng bàn tay.
+                                            Với kiểu dáng gọn gàng, thiết kế nguyên khối và lớp satin phủ bề mặt, Samsung S24 cho cảm giác cầm nắm chắc chắn và thích thú
+                                        </p>
+                                    </div>
+                                    <div class="item-stars">
+                                        <div class='star' title="4.7 out of 5 - based on 31 Reviews">
+                                            <span style='width:70px'></span>
+                                        </div>
+                                        <span>(31)</span>
+                                    </div>
+                                </div>
+                                <div class="price-template">
+                                    <div class="item-new-price">
+                                        19,500,000₫
+                                    </div>
+                                    <div class="item-old-price">
+                                        26,490,000₫
+                                    </div>
+                                </div>
+                                <div style="text-align:end">
+                                    <span>Đã bán:</span>
+                                    <span class="data-sales">49</span>
+                                </div>
+                            </div>
+                            <div class="tag hot">
+                                <span>HOT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Các dòng chưa sản phẩm /- -->
+            </div>
+            <!-- Thông tin sản phẩm bên phải /- -->
+            <!-- SĐhop-Pagination -->
+            <div class="pagination-area">
+                <div class="pagination-number">
+                    <ul>
+                        <li style="display: none">
+                            <a asp-controller="Product" asp-action="Phone" title="Previous">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a asp-controller="Product" asp-action="Phone">1</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Product" asp-action="Phone">2</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Product" asp-action="Phone">3</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Product" asp-action="Phone">...</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Product" asp-action="Phone">10</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Product" asp-action="Phone" title="Next">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Đánh số trang/- -->
+        </div>
+    </div>
+</div>
+<!-- Nội dung chính /- -->

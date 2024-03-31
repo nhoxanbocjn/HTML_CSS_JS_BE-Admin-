@@ -1,0 +1,39 @@
+﻿@model TechWeb.Models.Role
+
+@{
+    ViewData["Title"] = "Thông tin quyền truy câp";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="page-header">
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a asp-area="Admin" asp-controller="AdminRoles" asp-action="Index" class="breadcrumb-item">Quản lý quyền truy câp</a>
+            <span class="breadcrumb-item active">Thông tin quyền truy câp</span>
+        </nav>
+    </div>
+</div>
+<div class="card">
+    <h5 class="card-header">Thông Tin Quyền Truy Cập</h5>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered first">
+                <tbody>
+                    <tr>
+                        <td>ID</td>
+                        <td>@Model.RoleId</td>
+                    </tr>
+                    <tr>
+                        <td>Tên quyền truy cập</td>
+                        <td>@Model.RoleName</td>
+                    </tr>
+                    <tr>
+                        <td>Mô tả</td>
+                        <td>@Model.Description</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

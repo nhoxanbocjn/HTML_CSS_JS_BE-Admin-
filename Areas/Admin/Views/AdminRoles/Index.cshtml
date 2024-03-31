@@ -1,0 +1,51 @@
+﻿@model IEnumerable<TechWeb.Models.Role>
+
+@{
+    ViewData["Title"] = "Quản lý quyền truy cập";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="pageheader-title">Quản Lý Quyền Truy Cập </h2>
+<div class="card">
+    <h5 class="card-header">Danh Sách</h5>
+    <div class="card-body">
+        <div class="text-right">
+            <div class="m-r-20">
+                <a class="btn btn-rounded btn-primary" asp-area="Admin" asp-controller="AdminRoles" asp-action="Create">
+                    <i class=" fas fa-plus-circle m-r-10"></i><span>Thêm quyền truy cập </span>
+                </a>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Tên</th>
+                        <th scope="col">Mô tả</th>
+                        <th scope="col">Thao Tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <th scope="row">@item.RoleId</th>
+                                <td>@item.RoleName</td>
+                                <td>@item.Description</td>
+                                <td>
+                                    <a class="btn btn-success" asp-area="Admin" asp-controller="AdminRoles" asp-action="Details" asp-route-id="@item.RoleId">Xem Chi Tiết</a>
+                                    <a class="btn btn-warning" asp-area="Admin" asp-controller="AdminRoles" asp-action="Edit" asp-route-id="@item.RoleId">Sửa</a>
+                                    <a class="btn btn-danger" asp-area="Admin" asp-controller="AdminRoles" asp-action="Delete" asp-route-id="@item.RoleId">Xóa</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

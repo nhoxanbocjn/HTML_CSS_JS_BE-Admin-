@@ -1,0 +1,1397 @@
+
+    /* ---------THE MAIN SLIDE------------ */
+
+.one {
+    background-image: url(https://surfacezone.vn/wp-content/uploads/2022/02/Surface-Laptop-Go-Panel16_Video_Animation-1.jpeg);
+}
+
+.two {
+    background-image: url(https://panzerglass.com/cdn/shop/collections/PG_Subpage_BANNER__1920x720px_15-plus-cases.jpg?crop=center&height=4096&v=1693992217&width=4096);
+}
+
+.three {
+    background-image: url(https://www.colmi.info/cdn/shop/files/COLMi_C81_Smartwatch_banner_01_pc_5e182dd4-b341-411a-a78c-f9c50d881a61.jpg?v=1683619723&width=3840);
+}
+
+
+/* ---------------header--------- */
+.g-dropdown{
+z-index: 1000;
+}
+.mega-menu {
+    margin-left: 650px;
+    width: 20%;
+    padding-right: 55px; 
+    text-align: center;
+
+}
+
+/* -----------------------header - blog ------ */
+.mega-menu .mega-1-colm ul {
+    margin: 0;
+    padding: 0;
+}
+
+.mega-menu.mega-1-colm ul>li {
+    display: block;
+    list-style: none;
+
+}
+
+.mega-menu.mega-1-colm ul>li>a {
+    font-size: 13px;
+    display: block;
+    padding: 7px 0;
+    transition: all 0.3s ease-out 0s;
+}
+
+.mega-menu.mega-1-colm ul>li>a:hover {
+    padding-left: 5px;
+}
+
+
+/* ----------chinh mau top header ------------- */
+
+.full-layer-outer-header {
+    background-color: #1E1E27;
+}
+.full-layer-bottom-header { 
+    background-color: white;
+    
+}
+.full-layer-mid-header{
+background-color: white;
+
+}
+
+
+
+header{
+    /* position: fixed; */
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+}
+
+
+/* .default-height{
+margin-top: 200px;
+} */
+
+bottom-nav{
+    z-index: 1000;
+}
+
+
+/* them header blog */
+.mega-menuMOI {
+    background: #ffffff none repeat scroll 0 0;
+    border: 1px solid #ececec;
+    box-shadow: 0 1px 2px rgba(86, 86, 90, 0.5);
+    /* left: 0; */
+    padding: 20px 30px;
+    position: absolute;
+    text-align: left;
+    top: 120%;
+    transform-origin: 0 0 0;
+    transition: all 0.3s ease 0s;
+    width: 45%;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    margin-left:-200px ;
+
+
+}
+
+.mega-menuMOI.mega-3-colm ul {
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 33.33%;
+}
+
+.mega-menuMOI.mega-3-colm ul>li {
+    display: block;
+    list-style: none;
+}
+
+.mega-menuMOI.mega-3-colm ul>li>a {
+    font-size: 13px;
+    display: block;
+    padding: 7px 0;
+    transition: all 0.3s ease-out 0s;
+}
+
+.mega-menuMOI.mega-3-colm ul>li>a:hover {
+    padding-left: 5px;
+}
+
+.g-nav>li:hover>a+.mega-menuMOI {
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+}
+
+
+/* ---------hieu ung chu super sale HEAER ------- */
+div.at-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.at-item {
+    color: #3079ed;
+    font-weight: bold;
+    font-size: 3em;
+
+    animation-name: text-shadow-multicolor;
+    animation-duration: 1.2s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    font-size: 14px;
+
+    /* shorthand
+    animation: text-shadow-multicolor 1.2s ease 0s infinite normal none;*/
+}
+
+@keyframes text-shadow-multicolor {
+
+    0% {
+        text-shadow: 0 0px 15px #f0f;
+    }
+
+    33% {
+        text-shadow: 0 0px 15px #0ff;
+    }
+
+    66% {
+        text-shadow: 0 0px 10px #0f0;
+    }
+
+    100% {
+        text-shadow: 0 0px 10px #ff0;
+    }
+}
+
+/* ---HEADER-- */
+
+.full-layer-mid-header {
+    height: 100px;
+}
+
+-----------DANG KY THU FOOTER--- 
+
+.newsletter, .nl {
+    width: cacl(100%);
+    margin-bottom: 50px;
+    /* margin-left: 30px; 
+    margin-right: 30px;  */
+    padding: 10px;
+    border: 1px solid rgb(150, 145, 145);
+    background-color: whitesmoke;
+}
+
+
+.newsletter_text {
+    padding-top: 30px;
+    padding-left: 20px;
+    height: 120px;
+
+}
+
+.newsletter_text h4 {
+    margin-bottom: 0px;
+    line-height: 24px;
+    text-align: left;
+
+}
+
+.newsletter_text p {
+    margin-bottom: 0px;
+    line-height: 1.7;
+    color: black;
+    text-align: left;
+}
+
+.newsletter_form {
+    height: 120px;
+}
+
+#newsletter_email {
+    width: 300px;
+    height: 46px;
+    background: #FFFFFF;
+    border: solid 1px black;
+    padding-left: 20px;
+}
+
+#newsletter_email:focus {
+    border: solid 1px #7f7f7f !important;
+    box-shadow: none !important;
+}
+
+:focus {
+    outline: none !important;
+}
+
+#newsletter_email::-webkit-input-placeholder {
+    font-size: 14px !important;
+    font-weight: 400;
+    color: #b9b4c7 !important;
+}
+
+#newsletter_email:-moz-placeholder
+
+/* older Firefox*/
+    {
+    font-size: 14px !important;
+    font-weight: 400;
+    color: #b9b4c7 !important;
+}
+
+#newsletter_email::-moz-placeholder
+
+/* Firefox 19+ */
+    {
+    font-size: 14px !important;
+    font-weight: 400;
+    color: #b9b4c7 !important;
+}
+
+#newsletter_email:-ms-input-placeholder {
+    font-size: 14px !important;
+    font-weight: 400;
+    color: #b9b4c7 !important;
+}
+
+#newsletter_email::input-placeholder {
+    font-size: 14px !important;
+    font-weight: 400;
+    color: #b9b4c7 !important;
+}
+
+.newsletter_submit_btn {
+    width: 160px;
+    height: 46px;
+    border: none;
+    background-color: black;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.newsletter_submit_btn:hover {
+    background: red !important;
+}
+
+/* NUT MUA trong main slide*/
+.btn-cta {
+    color: RED;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #000000;
+    font-weight: bold;
+}
+
+
+/* ----------------------------------TIMING----------------------- */
+
+.timer {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    
+}
+
+.timer li {
+    margin-left: 20px;
+    padding: 5px 10px;
+    background-color: rgba(241, 241, 241, 0.938);
+    border-radius: 5px;
+}
+
+.timer_num {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.timer_unit {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Button Styles */
+.red_button {
+    background-color: #ff4d4d;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+    margin-left: -50px;
+}
+
+
+.red_button a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    /* Increase font size */
+}
+
+.red_button:hover {
+    background-color: #e63e3e;
+    /* Darken button color on hover */
+}
+
+.red_button:hover a {
+    transform: scale(1.05);
+    /* Enlarge text on hover */
+    color: black;
+}
+
+/* Deal Of The Week Styles */
+.deal_ofthe_week_content {
+    text-align: center;
+    margin-right: 200px;
+
+}
+
+.section_title {
+    margin-bottom: 20px;
+    margin-left: -50px;
+}
+
+.section_title h1 {
+    font-size: 50px;
+    color: #333;
+    margin: 0;
+}
+
+
+/* 
+-----------------Them hieu ung cho chu TRONG TIME-------------- */
+
+.section_title h1 {
+    color: red;
+    font-weight: bold;
+    font-size: 3em;
+
+    animation-name: text-flicker-out-glow;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+
+    /* shorthand
+    animation: text-flicker-out-glow 2.2s linear 0s infinite normal none;*/
+}
+
+@keyframes text-flicker-out-glow {
+
+    0% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(0, 0, 0, .6), 0 0 60px rgba(0, 0, 0, .45), 0 0 110px rgba(0, 0, 0, .25), 0 0 100px rgba(0, 0, 0, .1);
+    }
+
+    13% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(0, 0, 0, .6), 0 0 60px rgba(0, 0, 0, .45), 0 0 110px rgba(0, 0, 0, .25), 0 0 100px rgba(0, 0, 0, .1);
+    }
+
+    14% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    15% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    16% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(0, 0, 0, .55), 0 0 60px rgba(0, 0, 0, .4), 0 0 110px rgba(0, 0, 0, .2), 0 0 100px rgba(0, 0, 0, .1);
+    }
+
+    22% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(0, 0, 0, .55), 0 0 60px rgba(0, 0, 0, .4), 0 0 110px rgba(0, 0, 0, .2), 0 0 100px rgba(0, 0, 0, .1);
+    }
+
+    23% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    24% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    25% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(0, 0, 0, .55), 0 0 60px rgba(0, 0, 0, .35), 0 0 100px rgba(0, 0, 0, .1);
+    }
+
+    34% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(0, 0, 0, .55), 0 0 60px rgba(0, 0, 0, .35), 0 0 100px rgba(0, 0, 0, .1);
+    }
+
+    35% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    39% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    40% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(0, 0, 0, .55), 0 0 60px rgba(0, 0, 0, .35);
+    }
+
+    42% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(0, 0, 0, .55), 0 0 60px rgba(0, 0, 0, .35);
+    }
+
+    43% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    44% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    45% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(0, 0, 0, .45), 0 0 60px rgba(0, 0, 0, .25);
+    }
+
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(0, 0, 0, .45), 0 0 60px rgba(0, 0, 0, .25);
+    }
+
+    54% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(0, 0, 0, .45), 0 0 60px rgba(0, 0, 0, .25);
+    }
+
+    55% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    69% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(0, 0, 0, .45), 0 0 60px rgba(0, 0, 0, .25);
+    }
+
+    70% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(0, 0, 0, .45), 0 0 60px rgba(0, 0, 0, .25);
+    }
+
+    71% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    78% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    79% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(0, 0, 0, .25);
+    }
+
+    80% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    88% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    89% {
+        opacity: 1;
+        text-shadow: none;
+    }
+
+    90% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* Deal Of The Week Image Styles */
+.deal_ofthe_week_img img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Row Styles */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+/* Column Styles */
+.col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Text Right Styles */
+.text-right {
+    text-align: right;
+}
+
+
+.timing {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #f9f9f9;
+    padding: 7em 0;
+    position: relative;
+    background: #f5f5f5 url('../images/trangchu/baner/1.png') repeat fixed center center;
+}
+/* CSS for responsiveness */
+@media only screen and (max-width: 768px) {
+    .col-lg-6 {
+        flex: 0 0 100%; /* Đặt cột chiếm toàn bộ chiều rộng */
+        max-width: 100%;
+    }
+    
+    .deal_ofthe_week_content {
+        margin-right: 0; /* Loại bỏ margin phải */
+    }
+
+    .red_button {
+        margin-left: 0; /* Loại bỏ margin trái */
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .section_title h1 {
+        font-size: 30px; /* Giảm kích thước font cho tiêu đề */
+    }
+
+    .timing {
+        padding: 4em 0; /* Giảm khoảng cách giữa các phần tử ở phía dưới */
+    }
+}
+
+/* -------------------------------------------------BENERFIT-------------     */
+
+.benefit {
+    position: relative;
+    border: 1px solid rgb(170, 167, 167);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: whitesmoke;
+    max-width: calc(100% - 60px);
+    width: auto;
+    margin-left: 30px;
+    margin-right: 30px;
+
+
+}   
+
+.benefit_row {
+    padding-left: 50px;
+    padding-right: 50px;
+    
+}
+
+.benefit_col {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.benefit_item {
+    height: 100px;
+    border-right: solid 1px #FFFFFF;
+    padding-left: 25px;
+}
+
+.benefit_col:last-child .benefit_item {
+    border-right: none;
+}
+
+.benefit_icon i {
+    font-size: 30px;
+    color: #fe4c50;
+}
+
+.benefit_content {
+    padding-left: 22px;
+}
+
+.benefit_content h6 {
+    text-transform: uppercase;
+    line-height: 18px;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+
+.benefit_content p {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 0px;
+    color: #51545f;
+}
+
+/* Chỉnh khoảng cách 'Xem them' va banner */
+.image-banner {
+    margin-top: 10px;
+}
+
+.redirect-link :hover {
+    color: red;
+    font-weight: bold;
+}
+
+/* -------------------------hieu ung banner thuong hieu ------------- */
+.logo-container {
+    width: calc(100% - 60px); /* Đảm bảo chiều rộng của .logo-container không bị tràn ra ngoài */
+    overflow: hidden;
+    margin: 20px 30px; /* Margin 50px cho cả hai bên */
+    background-color:whitesmoke;
+    padding: 20px;
+    border: 1px rgb(135, 131, 131) solid;
+    margin-bottom: 50px;
+}
+
+.logo-container marquee {
+    width: 100%;
+    height: auto;
+}
+
+.logo {
+    display: inline-block;
+    width: 100px;
+    /* Điều chỉnh kích thước banner tùy ý */
+    height: fit-content;
+    /* Điều chỉnh kích thước banner tùy ý */
+    background-color: #f0f0f0;
+    margin-right: 100px;
+    /* Điều chỉnh khoảng cách giữa các banner */
+}
+
+/* BLOG */
+/* Căn chỉnh margin cho .blogs_container */
+.blogs_container {
+    margin-top: 20px;
+}
+
+/* Các phần tử của mỗi blog */
+.blog_item {
+    position: relative; 
+    height: 255px; /* Sử dụng chiều cao cố định */
+    width: 100%;
+}
+
+/* Ảnh nền của blog */
+.blog_background {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+/* Nội dung của blog */
+.blog_content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s linear;
+    box-sizing: border-box;
+}
+
+/* Hiển thị nội dung khi hover */
+.blog_item:hover .blog_content {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Tiêu đề của blog */
+.blog_title {
+    font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: 0px;
+}
+
+/* Thông tin meta của blog */
+.blog_meta {
+    font-size: 12px;
+    line-height: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #51545f;
+    margin-bottom: 0px;
+    margin-top: 3px;
+    letter-spacing: 1px;
+}
+
+/* Link xem thêm */
+.blog_more {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    color: #fe4c50;
+    border-bottom: solid 1px #fe4c50;
+    margin-top: 12px;
+}
+
+/* Màu khi hover link xem thêm */
+.blog_more:hover {
+    color: #FE7C7F;
+}
+
+/* Phần tử chứa blog */
+.blogs {
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 100px;
+    background-color: #f9f9f9;
+    border: 1px rgb(126, 123, 123) solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container chứa các blog */
+.blogs .container {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+/* ----------------REVIEW------------------ */
+
+.title_cmt {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title_cmt h3 {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+}
+
+.review-container {
+    display: flex;
+    flex-direction: column; /* Đảm bảo các review nằm dọc */
+    align-items: center; /* Căn giữa theo chiều ngang */
+    padding: 20px;
+    border: 1px solid #9b9999;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    margin: 50px 15px;
+}
+
+.review {
+    max-width: 400px; /* Giới hạn độ rộng của review */
+    padding: 20px;
+    margin-bottom: 20px; /* Khoảng cách giữa các review */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: none; /* Ẩn tất cả các review ban đầu */
+}
+
+.review.active {
+    display: block; /* Hiển thị review đang active */
+}
+
+.hd {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.comment p {
+    margin: 0; /* Loại bỏ margin mặc định của đoạn văn */
+}
+
+.stars {
+    color: gold;
+}
+
+
+
+/* ----------------------------------------BOX CHAT ------------------------- */
+/* Nút Để Mở Chatbox */
+.nut-mo-chatbox {
+    color: rgb(106, 104, 104);
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 10px;
+    left: 30px;
+    width: 80px;
+    z-index: 10000;
+    background-color: initial;
+    font-size: 50px;
+}
+
+.nut-mo-chatbox {
+    font-weight: bold;
+
+    animation-name: text-shadow-drop;
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+
+    /* shorthand
+    animation: text-shadow-drop 0.2s linear 0s infinite normal forwards;*/
+}
+
+@keyframes text-shadow-drop {
+
+    0% {
+        text-shadow: 0 0 0 transparent;
+    }
+
+    100% {
+        text-shadow: -6px 6px 18px rgba(0, 0, 0, .35);
+    }
+}
+
+.nut-mo-chatbox:hover {
+    color: red;
+}
+@media screen and (max-width: 768px) {
+    .nut-mo-chatbox {
+        display: none; /* Ẩn nút nhắn tin khi màn hình nhỏ hơn 768px */
+    }
+}
+
+
+
+
+/* Ẩn chatbox mặc định */
+
+.Chatbox {
+    display: none;
+    position: fixed;
+    bottom: 23px;
+    left: 30px;
+    border: 2px solid black;
+    z-index: 10000;
+    background-image: url(https://png.pngtree.com/background/20210710/original/pngtree-beautiful-christmas-display-board-background-picture-image_980193.jpg);
+    border-radius: 5%;
+}
+
+/* Thêm style cho form */
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background: none;
+}
+
+/* thiết lập style textarea */
+.form-container textarea {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    height: 40px;
+}
+
+/*thiết lập style cho textarea khi được focus */
+.form-container textarea:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+
+.form-container {
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+
+/* Thêm hiệu ứng hover cho nút*/
+.form-container .btn:hover,
+.nut-mo-chatbox:hover {
+    opacity: 1;
+}
+
+
+.btn {
+    background-color: white;
+    color: black;
+}
+
+.btn:hover {
+    color: yellow;
+}
+
+.form-container {
+    margin-bottom: 4px;
+
+}
+
+.title_boxchat p {
+    padding-top: 60px;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.nut-dong-chatbox {
+    background-color: transparent;
+    font-size: 23px;
+    position: absolute;
+    right: 0px;
+    top: 40px;
+    display: block;
+}
+
+
+.content_boxchat {
+    display: flex;
+    bottom: 2px;
+    margin-bottom: 0;
+    height: 40px;
+}
+
+
+.space_chat {
+    height: 200px;
+    width: 100%;
+    border: 2px solid black;
+    margin-bottom: 10px;
+}
+
+.nut-gui {
+    font-size: 20px;
+    height: 35px;
+    background: none;
+}
+
+
+
+.title_boxchat p {
+    font-weight: bold;
+
+    animation-name: focus-in-expand-top;
+    animation-duration: 2.2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+
+    /* shorthand
+    animation: focus-in-expand-top 2.2s linear 0s 1 normal none;*/
+}
+
+@keyframes focus-in-expand-top {
+
+    0% {
+        letter-spacing: -.5em;
+        transform: translateY(-300px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+
+    0% {
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+/* 
+  ----------------Hieu ung san pham------------ */
+
+.item {
+    animation-name: scale-up-center;
+    animation-duration: 1.2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+
+    /* shorthand
+          animation: scale-up-center 1.2s linear 0s 1 normal none;*/
+}
+
+@keyframes scale-up-center {
+
+    0% {
+        transform: scale(.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* -------------------CHO CHU O GIUA -------------- */
+.blog {
+    text-align: center;
+}
+
+.cmt {
+    text-align: center;
+}
+
+.brand {
+    text-align: center;
+}
+
+/* --------------------------------------------------------BANNER---------------------------- */
+.banner_frame {
+    border: 1px solid rgb(169, 166, 166);
+    background-color: whitesmoke;
+    height: auto;
+    margin-bottom: 50px;
+    width: calc(100% - 60px);
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 100px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.title_bn {
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.banner-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensure the image covers the entire space */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.banner-overlay p {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.banner-overlay h4 {
+    background-color: red;
+    color: black;
+    font-weight: bold;
+}
+
+.banner-container:hover .banner-overlay {
+    opacity: 1;
+}
+
+.banner-overlay h4 {
+    color: transparent;
+    background: linear-gradient(to right, #ff0000, #ff5500, #ffaa00, #ffff00, #ffaa00, #ff5500, #ff0000);
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: fire 1.5s infinite alternate;
+}
+
+@keyframes fire {
+    from {
+        text-shadow: 0 0 2px #ff5500, 0 0 4px #ffaa00, 0 0 6px #ffff00, 0 0 8px #ffaa00, 0 0 10px #ff5500, 0 0 12px #ff0000;
+    }
+
+    to {
+        text-shadow: 0 0 2px #ff0000, 0 0 4px #ff5500, 0 0 6px #ffaa00, 0 0 8px #ffff00, 0 0 10px #ffaa00, 0 0 12px #ff5500;
+    }
+}
+
+.banner-overlay p {
+    animation-name: text-shadow-drop-down;
+    animation-duration: 1.2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+@keyframes text-shadow-drop-down {
+    0% {
+        text-shadow: 0 0 0 transparent;
+    }
+
+    100% {
+        text-shadow: 0px 15px 18px rgba(0, 0, 0, 1);
+    }
+}
+
+/* 
+--------------vong tron quang cao ------------- */
+.vongtron_qc {
+background-color: whitesmoke;
+margin: 55px;
+padding: 20px;
+border: 1px solid rgb(150, 147, 147);
+padding-bottom: 0;
+height: fit-content;
+margin-left: 30px;
+margin-right: 30px;
+}
+.vongtron_qc h3{
+    text-align: center;
+    font-weight: bold;
+}
+
+.vongtron {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    margin-bottom: 150px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+}
+.title_vt{
+margin-bottom: 30px;
+}
+
+.box {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform-style: preserve-3d;
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+.box span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i)* 45deg)) translateZ(400px);
+    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004);
+}
+
+.box span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+}
+
+.footer{
+    padding: 20px;
+    margin-top: 50px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+.mid-footer-wrapper {
+    border: 1px solid rgb(134, 131, 131);
+    padding: 20px;
+    margin-left: 0;
+    margin-right: 0;
+
+}
+.bottom-footer-wrapper{
+    background-color: black;
+    margin-left: 0px;
+    margin-right: 0px;
+
+}
+.social-media-list li a{
+    color: white;
+}
+@media (max-width: 768px) {
+    .vongtron .box {
+        max-width: 80%; /* Giữ cho box không vượt quá 80% chiều rộng của container */
+        max-height: 80%; /* Giữ cho box không vượt quá 80% chiều cao của container */
+    }
+
+    .vongtron .box span img {
+        width: auto; /* Đảm bảo chiều rộng của hình ảnh tự động điều chỉnh */
+        max-width: 100%; /* Giữ cho hình ảnh không vượt quá kích thước của container */
+        max-height: 100%; /* Giữ cho hình ảnh không vượt quá kích thước của container */
+        height: auto; /* Đảm bảo chiều cao của hình ảnh tự động điều chỉnh */
+    }
+}
+
+
+/* Responsive header*/
+#dau-trang {
+    display: none;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 567px) {
+    #dau-trang {
+        display: none;
+    }
+
+    #giua-trang {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 566px) {
+    #giua-trang {
+        display: none;
+    }
+
+    #dau-trang {
+        display: block;
+    }
+}
+
+/* ------------------------quickview----------- */
+/*Thêm vào file css*/
+.mausac {
+    border: 1px solid rgba(0,0,0,.09);
+    height: 40px;
+    width: 150px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+    .mausac:focus {
+        outline: none; /* Loại bỏ viền mặc định */
+        border-color: red; /* Thay đổi màu sắc của viền thành màu đỏ */
+    }
+
+.muahang, .themhang {
+    height: 45px;
+    border-color: red;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.muahang {
+    background: red;
+    color: white;
+}
+
+.themhang {
+    color: red;
+}

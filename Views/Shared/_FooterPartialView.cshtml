@@ -1,0 +1,591 @@
+﻿
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="newsletter nl">
+            <div class="row">
+                <!-- Thanh đăng ký bản tin  -->
+                <div class="col-md-6">
+                    <div class="newsletter_text text-center text-md-start">
+                        <h4><b>Bản tin</b></h4>
+                        <p>Đăng ký nhận bản tin của chúng tôi để nhận nhiều ưu đãi</p>
+                    </div>
+                </div>
+                <!-- Cột về biểu mẫu của Newsletter -->
+                <div class="col-md-6">
+                    <form action="post">
+                        <!-- Điều chỉnh căn chỉnh và căn giữa cho phản ứng -->
+                        <div class="newsletter_form d-flex flex-column align-items-center justify-content-center">
+                            <!-- Ô nhập Email -->
+                            <input id="newsletter_email" type="email" class="form-control mb-2" placeholder="Email của bạn" required="required" data-error="Valid email is required." style="max-width: 500px;">
+                            <!-- Nút đăng kí -->
+                            <button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300 btn btn-primary" value="Đăng ký" style="max-width: 150px;color: white;background-color: black;">Đăng ký</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--phần footer kế cuối  màu trắng -->
+        <div class="mid-footer-wrapper u-s-p-b-80">
+            <div class="row">
+                <!-- Mỗi đoạn sẽ chiêm 1/4 cột -->
+
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="footer-list">
+                        <!-- Hiển thị các thông tin về dịch vụ khách hàng  -->
+                        <h6>DỊCH VỤ KHÁCH HÀNG</h6>
+                        <ul>
+                            <li>
+                                <a asp-controller="Home" asp-action="Support">Hỗ trợ</a>
+                            </li>
+                            <li>
+                                <a asp-controller="Home" asp-action="Support">Theo dõi đơn hàng</a>
+                            </li>
+                            <li>
+                                <a asp-controller="Home" asp-action="Support">Điều khoản và chính sách</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="footer-list">
+                        <!-- Hiển thị các thông tin về The Goat Shop-->
+
+                        <h6>THE GOAT SHOP</h6>
+                        <ul>
+                            <li>
+                                <a asp-controller="Home" asp-action="Index">Trang chủ</a>
+                            </li>
+                            <li>
+                                <a asp-controller="Home" asp-action="About">Về chúng tôi</a>
+                            </li>
+                            <li>
+                                <a asp-controller="Home" asp-action="Contact">Liên hệ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="footer-list">
+                        <!-- Hiển thị các thông tin cơ bản khác   -->
+
+                        <h6>THÔNG TIN</h6>
+                        <ul>
+                            <li>
+                                <a asp-controller="Product" asp-action="Index">Danh mục</a>
+                            </li>
+                            <li>
+                                <a asp-controller="Wishlist" asp-action="Index">Sản phẩm yêu thích</a>
+                            </li>
+                            <li>
+                                <a asp-controller="Cart" asp-action="Index">Giỏ hàng</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="footer-list">
+                        <!-- Hiển thị các thông tin về địa chỉ liên hệ  -->
+
+                        <h6>Địa chỉ</h6>
+                        <ul>
+                            <li>
+                                <i class="fas fa-location-arrow u-s-m-r-9"></i>
+                                <span>279 Nguyễn Tri Phương, phường 5, quận 10, TP HCM </span>
+                            </li>
+                            <li>
+                                <a href="tel:+923086561801">
+                                    <i class="fas fa-phone u-s-m-r-9"></i>
+                                    <span>0911904045</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:contact@domain.com">
+                                    <i class="fas fa-envelope u-s-m-r-9"></i>
+                                    <span>
+                                        thegoatshop.ueh@gmail.com
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Kết phần footer kế cuốir /- -->
+        <!-- Phần footer ở cuối-->
+        <!-- Đính kèm các phương thức thanh toán  -->
+        <style>
+            .bottom-footer-wrapper:before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 23px;
+                margin-bottom: 14px;
+                background: url(../images/payment/pay-3.png) center center no-repeat;
+            }
+        </style>
+        <div class="bottom-footer-wrapper">
+            <div class="social-media-wrapper">
+                <!-- đính kèm các trang social  -->
+
+                <ul class="social-media-list">
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-google-plus-g"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-rss"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!--Phần bản quyền  -->
+
+            <p style="color: white;" class="copyright-text">
+                Copyright &copy; 2024
+                <a asp-controller="Home" asp-action="Index">The Goat Shop</a> Bảo lưu mọi bản quyền
+            </p>
+        </div>
+    </div>
+    <!-- Kết thúc phần footer /- -->
+</footer>
+
+<!-- Dưới đây là một số chức năng nếu trang nào cần thì sẽ hỗ  -->
+<!-- Phần thanh chọn   -->
+<div class="select-dummy-wrapper">
+    <select id="compute-select">
+        <option id="compute-option">All</option>
+    </select>
+</div>
+<!-- Phần thanh chọn   -->
+
+<!-- Nút search khi reponsive sẽ hiệ thị ở góc dưới bên phải -->
+<div class="responsive-search-wrapper">
+    <button type="button" class="button ion ion-md-close" id="responsive-search-close-button"></button>
+    <div class="responsive-search-container">
+        <div class="container">
+            <form class="responsive-search-form">
+                <label class="sr-only" for="search-text">Search</label>
+                <input id="search-text" type="text" class="responsive-search-field" placeholder="Nhập từ khóa">
+                <i class="fas fa-search"></i>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Nút search Responsive /- -->
+<!-- Chức năng xem nhanh sản phẩm  -->
+<div id="quick-view" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <button type="button" class="button dismiss-button ion ion-ios-close" data-dismiss="modal"></button>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <!-- Zoom sản phảm to ra  -->
+                        <div class="zoom-area">
+                            <img id="zoom-pro-quick-view" class="img-fluid" src="/images/anhsp/product@4x.jpg" data-zoom-image="/images/anhsp/product@4x.jpg" alt="Zoom Image">
+                            <div id="gallery-quick-view" class="u-s-m-t-10">
+                                <a class="active" data-image="/images/anhsp/product@4x.jpg" data-zoom-image="/images/anhsp/product@4x.jpg">
+                                    <img src="/images/anhsp/product@4x.jpg" alt="Product">
+                                </a>
+                                <a data-image="/images/anhsp/product1@4x.jpg" data-zoom-image="/images/anhsp/product1@4x.jpg">
+                                    <img src="/images/anhsp/product1@4x.jpg" alt="Product">
+                                </a>
+                                <a data-image="/images/anhsp/product2@4x.jpg" data-zoom-image="/images/anhsp/product2@4x.jpg">
+                                    <img src="/images/anhsp/product2@4x.jpg" alt="Product">
+                                </a>
+                                <a data-image="/images/anhsp/product3@4x.jpg" data-zoom-image="/images/anhsp/product3@4x.jpg">
+                                    <img src="/images/anhsp/product3@4x.jpg" alt="Product">
+                                </a>
+
+                            </div>
+                        </div>
+                        <!-- Zoom sản phảm to ra  -->
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <!-- Hiển thị phần nội dụng chi tiết của sản phẩm  -->
+                        <div class="all-information-wrapper">
+                            <div class="section-1-title-breadcrumb-rating">
+                                <!-- Tiêu đề của sản phẩm  -->
+                                <div class="product-title">
+                                    <h1>
+                                        <a asp-controller="Product" asp-action="Details">iPhone 15 Pro Max 512GB</a>
+                                    </h1>
+                                </div>
+                                <ul class="bread-crumb">
+                                    <li class="has-separator">
+                                        <a asp-controller="Home" asp-action="Index">Trang chủ</a>
+                                    </li>
+                                    <li class="has-separator">
+                                        <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Product" asp-action="IPhone">iPhone</a>
+                                    </li>
+                                </ul>
+                                <div class="product-rating">
+                                    <div class='star' title="4.7 out of 5 - based on 28 Reviews">
+                                        <span style='width:69px'></span>
+                                    </div>
+                                    <span>(28)</span>
+
+                                </div>
+                                <!-- Hiển thị các mã giảm giá  -->
+                            </div>
+                            <div class="section-2-short-description u-s-p-y-14">
+                                <h6 class="information-heading u-s-m-b-8">Mã giảm giá:</h6>
+                                <span style="color: red; background-color: #FFD4D8; margin-right: 10px">
+                                    Giảm 50k
+                                </span>
+                                <span style="color: red; background-color: #FFD4D8; margin-right: 10px">
+                                    Giảm 100k
+                                </span>
+                                <span style="color: red; background-color: #FFD4D8; margin-right:10px">
+                                    Giảm 500k
+                                </span>
+                            </div>
+                            <!-- Hiện giá sản phẩm -->
+                            <div class="section-3-price-original-discount u-s-p-y-14">
+                                <span style="text-decoration:line-through; margin-right:10px">₫34.999.000</span>
+                                <span style="font-size:30px; color:red; font-weight:600; margin-right:10px">₫32.190.000</span>
+                                <span style="color:white; font-size:18px; background-color:red; margin-bottom:10px">Giảm 8%</span>
+                            </div>
+                        </div>
+
+                        <div class="section-5-product-variants u-s-p-y-14">
+                            <!-- Chọn màu sắc cho sản phẩm -->
+                            <h6 class="information-heading u-s-m-b-8">Phân loại:</h6>
+                            <div class="color u-s-m-b-11">
+                                <div>
+                                    <button class="mausac">
+                                        <img style="width:30px; height:30px" src="~/images/anhsp/product@4x.jpg" /> Titan - Trắng
+                                    </button>
+                                    <button class="mausac">
+                                        <img style="width:30px; height:30px" src="~/images/anhsp/product1@4x.jpg" /> Titan - Xám
+                                    </button>
+                                    <button class="mausac">
+                                        <img style="width:30px; height:30px" src="~/images/anhsp/product2@4x.jpg" /> Titan - Xanh
+                                    </button>
+                                    <button class="mausac">
+                                        <img style="width:30px; height:30px" src="~/images/anhsp/product3@4x.jpg" /> Titan - Đen
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-6-social-media-quantity-actions u-s-p-y-14">
+                            <form action="#" class="post-form">
+                                <div class="quick-social-media-wrapper u-s-m-b-22">
+                                    <!-- Chia sẻ sản phẩm cho các trang social -->
+                                    <span>Share:</span>
+                                    <ul class="social-media-list">
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-facebook-f" style="color : black"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-twitter" style="color : black"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-google-plus-g" style="color : black"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fas fa-rss " style="color : black"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-pinterest " style="color : black"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="quantity-wrapper u-s-m-b-22">
+                                    <!-- Chọn số lượng   -->
+                                    <span>Số lượng:</span>
+                                    <div class="quantity">
+                                        <input type="text" class="quantity-text-field" value="1">
+                                        <a class="plus-a" data-max="1000">&#43;</a>
+                                        <a class="minus-a" data-min="1">&#45;</a>
+                                    </div>
+                                    <span>Còn 100 sản phẩm có sẵn</span>
+                                </div>
+                                <div>
+                                    <!-- Thêm vào giỏ hàng  -->
+                                    <button class="button button-outline-secondary themhang" type="submit">
+                                        <img style="width:30px; height:30px" src="~/images/anhsp/gio-hang.jpg" />
+                                        Thêm vào giỏ hàng
+                                    </button>
+                                    <!-- Mua ngay  -->
+                                    <button class="button button-outline-secondary muahang">MUA NGAY</button>
+                                    <button class="button button-outline-secondary far fa-heart u-s-m-l-6"></button>
+                                    <button class="button button-outline-secondary far fa-envelope u-s-m-l-6"></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Kết thúc phần xem nhanh  /- -->
+<!-- hàm search sản phẩm -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchField = document.getElementById('search-text');
+        const productItems = document.querySelectorAll('.product-item');
+
+        searchField.addEventListener('#search-text', function () {
+            const searchTerm = this.value.trim().toLowerCase(); // Lấy từ khóa tìm kiếm và chuyển đổi sang chữ thường
+
+            productItems.forEach(function (item) {
+                const itemName = item.querySelector('.item-title a').textContent.trim().toLowerCase(); // Lấy tên sản phẩm và chuyển đổi sang chữ thường
+
+                // Kiểm tra xem từ khóa tìm kiếm có xuất hiện trong tên sản phẩm hay không
+                if (itemName.includes(searchTerm)) {
+                    item.style.display = 'block'; // Hiển thị sản phẩm nếu có kết quả tìm kiếm
+                } else {
+                    item.style.display = 'none'; // Ẩn sản phẩm nếu không có kết quả tìm kiếm
+                }
+            });
+        });
+    });
+
+</script>
+<!-- QUICK VIEW /- -->
+<div id="quick-view" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <button type="button" class="button dismiss-button ion ion-ios-close" data-dismiss="modal"></button>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <!-- Product-zoom-area -->
+                        <div class="zoom-area">
+                            <img id="zoom-pro-quick-view" class="img-fluid" src="/images/anhsp/product/product@4x.jpg" data-zoom-image="/images/anhsp/product/product@4x.jpg" alt="Zoom Image">
+                            <div id="gallery-quick-view" class="u-s-m-t-10">
+                                <a class="active" data-image="/images/anhsp/product/product@4x.jpg" data-zoom-image="/images/anhsp/product/product@4x.jpg">
+                                    <img src="/images/anhsp/product/product@4x.jpg" alt="Product">
+                                </a>
+                                <a data-image="/images/anhsp/product/product1@4x.jpg" data-zoom-image="/images/anhsp/product/product1@4x.jpg">
+                                    <img src="/images/anhsp/product/product1@4x.jpg" alt="Product">
+                                </a>
+                                <a data-image="/images/anhsp/product/product2@4x.jpg" data-zoom-image="/images/anhsp/product/product2@4x.jpg">
+                                    <img src="/images/anhsp/product/product2@4x.jpg" alt="Product">
+                                </a>
+                                <a data-image="/images/anhsp/product/product3@4x.jpg" data-zoom-image="/images/anhsp/product/product3@4x.jpg">
+                                    <img src="/images/anhsp/product/product3@4x.jpg" alt="Product">
+                                </a>
+
+                            </div>
+                        </div>
+                        <!-- Product-zoom-area /- -->
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <!-- Product-details -->
+                        <div class="all-information-wrapper">
+                            <div class="section-1-title-breadcrumb-rating">
+                                <div class="product-title">
+                                    <h1>
+                                        <a asp-controller="Product" asp-action="Details">iPhone 15 Pro Max 512GB</a>
+                                    </h1>
+                                </div>
+                                <ul class="bread-crumb">
+                                    <li class="has-separator">
+                                        <a asp-controller="Home" asp-action="Index">Trang chủ</a>
+                                    </li>
+                                    <li class="has-separator">
+                                        <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Product" asp-action="IPhone">iPhone</a>
+                                    </li>
+                                </ul>
+                                <div class="product-rating">
+                                    <div class='star' title="4.7 out of 5 - based on 28 Reviews">
+                                        <span style='width:69px'></span>
+                                    </div>
+                                    <span>(28)</span>
+
+                                </div>
+                            </div>
+                            <div class="section-2-short-description u-s-p-y-14">
+                                <h6 class="information-heading u-s-m-b-8">Mã giảm giá:</h6>
+                                <span style="color: red; background-color: #FFD4D8; margin-right: 10px">
+                                    Giảm 50k
+                                </span>
+                                <span style="color: red; background-color: #FFD4D8; margin-right: 10px">
+                                    Giảm 100k
+                                </span>
+                                <span style="color: red; background-color: #FFD4D8; margin-right:10px">
+                                    Giảm 500k
+                                </span>
+                            </div>
+                            <div class="section-3-price-original-discount u-s-p-y-14">
+                                <span style="text-decoration:line-through; margin-right:10px">₫34.999.000</span>
+                                <span style="font-size:30px; color:red; font-weight:600; margin-right:10px">₫32.190.000</span>
+                                <span style="color:white; font-size:18px; background-color:red; margin-bottom:10px">Giảm 8%</span>
+                            </div>
+                        </div>
+
+                        <div class="section-5-product-variants u-s-p-y-14">
+                            <h6 class="information-heading u-s-m-b-8">Phân loại:</h6>
+                            <div class="color u-s-m-b-11">
+                                <div>
+                                    <button class="mausac">
+                                        <img style="width:30px; height:30px" src="~/images/anhsp/product/product@4x.jpg" /> Titan - Trắng
+                                    </button>
+                                    <button class="mausac">
+                                        <img style="width:30px; height:30px" src="~/images/anhsp/product/product1@4x.jpg" /> Titan - Xám
+                                    </button>
+                                    <button class="mausac">
+                                        <img style="width:30px; height:30px" src="~/images/anhsp/product/product2@4x.jpg" /> Titan - Xanh
+                                    </button>
+                                    <button class="mausac">
+                                        <img style="width:30px; height:30px" src="~/images/anhsp/product/product3@4x.jpg" /> Titan - Đen
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-6-social-media-quantity-actions u-s-p-y-14">
+                            <form action="#" class="post-form">
+                                <div class="quick-social-media-wrapper u-s-m-b-22">
+                                    <span>Share:</span>
+                                    <ul class="social-media-list">
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-facebook-f" style="color : black"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-twitter" style="color : black"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-google-plus-g" style="color : black"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fas fa-rss " style="color : black"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-pinterest " style="color : black"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="quantity-wrapper u-s-m-b-22">
+                                    <span>Số lượng:</span>
+                                    <div class="quantity">
+                                        <input type="text" class="quantity-text-field" value="1">
+                                        <a class="plus-a" data-max="1000">&#43;</a>
+                                        <a class="minus-a" data-min="1">&#45;</a>
+                                    </div>
+                                    <span>Còn 100 sản phẩm có sẵn</span>
+                                </div>
+                                <div>
+                                    <button class="button button-outline-secondary themhang" type="submit">
+                                        <img style="width:30px; height:30px" src="~/images/anhsp/product/gio-hang.jpg" />
+                                        Thêm vào giỏ hàng
+                                    </button>
+                                    <button class="button button-outline-secondary muahang">MUA NGAY</button>
+                                    <button class="button button-outline-secondary far fa-heart u-s-m-l-6"></button>
+                                    <button class="button button-outline-secondary far fa-envelope u-s-m-l-6"></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- -------------------------------------Doạn chat ở góc dưới bên trái ----------------- -->
+<section class="boxchat">
+    <button class="nut-mo-chatbox" onclick="moForm()"><i class="fa-regular fa-comment-dots"></i></button>
+    <div class="Chatbox" id="myForm">
+        <form action="" class="form-container">
+            <div class="title_boxchat">
+                <p>The Goat kính chào quý khách</p>
+                <button type="button" class="btn nut-dong-chatbox" onclick="dongForm()">
+                    <i class="fa-regular fa-circle-xmark"></i>
+                </button>
+            </div>
+            <div class="space_chat"></div>
+            <div class="content_boxchat">
+                <textarea placeholder="Bạn hãy nhập lời nhắn.." name="msg" required></textarea>
+                <button type="submit" class="btn nut-gui"><i class="fa-regular fa-paper-plane"></i></button>
+            </div>
+        </form>
+    </div>
+    <script>
+        /*Hàm Mở Form*/
+        function moForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+        /*Hàm Đóng Form*/
+        function dongForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
+</section>
+<script>
+    //Chức năng hiển thị ảnh sản phẩm tương ứng với màu sắc được chọn
+    // Lấy tất cả các button màu sắc
+    var colorButtons = document.querySelectorAll('.color button.mausac');
+
+    // Lặp qua từng button màu sắc và thêm sự kiện click
+    colorButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            // Lấy đường dẫn ảnh từ thuộc tính data-image của button được click
+            var imageUrl = this.querySelector('img').getAttribute('src');
+
+            // Lấy ảnh hiển thị trong phần zoom
+            var zoomImage = document.getElementById('zoom-pro-quick-view');
+
+            // Cập nhật đường dẫn và ảnh của phần zoom để hiển thị ảnh tương ứng với màu sắc
+            zoomImage.setAttribute('src', imageUrl);
+            zoomImage.setAttribute('data-zoom-image', imageUrl);
+        });
+    });
+</script>

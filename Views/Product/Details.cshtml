@@ -1,0 +1,1315 @@
+﻿@model TechWeb.Models.Product
+
+@{
+    ViewData["Title"] = "Product Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/product.css" rel="stylesheet" />
+<style>
+    .page-detail {
+        width: 100%;
+    }
+</style>
+
+<!-- Giới thiệu trang chi tiết sản phẩm -->
+<div class="page-style-a">
+    <div class="container">
+        <div class="page-intro">
+            <h2>Chi tiết sản phẩm</h2>
+            <!--Thông tin bread-crumb -->
+            <ul class="bread-crumb">
+                <li class="has-separator">
+                    <i class="ion ion-md-home"></i>
+                    <a asp-controller="Home" asp-action="Index">Trang chủ</a>
+                </li>
+                <li class="has-separator">
+                    <a asp-controller="Product" asp-action="Index">Sản Phẩm</a>
+                </li>
+                <!--Phần Thông tin bread-crumb được đánh dấu -->
+                <li class="is-marked">
+                    <a asp-controller="Product" asp-action="Details">Chi tiết sản phẩm</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Giới thiệu trang chi tiết sản phẩm -->
+<!--Nội dung  trang chi tiết sản phẩm -->
+<div class="page-detail u-s-p-t-80">
+    <div class="container">
+		<!-- Chi tiết sản phẩm -->
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <!--phần zoom ảnh sản phẩm  -->
+                <div class="zoom-area">
+                    <img id="zoom-pro" class="img-fluid" src="/images/anhsp/product0@4x.jpg" data-zoom-image="/images/anhsp/product0@4x.jpg" alt="Zoom Image">
+                    <div id="gallery" class="u-s-m-t-10 col-lg-11 col-md-11 col-sm-11">
+                        <div class="products-slider owl-carousel" data-item="7">
+                            <a class="active" data-image="~/images/anhsp/product0@4x.jpg" data-zoom-image="/images/anhsp/product0@4x.jpg">
+                                <img src="/images/anhsp/product0@4x.jpg" alt="Product">
+                            </a>
+                            <a data-image="/images/anhsp/product@4x.jpg" data-zoom-image="/images/anhsp/product@4x.jpg">
+                                <img src="/images/anhsp/product@4x.jpg" alt="Product">
+                            </a>
+                            <a data-image="/images/anhsp/product1@4x.jpg" data-zoom-image="/images/anhsp/product1@4x.jpg">
+                                <img src="/images/anhsp/product1@4x.jpg" alt="Product">
+                            </a>
+                            <a data-image="/images/anhsp/product2@4x.jpg" data-zoom-image="/images/anhsp/product2@4x.jpg">
+                                <img src="/images/anhsp/product2@4x.jpg" alt="Product">
+                            </a>
+                            <a data-image="/images/anhsp/product3@4x.jpg" data-zoom-image="/images/anhsp/product3@4x.jpg">
+                                <img src="/images/anhsp/product3@4x.jpg" alt="Product">
+                            </a>
+                            <a data-image="/images/anhsp/product4@4x.jpg" data-zoom-image="/images/anhsp/product4@4x.jpg">
+                                <img src="/images/anhsp/product4@4x.jpg" alt="Product">
+                            </a>
+                            <a data-image="/images/anhsp/product5@4x.jpg" data-zoom-image="/images/anhsp/product5@4x.jpg">
+                                <img src="/images/anhsp/product5@4x.jpg" alt="Product">
+                            </a>
+                            <a data-image="/images/anhsp/product6@4x.jpg" data-zoom-image="/images/anhsp/product6@4x.jpg">
+                                <img src="/images/anhsp/product6@4x.jpg" alt="Product">
+                            </a>
+                            <a data-image="/images/anhsp/product7@4x.jpg" data-zoom-image="/images/anhsp/product7@4x.jpg">
+                                <img src="/images/anhsp/product7@4x.jpg" alt="Product">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--phần zoom sản phẩm  -->
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <!-- đường dẫn  sản phẩm -->
+                <div class="all-information-wrapper">
+                    <div class="section-1-title-breadcrumb-rating">
+                        <div class="product-title">
+                            <h1>
+                                <a asp-controller="Product" asp-action="Details">Điện thoại Apple iPhone 15 Pro Max 512GB</a>
+                            </h1>
+                        </div>
+                        <ul class="bread-crumb">
+                            <li class="has-separator">
+                                <a asp-controller="Home" asp-action="Index">Trang chủ</a>
+                            </li>
+                            <li class="has-separator">
+                                <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                            </li>
+                            <li class="is-marked">
+                                <a asp-controller="Product" asp-action="IPhone">iPhone</a>
+                            </li>
+                        </ul>
+                        <!-- đánh giá  sản phẩm -->
+                        <div class="product-rating">
+                            <div class='star' title="4.7 out of 5 - based on 28 Reviews">
+                                <span style='width:69px'></span>
+                            </div>
+                            <span>(28)</span>
+                            <!-- số lượng đã bán  -->
+                            <div style="float:inline-end">
+                                <span>Đã bán: 40</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Các mã khuyến mĩa -->
+                    <div class="section-2-short-description u-s-p-y-14">
+                        <h6 class="information-heading u-s-m-b-8">Mã giảm giá:</h6>
+                        <span style="color: red; background-color: #FFD4D8; margin-right: 10px">
+                            Giảm 50k
+                        </span>
+                        <span style="color: red; background-color: #FFD4D8; margin-right: 10px">
+                            Giảm 100k
+                        </span>
+                        <span style="color: red; background-color: #FFD4D8; margin-right:10px">
+                            Giảm 500k
+                        </span>
+                    </div>
+                    <!-- giá -->
+                    <div class="section-3-price-original-discount u-s-p-y-14">
+                        <span class="col-12" style="text-decoration:line-through; margin-right:10px">34.999.000₫</span>
+                        <span class="col-12" style="font-size:30px; color:red; font-weight:600; margin-right:10px">32.190.000₫</span>
+                        <span class="col-12" style="color:white; font-size:18px; background-color:red; margin-bottom:10px">Giảm 8%</span>
+                    </div>
+                </div>
+                <!-- Tùy chỉnh màu sắc phẩm -->
+                <div class="section-5-product-variants u-s-p-y-14">
+                    <h6 class="information-heading u-s-m-b-8">Phân loại:</h6>
+                    <div class="color u-s-m-b-11">
+                        <div>
+                            <button class="mausac">
+                                <img id="mautrang" style="width:30px; height:30px" src="~/images/anhsp/product@4x.jpg" /> Titan - Trắng
+                            </button>
+                            <button class="mausac">
+                                <img id="mauxam" style="width:30px; height:30px" src="~/images/anhsp/product1@4x.jpg" /> Titan - Xám
+                            </button>
+                            <button class="mausac">
+                                <img id="mauxanh" style="width:30px; height:30px" src="~/images/anhsp/product2@4x.jpg" /> Titan - Xanh
+                            </button>
+                            <button class="mausac">
+                                <img id="mauden" style="width:30px; height:30px" src="~/images/anhsp/product3@4x.jpg" /> Titan - Đen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Chia sẻ social media-->
+                <div class="section-6-social-media-quantity-actions u-s-p-y-14">
+                    <form action="#" class="post-form">
+                        <div class="quick-social-media-wrapper u-s-m-b-22">
+                            <span>Share:</span>
+                            <ul class="social-media-list" >
+                                <li>
+                                    <a href="#">
+                                        <i class="fab fa-facebook-f" style="color : black"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fab fa-twitter" style="color : black"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fab fa-google-plus-g" style="color : black" ></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fas fa-rss " style="color : black"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fab fa-pinterest " style="color : black"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="quantity-wrapper u-s-m-b-22">
+                            <span>Số lượng:</span>
+                            <div class="quantity">
+                                <input type="text" class="quantity-text-field" value="1">
+                                <a class="plus-a" data-max="1000">&#43;</a>
+                                <a class="minus-a" data-min="1">&#45;</a>
+                            </div>
+                            <span>Còn 100 sản phẩm có sẵn</span>
+
+                        </div>
+                        <div>
+                            <button class="button button-outline-secondary themhang col-lg-5 col-md-7 col-sm-12 col-11" type="submit">
+                                <img style="width:30px; height:30px" src="~/images/anhsp/gio-hang.jpg" />
+                                Thêm vào giỏ hàng
+                            </button>
+                            <button class="button button-outline-secondary muahang col-lg-3 col-md-4 col-sm-12 col-11">MUA NGAY</button>
+                            <button class="button button-outline-secondary far fa-heart col-lg-1 col-md-2 col-2 "></button>
+                            <button class="button button-outline-secondary far fa-envelope col-lg-1 col-md-2 col-2 u-s-m-l-6"></button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- Chi tiết sản phẩm -->
+        <!-- Tabs chi tiết -->
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="detail-tabs-wrapper u-s-p-t-80">
+                    <div class="detail-nav-wrapper u-s-m-b-30">
+                        <ul class="nav single-product-nav justify-content-center">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#description">Mô tả</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#specification">Thông số kỹ thuật</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#review">Đánh giá (28)</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <!-- Tab mô tả -->
+                        <div class="tab-pane fade active show" id="description">
+                            <div class="description-whole-container">
+                                <h5> ĐẶC ĐIỂM NỔI BẬT </h5>
+                                <p class="desc-p u-s-m-b-26">
+                                    Apple chính thức ra mắt iPhone 15 Pro và 15 Pro Max mới, sử dụng khung titanium siêu bền và nhẹ.
+                                    Trang bị nút Action tuỳ chỉnh thông minh, chip A17 Pro 3mm, camera 48MP
+                                </p>
+                                <h5> Khung viền Titanium siêu bền siêu nhẹ </h5>
+                                <img class="desc-img img-fluid u-s-m-b-26" src="~/images/anhsp/hero_endframe.jpg" alt="Product">
+                                <p class="desc-p u-s-m-b-26">
+                                    Apple đã sử dụng khung viền được làm bằng titan cấp độ 5 trên các mẫu iPhone 15 Pro và 15 Pro Max
+                                    để biến chúng thành những mẫu iPhone nhẹ nhất, bền nhất và có viền mỏng nhất.
+                                </p>
+                                <h5> Nút Action tuỳ chỉnh hoàn toàn mới </h5>
+                                <img class="desc-img img-fluid u-s-m-b-26" src="~/images/anhsp/anh_man_hinh.jpg" alt="Product">
+                                <p class="desc-p u-s-m-b-26">
+                                    Thanh gạt rung để chuyền máy sang chế độ Im lặng hoặc ngược lại, thứ tồn tại từ rất nhiều năm kể từ
+                                    lúc iPhone ra đời, đã được thay thế bởi cái gọi là nút Action. Giờ đây, các bạn có thể gán cho nút bấm này
+                                    các chức năng khác nhau chẳng hạn như mở camera, bật đèn pin, dịch từ, ghi âm hoặc nhiều hơn nữa tuỳ vào nhu cầu sử dụng.
+                                </p>
+                                <h5> Camera 48MP, khả năng zoom optical nhiều hơn </h5>
+                                <img class="desc-img img-fluid u-s-m-b-26" src="~/images/anhsp/camera.jpg" alt="Product">
+                                <p class="desc-p u-s-m-b-26">
+                                    Camera trên iPhone 15 Pro và iPhone 15 Pro Max có độ phân giải lần lượt 48MP HEIF (chính), 12MP (telephoto) và 12MP (siêu rộng).
+                                    Và camera được phủ một lớp nano mới giảm độ lóa của ống kính
+
+                                    Camera được nâng cấp để chụp ảnh trong điều kiện ánh sáng yếu tốt hơn, ít bị chói sáng hơn dưới trời nắng gắt
+                                    hoặc ánh đèn trực tiếp và sử dụng AI để chụp ảnh HEIF. Bạn cũng có thể thay đổi tiêu cự ống kính từ 24mm đến 28mm và 35mm.
+                                    Đặc biệt camera telephoto trên iPhone 15 Pro Max đã được tăng tiêu cự lên 120mm giúp máy có thể chụp ảnh với mức zoom quang học 5X
+                                </p>
+                                <h5> Cấu hình mạnh mẽ với vi xử lý A17 Pro </h5>
+                                <img class="desc-img img-fluid u-s-m-b-26" src="~/images/anhsp/cauhinh.jpg" alt="Product">
+                                <p class="desc-p u-s-m-b-26">
+                                    Chipset A17 Pro thu nhỏ tiến trình giúp thiết bị iPhone 15 của bạn trở nên mát hơn khi sử dụng và cũng cải thiện
+                                    thời lượng sử dụng pin tốt hơn. Con chip này còn tạo ra hình ảnh 3D chân thực và sống động hơn, tái hiện chính xác
+                                    các hiệu ứng ánh sáng và bóng đổ trong thế giới thực do được trang bị công nghệ Ray Tracing
+                                </p>
+                                <h5> iPhone 15 Pro và iPhone 15 Pro Max có mấy màu? </h5>
+                                <p class="desc-p u-s-m-b-26">
+                                    iPhone 15 Pro Max và 15 Pro năm nay có bốn màu mới gồm Black Titan, White Titan, Blue Titan và Natural Titan.
+                                </p>
+                                <img class="desc-img img-fluid u-s-m-b-26" src="~/images/anhsp/product.jpg" alt="Product">
+                                <iframe class="desc-iframe u-s-m-b-45" width="710" height="400" src="https://www.youtube.com/embed/BQnsGSEGgDA" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <!-- Tab mô tả -->
+                        <!-- Tab thông số kỹ thuật -->
+                        <div class="tab-pane fade" id="specification">
+                            <div class="specification-whole-container">
+
+                                <div class="u-s-m-b-50">
+                                    <h4 class="spec-heading">Bộ sản phẩm bao gồm:</h4>
+                                    <ul>
+                                        <li>
+                                            <h3 class="spec-answer"> Điện thoại </h3>
+                                        </li>
+                                        <li>
+                                            <h3 class="spec-answer">  Dây sạc </h3>
+                                        </li>
+                                        <li>
+                                            <h3 class="spec-answer">HDSD Bảo hành điện tử 12 tháng. </h3>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="u-s-m-b-50">
+                                    <h4 class="spec-heading"> Thông tin bảo hành: </h4>
+                                    <h3 class="spec-answer">
+                                        Bảo hành: 12 tháng kể từ ngày kích hoạt sản phẩm.
+                                    </h3>
+                                    <h3 class="spec-answer">
+                                        Kích hoạt bảo hành tại: https://checkcoverage.apple.com/vn/en/
+                                    </h3>
+                                </div>
+                                <div class="spec-table u-s-m-b-50">
+                                    <h4 class="spec-heading">Thông số kỹ thuật</h4>
+                                    <table>
+                                        <tr>
+                                            <td>Màn hình</td>
+                                            <td>6.7 inch, OLED, Super Retina XDR, 2796 x 1290 Pixels</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Camera sau</td>
+                                            <td>48.0 MP + 12.0 MP + 12.0 MP</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Camera Selfie</td>
+                                            <td>12.0 MP </td>
+                                        </tr>
+                                        <tr>
+                                            <td>RAM</td>
+                                            <td>8 GB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bộ nhớ trong</td>
+                                            <td>512 GB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CPU</td>
+                                            <td>Apple A17 Pro</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dung lượng pin</td>
+                                            <td>29 Giờ</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Thẻ sim</td>
+                                            <td>1 - 1 eSIM, 1 Nano SIM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Hệ điều hành</td>
+                                            <td>iOS 17</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                     <!-- Tab thông số kỹ thuật -->
+                        <!-- -Tab đánh giá  -->
+                        <div class="tab-pane fade" id="review">
+                            <div class="review-whole-container">
+                                <div class="row r-1 u-s-m-b-26 u-s-p-b-22">
+                                    <!-- Sao trung bình -->
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="total-score-wrapper">
+                                            <div class="circle-wrapper ">
+                                                <h1>4.7</h1>
+                                            </div>
+                                            <div class="star">
+                                                <span style='width:69px'></span>
+                                            </div>
+                                            <h6 class="review-h6">Dựa trên 28 đánh giá</h6>
+                                        </div>
+                                    </div>
+                                    <!-- Số lượng người đánh giá  theo từng  sao   -->
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="total-star-meter">
+                                            <div class="star-wrapper">
+                                                <span>5 Sao</span>
+                                                <div class="star">
+                                                    <span style='width:75px'></span>
+                                                </div>
+                                                <span>(22)</span>
+                                            </div>
+                                            <div class="star-wrapper">
+                                                <span>4 Sao</span>
+                                                <div class="star">
+                                                    <span style='width:60px'></span>
+                                                </div>
+                                                <span>(4)</span>
+                                            </div>
+                                            <div class="star-wrapper">
+                                                <span>3 Sao</span>
+                                                <div class="star">
+                                                    <span style='width:45px'></span>
+                                                </div>
+                                                <span>(2)</span>
+                                            </div>
+                                            <div class="star-wrapper">
+                                                <span>2 Sao</span>
+                                                <div class="star">
+                                                    <span style='width:0'></span>
+                                                </div>
+                                                <span>(0)</span>
+                                            </div>
+                                            <div class="star-wrapper">
+                                                <span>1 Sao</span>
+                                                <div class="star">
+                                                    <span style='width:0'></span>
+                                                </div>
+                                                <span>(0)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--GỬi đánh giá-->
+                                <div class="row r-2 u-s-m-b-26 u-s-p-b-22">
+                                    <div class="col-lg-12">
+                                        <div class="your-rating-wrapper">
+                                            <h6 class="review-h6">Bạn đã từng mua sản phẩm này hay chưa?</h6>
+                                            <h6 class="review-h6">Hãy để lại đánh giá nếu bạn đã mua sản phẩm này rồi.</h6>
+                                            <div class="star-wrapper u-s-m-b-8">
+                                                <div class="star">
+                                                    <span id="your-stars" style='width:0'></span>
+                                                </div>
+                                                <label for="your-rating-value"></label>
+                                                <input id="your-rating-value" type="text" class="text-field" placeholder="0.0">
+                                                <span id="star-comment"></span>
+                                            </div>
+                                            <form>
+                                                <label for="your-name">
+                                                    Tên:
+                                                    <span class="astk"> *</span>
+                                                </label>
+                                                <input id="your-name" type="text" class="text-field" placeholder="Tên của bạn">
+                                                <label for="your-email">
+                                                    Email:
+                                                    <span class="astk"> *</span>
+                                                </label>
+                                                <input id="your-email" type="text" class="text-field" placeholder="Email của bạn">
+                                                <label for="review-text-area">
+                                                    Đánh giá:
+                                                    <span class="astk"> *</span>
+                                                </label>
+                                                <textarea class="text-area u-s-m-b-8" id="review-text-area" placeholder="Nội dung đánh giá"></textarea>
+                                                <div class="u-s-m-b-30">
+                                                    <input type="file" multiple="" class="form-control" name="images[]" max="5">
+                                                </div>
+                                                <button class="button button-outline-secondary">Gửi đánh giá</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="get-reviews u-s-p-b-22">
+                                    <!-- Sắp xếp review -->
+                                    <div class="review-options u-s-m-b-16">
+                                        <div class="review-option-heading">
+                                            <h6>
+                                                Đánh giá
+                                                <span> (28) </span>
+                                            </h6>
+                                        </div>
+                                        <!--Các thuộc tinh sắp xếp -->
+                                        <div class="review-option-box">
+                                            <div class="select-box-wrapper">
+                                                <label class="sr-only" for="review-sort">Đánh giá</label>
+                                                <select class="select-box" id="review-sort">
+                                                    <option value="">Sắp xếp theo: Đánh giá tốt nhất</option>
+                                                    <option value="">Sắp xếp theo: Đánh giá tệ nhất</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Sắp xếp review -->
+                                    <!-- Các  bình luận sản phẩm -->
+                                    <div class="reviewers">
+                                        <!-- Review1 -->
+                                        <div class="review-data">
+                                            <div class="reviewer-name-and-date">
+                                                <h6 class="reviewer-name">Hoài Anh</h6>
+                                                <h6 class="review-posted-date">20/03/2024</h6>
+                                            </div>
+                                            <div class="reviewer-stars-title-body">
+                                                <div class="reviewer-stars">
+                                                    <div class="star">
+                                                        <span style='width:75px'></span>
+                                                    </div>
+                                                </div>
+                                                <p class="review-body">
+                                                    Sản phẩm chính hàng
+                                                </p>
+                                            </div>
+                                        </div>
+                                             <!-- Review 2 -->
+                                        <div class="review-data">
+                                            <div class="reviewer-name-and-date">
+                                                <h6 class="reviewer-name">Hải Nguyên</h6>
+                                                <h6 class="review-posted-date">15/03/2024</h6>
+                                            </div>
+                                            <div class="reviewer-stars-title-body">
+                                                <div class="reviewer-stars">
+                                                    <div class="star">
+                                                        <span style='width:75px'></span>
+                                                    </div>
+                                                </div>
+                                                <p class="review-body">
+                                                    Giao hàng nhanh
+                                                </p>
+                                            </div>
+                                        </div>
+                                             <!-- Review 3-->
+                                        <div class="review-data">
+                                            <div class="reviewer-name-and-date">
+                                                <h6 class="reviewer-name">Ngọc Như</h6>
+                                                <h6 class="review-posted-date">12/03/2024</h6>
+                                            </div>
+                                            <div class="reviewer-stars-title-body">
+                                                <div class="reviewer-stars">
+                                                    <div class="star">
+                                                        <span style='width:75px'></span>
+                                                    </div>
+                                                </div>
+                                                <p class="review-body">
+                                                    Máy siêu chất lượng, giao hàng đầy đủ.
+                                                </p>
+                                            </div>
+                                        </div>
+                                             <!-- Review 4 -->
+                                        <div class="review-data">
+                                            <div class="reviewer-name-and-date">
+                                                <h6 class="reviewer-name">Tuấn Lê</h6>
+                                                <h6 class="review-posted-date">09/03/2024</h6>
+                                            </div>
+                                            <div class="reviewer-stars-title-body">
+                                                <div class="reviewer-stars">
+                                                    <div class="star">
+                                                        <span style='width:75px'></span>
+                                                    </div>
+                                                </div>
+                                                <p class="review-body">
+                                                    Đóng gói chắc chắn, hỗ trợ nhiệt tình.
+                                                </p>
+                                            </div>
+                                        </div>
+                                             <!-- Review 5 -->
+                                        <div class="review-data">
+                                            <div class="reviewer-name-and-date">
+                                                <h6 class="reviewer-name">Thanh Hùng </h6>
+                                                <h6 class="review-posted-date">28/02/2024</h6>
+                                            </div>
+                                            <div class="reviewer-stars-title-body">
+                                                <div class="reviewer-stars">
+                                                    <div class="star">
+                                                        <span style='width:75px'></span>
+                                                    </div>
+                                                </div>
+                                                <p class="review-body">
+                                                    Rất hài lòng với sản phẩm.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                           <!-- Các  bình luận sản phẩm -->                                   
+
+                           <!--Phân trang review /- -->
+                                    <div class="pagination-review-area">
+                                        <div class="pagination-review-number">
+                                            <ul>
+                                                <li style="display: none">
+                                                    <a asp-controller="Product" asp-action="Details" title="Previous">
+                                                        <i class="fas fa-angle-left"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="active">
+                                                    <a asp-controller="Product" asp-action="Details">1</a>
+                                                </li>
+                                                <li>
+                                                    <a asp-controller="Product" asp-action="Details">2</a>
+                                                </li>
+                                                <li>
+                                                    <a asp-controller="Product" asp-action="Details">3</a>
+                                                </li>
+                                                <li>
+                                                    <a asp-controller="Product" asp-action="Details">...</a>
+                                                </li>
+                                                <li>
+                                                    <a asp-controller="Product" asp-action="Details">10</a>
+                                                </li>
+                                                <li>
+                                                    <a asp-controller="Product" asp-action="Details" title="Next">
+                                                        <i class="fas fa-angle-right"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!--Phhân trang review /- -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- -Tab đánh giá  -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Tâbs chi tiết -->
+        <!-- Nội dung ngoài sản phẩm  -->
+        <div class="detail-different-product-section u-s-p-t-80">
+            <!--Sản phẩm kèm theo-->
+            <section class="section-maker">
+                <div class="container">
+                    <div class="sec-maker-header text-center">
+                        <h3 class="sec-maker-h3">SẢN PHẨM MUA KÈM</h3>
+                    </div>
+                    <div class="slider-fouc">
+                        <!--Hiện tối đa 4 sản phẩm và có nút slide dể trượt qua  -->
+                        <div class="products-slider owl-carousel" data-item="4">
+                            <!-- Sản phẩm 1  -->
+                            <div class="item">
+                                <div class="image-container">
+                                    <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                        <img class="img-fluid" src="~/images/anhsp/tainghe.jpg" alt="Product">
+                                    </a>
+                                    <!-- Các nút khi hover vào ảnh sản phẩm  -->
+                                    <div class="item-action-behaviors">
+                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                        <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                        <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                        <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                    </div>
+                                </div>
+                                <!--Thông tin sản phẩm  -->
+                                <div class="item-content">
+                                    <div class="what-product-is">
+                                        <ul class="bread-crumb">
+                                            <li class="has-separator">
+                                                <a asp-controller="Product" asp-action="Phone">Tai nghe</a>
+                                            </li>
+                                            <li>
+                                                <a asp-controller="Product" asp-action="IPhone">Tai nghe bluetooth</a>
+                                            </li>
+                                        </ul>
+                                        <h6 class="item-title">
+                                            <a asp-controller="Product" asp-action="Details"> Tai nghe Apple AirPods 3rd gen lightning charge </a>
+                                        </h6>
+                                        <div class="item-stars">
+                                            <div class='star' title="4.5 out of 5 - based on 82 Reviews">
+                                                <span style='width:67px'></span>
+                                            </div>
+                                            <span>(82)</span>
+                                        </div>
+                                    </div>
+                                    <div class="price-template">
+                                        <div class="item-new-price">
+                                            4.090.000₫
+                                        </div>
+                                        <div class="item-old-price">
+                                            5.390.000₫
+                                        </div>
+                                    </div>
+                                    <div style="text-align:end">
+                                        <span>Đã bán:</span>
+                                        <span class="data-sales">100</span>
+                                    </div>
+                                </div>
+                                <div class="tag hot">
+                                    <span>HOT</span>
+                                </div>
+                            </div>
+                            <!-- Sản phẩm 2  -->
+                            <div class="item">
+                                <div class="image-container">
+                                    <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                        <img class="img-fluid" src="~/images/anhsp/oplung.jpg" alt="Product">
+                                    </a>
+                                    <div class="item-action-behaviors">
+                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                        <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                        <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                        <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <div class="what-product-is">
+                                        <ul class="bread-crumb">
+                                            <li class="has-separator">
+                                                <a asp-controller="Product" asp-action="Phone">Phụ kiện</a>
+                                            </li>
+                                            <li class="has-separator">
+                                                <a asp-controller="Product" asp-action="IPhone">Phụ kiện điện thoại</a>
+                                            </li>
+                                            <li>
+                                                <a asp-controller="Product" asp-action="IPhone">Ốp lưng</a>
+                                            </li>
+                                        </ul>
+                                        <h6 class="item-title">
+                                            <a asp-controller="Product" asp-action="Details">Ốp Lưng Trong Suốt MagSafe cho iPhone 15 Pro Max</a>
+                                        </h6>
+                                        <div class="item-stars">
+                                            <div class='star' title="4.4 out of 5 - based on 17 Reviews">
+                                                <span style='width:67px'></span>
+                                            </div>
+                                            <span>(20)</span>
+                                        </div>
+                                    </div>
+                                    <div class="price-template">
+                                        <div class="item-new-price">
+                                            990.000₫
+                                        </div>
+                                        <div class="item-old-price">
+                                            1.429.000₫
+                                        </div>
+                                    </div>
+                                    <div style="text-align:end">
+                                        <span>Đã bán:</span>
+                                        <span class="data-sales">25</span>
+                                    </div>
+                                </div>
+                                <div class="tag hot">
+                                    <span>HOT</span>
+                                </div>
+                            </div>
+                            <!-- Sản phẩm 3  -->
+                            <div class="item">
+                                <div class="image-container">
+                                    <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                        <img class="img-fluid" src="~/images/anhsp/cusac.jpg" alt="Product">
+                                    </a>
+                                    <div class="item-action-behaviors">
+                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                        <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                        <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                        <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <div class="what-product-is">
+                                        <ul class="bread-crumb">
+                                            <li class="has-separator">
+                                                <a asp-controller="Product" asp-action="Phone">Phụ kiện</a>
+                                            </li>
+                                            <li class="has-separator">
+                                                <a asp-controller="Product" asp-action="IPhone">Phụ kiện điện thoại</a>
+                                            </li>
+                                            <li>
+                                                <a asp-controller="Product" asp-action="IPhone">Cáp, sạc</a>
+                                            </li>
+                                        </ul>
+                                        <h6 class="item-title">
+                                            <a asp-controller="Product" asp-action="Details">Sạc Apple 20W USB-C Power Adapter</a>
+                                        </h6>
+                                        <div class="item-stars">
+                                            <div class='star' title="4.4 out of 5 - based on 45 Reviews">
+                                                <span style='width:67px'></span>
+                                            </div>
+                                            <span>(45)</span>
+                                        </div>
+                                    </div>
+                                    <div class="price-template">
+                                        <div class="item-new-price">
+                                            459.000₫
+                                        </div>
+                                        <div class="item-old-price">
+                                            790.000₫
+                                        </div>
+                                    </div>
+                                    <div style="text-align:end">
+                                        <span>Đã bán:</span>
+                                        <span class="data-sales">62</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Sản phẩm 4  -->
+                            <div class="item">
+                                <div class="image-container">
+                                    <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                        <img class="img-fluid" src="~/images/anhsp/daysac.jpg" alt="Product">
+                                    </a>
+                                    <div class="item-action-behaviors">
+                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                        <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                        <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                        <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <div class="what-product-is">
+                                        <ul class="bread-crumb">
+                                            <li class="has-separator">
+                                                <a asp-controller="Product" asp-action="Phone">Phụ kiện</a>
+                                            </li>
+                                            <li class="has-separator">
+                                                <a asp-controller="Product" asp-action="IPhone">Phụ kiện điện thoại</a>
+                                            </li>
+                                            <li>
+                                                <a asp-controller="Product" asp-action="IPhone">Cáp, sạc</a>
+                                            </li>
+                                        </ul>
+                                        <h6 class="item-title">
+                                            <a asp-controller="Product" asp-action="Details">Cáp Apple Type-C to Type-C 2M MLL82ZP</a>
+                                        </h6>
+                                        <div class="item-stars">
+                                            <div class='star' title="4.8 out of 5 - based on 40 Reviews">
+                                                <span style='width:72px'></span>
+                                            </div>
+                                            <span>(40)</span>
+                                        </div>
+                                    </div>
+                                    <div class="price-template">
+                                        <div class="item-new-price">
+                                            650,000₫
+                                        </div>
+                                        <div class="item-old-price">
+                                            790.000₫
+                                        </div>
+                                    </div>
+                                    <div style="text-align:end">
+                                        <span>Đã bán:</span>
+                                        <span class="data-sales">47</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Sản phẩm kèm theo-->
+            <!-- Sản phẩm tương tự -->
+            <section class="section-maker">
+                <div class="container">
+                    <div class="sec-maker-header text-center">
+                        <h3 class="sec-maker-h3">GỢI Ý CHO BẠN</h3>
+                    </div>
+                    <div class="slider-fouc">
+                        <div class="products-slider owl-carousel" data-item="4">
+                            <div class="item">
+                                <div class="image-container">
+                                    <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                        <img class="img-fluid" src="~/images/anhsp/iphone15plus.jpg" alt="Product">
+                                    </a>
+                                    <div class="item-action-behaviors">
+                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                        <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                        <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                        <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <div class="what-product-is">
+                                        <ul class="bread-crumb">
+                                            <li class="has-separator">
+                                                <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                            </li>
+                                            <li>
+                                                <a asp-controller="Product" asp-action="IPhone">iPhone</a>
+                                            </li>
+                                        </ul>
+                                        <h6 class="item-title">
+                                            <a asp-controller="Product" asp-action="Details">Điện thoại Apple iPhone 15 Plus 512GB </a>
+                                        </h6>
+                                        <div class="item-stars">
+                                            <div class='star' title="2.8 out of 5 - based on 42 Reviews">
+                                                <span style='width:42px'></span>
+                                            </div>
+                                            <span>(42)</span>
+                                        </div>
+                                    </div>
+                                    <div class="price-template">
+                                        <div class="item-new-price">
+                                            27,700,000₫
+                                        </div>
+                                        <div class="item-old-price">
+                                            32,990,000₫
+                                        </div>
+                                    </div>
+                                    <div style="text-align:end">
+                                        <span>Đã bán:</span>
+                                        <span class="data-sales">48</span>
+                                    </div>
+                                </div>
+                                <div class="tag new">
+                                    <span>NEW</span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="image-container">
+                                    <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                        <img class="img-fluid" src="~/images/anhsp/iphone14plus.jpg" alt="Product">
+                                    </a>
+                                    <div class="item-action-behaviors">
+                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                        <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                        <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                        <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <div class="what-product-is">
+                                        <ul class="bread-crumb">
+                                            <li class="has-separator">
+                                                <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                            </li>
+                                            <li>
+                                                <a asp-controller="Product" asp-action="IPhone">iPhone</a>
+                                            </li>
+                                        </ul>
+                                        <h6 class="item-title">
+                                            <a asp-controller="Product" asp-action="Details">Điện thoại Apple iPhone 14 Plus 256GB</a>
+                                        </h6>
+                                        <div class="item-stars">
+                                            <div class='star' title="5 out of 5 - based on 60 Reviews">
+                                                <span style='width:75px'></span>
+                                            </div>
+                                            <span>(60)</span>
+                                        </div>
+                                    </div>
+                                    <div class="price-template">
+                                        <div class="item-new-price">
+                                            22,300,000₫
+                                        </div>
+                                        <div class="item-old-price">
+                                            25,999,000₫
+                                        </div>
+                                    </div>
+                                    <div style="text-align:end">
+                                        <span>Đã bán:</span>
+                                        <span class="data-sales">87</span>
+                                    </div>
+                                </div>
+                                <div class="tag hot">
+                                    <span>HOT</span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="image-container">
+                                    <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                        <img class="img-fluid" src="~/images/anhsp/samsungS24U.jpg" alt="Product">
+                                    </a>
+                                    <div class="item-action-behaviors">
+                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                        <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                        <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                        <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <div class="what-product-is">
+                                        <ul class="bread-crumb">
+                                            <li class="has-separator">
+                                                <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                            </li>
+                                            <li>
+                                                <a asp-controller="Product" asp-action="SamSung">Samsung</a>
+                                            </li>
+                                        </ul>
+                                        <h6 class="item-title">
+                                            <a asp-controller="Product" asp-action="Details">Samsung Galaxy S24 Ultra 5G 12GB/1TB</a>
+                                        </h6>
+                                        <div class="item-stars">
+                                            <div class='star' title="4.9 out of 5 - based on 22 Reviews">
+                                                <span style='width:73px'></span>
+                                            </div>
+                                            <span>(22)</span>
+                                        </div>
+                                    </div>
+                                    <div class="price-template">
+                                        <div class="item-new-price">
+                                            32,600,000₫
+                                        </div>
+                                        <div class="item-old-price">
+                                            44,490,000₫
+                                        </div>
+                                    </div>
+                                    <div style="text-align:end">
+                                        <span>Đã bán:</span>
+                                        <span class="data-sales">31</span>
+                                    </div>
+                                </div>
+                                <div class="tag hot">
+                                    <span>HOT</span>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="image-container">
+                                    <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                        <img class="img-fluid" src="~/images/anhsp/samsungS24.jpg" alt="Product">
+                                    </a>
+                                    <div class="item-action-behaviors">
+                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                        <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                        <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                        <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <div class="what-product-is">
+                                        <ul class="bread-crumb">
+                                            <li class="has-separator">
+                                                <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                            </li>
+                                            <li>
+                                                <a asp-controller="Product" asp-action="SamSung">Samsung</a>
+                                            </li>
+                                        </ul>
+                                        <h6 class="item-title">
+                                            <a asp-controller="Product" asp-action="Details">Samsung Galaxy S24 5G 8GB/512GB</a>
+                                        </h6>
+                                        <div class="item-stars">
+                                            <div class='star' title="4.7 out of 5 - based on 31 Reviews">
+                                                <span style='width:70px'></span>
+                                            </div>
+                                            <span>(31)</span>
+                                        </div>
+                                    </div>
+                                    <div class="price-template">
+                                        <div class="item-new-price">
+                                            19,500,000₫
+                                        </div>
+                                        <div class="item-old-price">
+                                            26,490,000₫
+                                        </div>
+                                    </div>
+                                    <div style="text-align:end">
+                                        <span>Đã bán:</span>
+                                        <span class="data-sales">49</span>
+                                    </div>
+                                </div>
+                                <div class="tag hot">
+                                    <span>HOT</span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="image-container">
+                                    <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                        <img class="img-fluid" src="~/images/anhsp/iphone13promax.jpg" alt="Product">
+                                    </a>
+                                    <div class="item-action-behaviors">
+                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                        <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                        <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                        <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <div class="what-product-is">
+                                        <ul class="bread-crumb">
+                                            <li class="has-separator">
+                                                <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                            </li>
+                                            <li>
+                                                <a asp-controller="Product" asp-action="IPhone">iPhone</a>
+                                            </li>
+                                        </ul>
+                                        <h6 class="item-title">
+                                            <a asp-controller="Product" asp-action="Details">Điện thoại Apple iPhone 13 Pro Max 128GB </a>
+                                        </h6>
+                                        <div class="item-stars">
+                                            <div class='star' title="4.5 out of 5 - based on 52 Reviews">
+                                                <span style='width:68px'></span>
+                                            </div>
+                                            <span>(52)</span>
+                                        </div>
+                                    </div>
+                                    <div class="price-template">
+                                        <div class="item-new-price">
+                                            22.990.000₫
+                                        </div>
+                                        <div class="item-old-price">
+                                            28.990.000₫
+                                        </div>
+                                    </div>
+                                    <div style="text-align:end">
+                                        <span>Đã bán:</span>
+                                        <span class="data-sales">71</span>
+                                    </div>
+                                </div>
+                                <div class="tag sale">
+                                    <span>SALE</span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="image-container">
+                                    <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                        <img class="img-fluid" src="~/images/anhsp/iphone13.jpg" alt="Product">
+                                    </a>
+                                    <div class="item-action-behaviors">
+                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                        <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                        <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                        <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <div class="what-product-is">
+                                        <ul class="bread-crumb">
+                                            <li class="has-separator">
+                                                <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                            </li>
+                                            <li>
+                                                <a asp-controller="Product" asp-action="IPhone">iPhone</a>
+                                            </li>
+                                        </ul>
+                                        <h6 class="item-title">
+                                            <a asp-controller="Product" asp-action="Details">
+                                                Điện thoại Apple iPhone 13 256GB
+                                            </a>
+                                        </h6>
+                                        <div class="item-stars">
+                                            <div class='star' title="4.4 out of 5 - based on 21 Reviews">
+                                                <span style='width:67px'></span>
+                                            </div>
+                                            <span>(21)</span>
+                                        </div>
+                                    </div>
+                                    <div class="price-template">
+                                        <div class="item-new-price">
+                                            19.990.000₫
+                                        </div>
+                                        <div class="item-old-price">
+                                            21.990.000₫
+                                        </div>
+                                    </div>
+                                    <div style="text-align:end">
+                                        <span>Đã bán:</span>
+                                        <span class="data-sales">45</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Sản phẩm tương tự -->
+            <!--Sản phẩm xem gần đây /- -->
+            <section class="section-maker">
+                <div class="container">
+                    <div class="sec-maker-header text-center">
+                        <h3 class="sec-maker-h3">XEM GẦN ĐÂY</h3>
+                    </div>
+                    <div class="slider-fouc">
+                        <div class="products-slider owl-carousel" data-item="4">
+                            <div class="item">
+                                <div class="image-container">
+                                    <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                        <img class="img-fluid" src="~/images/anhsp/samsungZflip.jpg" alt="Product">
+                                    </a>
+                                    <div class="item-action-behaviors">
+                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                        <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                        <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                        <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <div class="what-product-is">
+                                        <ul class="bread-crumb">
+                                            <li class="has-separator">
+                                                <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                            </li>
+                                            <li>
+                                                <a asp-controller="Product" asp-action="SamSung">Samsung</a>
+                                            </li>
+                                        </ul>
+                                        <h6 class="item-title">
+                                            <a asp-controller="Product" asp-action="Details"> Điện Thoại Samsung Galaxy Z Flip4 256GB</a>
+                                        </h6>
+                                        <div class="item-stars">
+                                            <div class='star' title="4.7 out of 5 - based on 74 Reviews">
+                                                <span style='width:69px'></span>
+                                            </div>
+                                            <span>(74)</span>
+                                        </div>
+                                    </div>
+                                    <div class="price-template">
+                                        <div class="item-new-price">
+                                            15.690.000đ
+                                        </div>
+                                        <div class="item-old-price">
+                                            20.990.000₫
+                                        </div>
+                                    </div>
+                                    <div style="text-align:end">
+                                        <span>Đã bán:</span>
+                                        <span class="data-sales">88</span>
+                                    </div>
+                                </div>
+                                <div class="tag hot">
+                                    <span>HOT</span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="image-container">
+                                    <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                        <img class="img-fluid" src="~/images/anhsp/samsungZfold.jpg" alt="Product">
+                                    </a>
+                                    <div class="item-action-behaviors">
+                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                        <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                        <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                        <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <div class="what-product-is">
+                                        <ul class="bread-crumb">
+                                            <li class="has-separator">
+                                                <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                            </li>
+                                            <li>
+                                                <a asp-controller="Product" asp-action="SamSung">Samsung</a>
+                                            </li>
+                                        </ul>
+                                        <h6 class="item-title">
+                                            <a asp-controller="Product" asp-action="Details"> Điện thoại Samsung Galaxy Z Fold5 5G 512GB</a>
+                                        </h6>
+                                        <div class="item-stars">
+                                            <div class='star' title="4.6 out of 5 - based on  R65eviews">
+                                                <span style='width:67px'></span>
+                                            </div>
+                                            <span>(65)</span>
+                                        </div>
+                                    </div>
+                                    <div class="price-template">
+                                        <div class="item-new-price">
+                                            41.990.000đ
+                                        </div>
+                                        <div class="item-old-price">
+                                            44.990.000₫
+                                        </div>
+                                    </div>
+                                    <div style="text-align:end">
+                                        <span>Đã bán:</span>
+                                        <span class="data-sales">80</span>
+                                    </div>
+                                </div>
+                                <div class="tag hot">
+                                    <span>HOT</span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="image-container">
+                                    <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                        <img class="img-fluid" src="~/images/anhsp/iphone14pro.jpg" alt="Product">
+                                    </a>
+                                    <div class="item-action-behaviors">
+                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                        <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                        <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                        <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <div class="what-product-is">
+                                        <ul class="bread-crumb">
+                                            <li class="has-separator">
+                                                <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                            </li>
+                                            <li>
+                                                <a asp-controller="Product" asp-action="IPhone">iPhone</a>
+                                            </li>
+                                        </ul>
+                                        <h6 class="item-title">
+                                            <a asp-controller="Product" asp-action="Details">Điện thoại Apple iPhone 14 Pro Max 128GB  </a>
+                                        </h6>
+                                        <div class="item-stars">
+                                            <div class='star' title="4.7 out of 5 - based on 35 Reviews">
+                                                <span style='width:70px'></span>
+                                            </div>
+                                            <span>(35)</span>
+                                        </div>
+                                    </div>
+                                    <div class="price-template">
+                                        <div class="item-new-price">
+                                            20.990.000₫
+                                        </div>
+
+                                    </div>
+                                    <div style="text-align:end">
+                                        <span>Đã bán:</span>
+                                        <span class="data-sales">48</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Sản phẩm xem gần đây /- -->
+        </div>
+        <!-- Nội dung ngoài sản phẩm  -->
+    </div>
+</div>
+<!--Nội dung  trang chi tiết sản phẩm -->
+
+<script>
+    // Lấy tất cả các button màu sắc
+    var colorButtons = document.querySelectorAll('.color button.mausac');
+
+    // Lặp qua từng button màu sắc và thêm sự kiện click
+    colorButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            // Lấy đường dẫn ảnh từ thuộc tính data-image của button được click
+            var imageUrl = this.querySelector('img').getAttribute('src');
+
+            // Lấy ảnh hiển thị trong phần zoom
+            var zoomImage = document.getElementById('zoom-pro');
+
+            // Cập nhật đường dẫn và ảnh của phần zoom để hiển thị ảnh tương ứng với màu sắc
+            zoomImage.setAttribute('src', imageUrl);
+            zoomImage.setAttribute('data-zoom-image', imageUrl);
+
+            // Lấy ảnh hiển thị trong phần zoom của quick view
+            var quickViewZoomImage = document.getElementById('zoom-pro-quick-view');
+
+            // Cập nhật đường dẫn và ảnh của phần zoom trong quick view để hiển thị ảnh tương ứng với màu sắc
+            quickViewZoomImage.setAttribute('src', imageUrl);
+            quickViewZoomImage.setAttribute('data-zoom-image', imageUrl);
+        });
+    });
+</script>

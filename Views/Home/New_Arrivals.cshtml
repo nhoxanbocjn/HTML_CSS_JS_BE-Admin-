@@ -1,0 +1,534 @@
+﻿
+@{
+    ViewData["Title"] = "Hàng mới";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .full-layer-outer-header {
+        background-color: black;
+    }
+
+    .mega-menu {
+        margin-left: 630px;
+        width: 20%;
+        padding-right: 20px;
+        padding-left: 20px;
+        text-align: center;
+    }
+</style>
+<!-- Đoạn giới thiệu trang sản phẩm mới -->
+<div class="page-style-a">
+    <div class="container">
+        <div class="page-intro">
+            <h2>Hàng mới</h2>
+            <!--Thông tin bread-crumb -->
+            <ul class="bread-crumb">
+                <li class="has-separator">
+                    <i class="ion ion-md-home"></i>
+                    <a asp-controller="Home" asp-action="Index">Trang chủ</a>
+                </li>
+                  <!--Phần Thông tin bread-crumb được đánh dấu -->
+                <li class="is-marked">
+                    <a asp-controller="Home" asp-action="New_Arrivals">Hàng mới</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Đoạn giới thiệu trang sản phẩm mới -->
+<!--Nội dung trang sản phẩm mới -->
+
+<div class="page-deal u-s-p-t-80">
+    <div class="container">
+        <div class="deal-page-wrapper">
+            <h1 class="deal-heading">Hàng mới</h1>
+            <h6 class="deal-has-total-items">27 mặt hàng</h6>
+        </div>
+        <!-- Thanh trang-->
+        <div class="page-bar clearfix">
+            <div class="shop-settings">
+                <a id="list-anchor">
+                    <i class="fas fa-th-list"></i>
+                </a>
+                <a id="grid-anchor" class="active">
+                    <i class="fas fa-th"></i>
+                </a>
+            </div>
+            <!-- Thanh sắp xếp  -->
+            <div class="toolbar-sorter">
+                <div class="select-box-wrapper">
+                    <label class="sr-only" for="sort-by">Sắp xếp theo</label>
+                    <select class="select-box" id="sort-by">
+                        <option selected="selected" value="">Săp xếp theo: mới nhất</option>
+                        <option value="">Sắp xếp theo: giá cao nhất</option>
+                        <option value="">Sắp xếp theo: giá thấp nhất</option>
+                        <option value="">Sắp xếp theo: đánh giá cao nhất</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Thanh sắp xếp  -->    
+        </div>
+        <!-- Thanh trang-->
+        <!-- dòng chứa sản phẩm -->
+        <div class="row product-container grid-style">
+            <!--Môi dòng sẽ thay đổi từ 4 đến 6 sản phẩm tùy theo kích thước màn hình  -->
+            <div class="product-item col-lg-3 col-md-6 col-sm-6">
+                <!-- Sản phẩm 1 -->
+                <div class="item">
+                    <div class="image-container">
+                        <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                            <img class="img-fluid" src="/images/trangchu/phone/1.jpg" alt="Product">
+                        </a>
+                        <!-- Các hiệu ứng khi hover vào ảnh sản phẩm  -->
+                        <div class="item-action-behaviors">
+                            <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                            <a class="item-mail" href="javascript:void(0)">Mail</a>
+                            <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                            <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
+                        </div>
+                    </div>
+                    <!-- Nội dung sản phẩm   -->
+                    <div class="item-content">
+                        <div class="what-product-is">
+                            <!-- Thông tin bread-cumb -->
+                            <ul class="bread-crumb">
+                                <li class="has-separator">
+                                    <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                </li>
+                                <li >
+                                    <a asp-controller="Product" asp-action="IPhone">iPhone</a>
+                                </li>
+                            </ul>
+                            <!-- Tên Sản phẩm   -->
+                            <h6 class="item-title">
+                                <a asp-controller="Product" asp-action="Details">iPhone 15 Pro Max 128GB</a>
+                            </h6>
+                            <!-- Mô tả sản phẩm   -->
+                            <div class="item-description">
+                                <p>
+                                    Bước nhảy vọt cho iPhone với thiết kế mới tuyệt đẹp, gồm mặt lưng bền bỉ làm bằng kính pha màu và cạnh viền bo tròn mới, Dynamic Island, camera Chính 48MP với camera Telephoto 2x, và cổng kết nối USB‑C
+                                </p>
+                            </div>
+                            <!--Sao đánh giá   -->
+                            <div class="item-stars">
+                                <div class='star' title="4.5 out of 5 - based on 23 Reviews">
+                                    <span style='width:67px'></span>
+                                </div>
+                                <span>(23)</span>
+                            </div>
+                        </div>
+                        <!-- Giá   -->
+                        <div class="price-template">
+                            <div class="item-new-price">
+                                30.000.000<sup>đ</sup>
+                            </div>
+                            <div class="item-old-price">
+                                40.000.000<sup>đ</sup>
+                            </div>
+                        </div>
+                    </div>
+                        <!-- Nhãn New   -->
+                    <div class="tag new">
+                        <span>NEW</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-item col-lg-3 col-md-6 col-sm-6">
+                <!-- Sản phẩm 2 -->
+                <div class="item">
+                    <div class="image-container">
+                        <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                            <img class="img-fluid" src="/images/trangchu/phone/2.jpg" alt="Product">
+                        </a>
+                        <div class="item-action-behaviors">
+                            <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                            <a class="item-mail" href="javascript:void(0)">Mail</a>
+                            <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                            <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="what-product-is">
+                            <ul class="bread-crumb">
+                                <li class="has-separator">
+                                    <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                </li>
+                                <li >
+                                    <a asp-controller="Product" asp-action="IPhone">iPhone</a>
+                                </li>
+          
+                            </ul>
+                            <h6 class="item-title">
+                                <a asp-controller="Product" asp-action="Details">iPhone 14 Pro 128GB</a>
+                            </h6>
+                            <div class="item-description">
+                                <p>Giới thiệu màn hình Luôn Bật, camera 48MP đầu tiên trên iPhone, tính năng Phát hiện Va chạm, tính năng SOS Khẩn cấp qua vệ tinh, cùng một phương thức mới đầy sáng tạo để nhận thông báo và hoạt động với Dynamic Island</p>
+                            </div>
+                            <div class="item-stars">
+                                <div class='star' title="4.5 out of 5 - based on 23 Reviews">
+                                    <span style='width:67px'></span>
+                                </div>
+                                <span>(23)</span>
+                            </div>
+                        </div>
+                        <div class="price-template">
+                            <div class="item-new-price">
+                                25.000.000<sup>đ</sup>
+                            </div>
+                            <div class="item-old-price">
+                                27.999.<sup>đ</sup>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-item col-lg-3 col-md-6 col-sm-6">
+                <!-- Sản phẩm 3 -->
+                <div class="item">
+                    <div class="image-container">
+                        <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                            <img class="img-fluid" src="/images/trangchu/phone/3.jpg" alt="Product">
+                        </a>
+                        <div class="item-action-behaviors">
+                            <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                            <a class="item-mail" href="javascript:void(0)">Mail</a>
+                            <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                            <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="what-product-is">
+                            <ul class="bread-crumb">
+                                <li class="has-separator">
+                                    <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                </li>
+                                <li >
+                                    <a asp-controller="Product" asp-action="IPhone">iPhone</a>
+                                </li>
+  
+                            </ul>
+                            <h6 class="item-title">
+                                <a asp-controller="Product" asp-action="Details">IPhone 14 Pro Pink</a>
+                            </h6>
+                            <div class="item-description">
+                                <p>“Khách hàng của chúng tôi tin tưởng vào iPhone của họ mỗi ngày và với iPhone 14 Pro cùng iPhone 14 Pro Max, chúng tôi mang đến thêm nhiều cải tiến hơn bất kỳ chiếc iPhone nào khác.</p>
+                            </div>
+                            <div class="item-stars">
+                                <div class='star' title="4.5 out of 5 - based on 23 Reviews">
+                                    <span style='width:67px'></span>
+                                </div>
+                                <span>(23)</span>
+                            </div>
+                        </div>
+                        <div class="price-template">
+                            <div class="item-new-price">
+                                40.000.000<sup>đ</sup>
+                            </div>
+                            <div class="item-old-price">
+                                50.000.000<sup>đ</sup>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-item col-lg-3 col-md-6 col-sm-6">
+                <!-- Sản phẩm 4 -->
+                <div class="item">
+                    <div class="image-container">
+                        <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                            <img class="img-fluid" src="/images/trangchu/Laptop/1.jpg" alt="Product">
+                        </a>
+                        <div class="item-action-behaviors">
+                            <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                            <a class="item-mail" href="javascript:void(0)">Mail</a>
+                            <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                            <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="what-product-is">
+                            <ul class="bread-crumb">
+                                <li class="has-separator">
+                                    <a asp-controller="Product" asp-action="Phone">Laptop</a>
+                                </li>
+                                <li >
+                                    <a asp-controller="Product" asp-action="IPhone">Macbook</a>
+                                </li>
+
+                            </ul>
+                            <h6 class="item-title">
+                                <a asp-controller="Product" asp-action="Details">Macbook Pro 2024</a>
+                            </h6>
+                            <div class="item-description">
+                                <p>
+                                    Được ra mắt lần đầu trên iMac và MacBook Pro 14 inch 2023, chip M3 có 8 nhân xử lý, gồm 4 nhân hiệu năng cao và 4 nhân tiết kiệm năng lượng, bên cạnh GPU tối đa 10 nhân, hỗ trợ ray tracing bằng phần cứng.
+                                </p>
+                            </div>
+                            <div class="item-stars">
+                                <div class='star' title="4.5 out of 5 - based on 23 Reviews">
+                                    <span style='width:67px'></span>
+                                </div>
+                                <span>(23)</span>
+                            </div>
+                        </div>
+                        <div class="price-template">
+                            <div class="item-new-price">
+                                80.000.000<sup>đ</sup>
+                            </div>
+                            <div class="item-old-price">
+                                90.000.000<sup>đ</sup>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tag new">
+                        <span>NEW</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-item col-lg-3 col-md-6 col-sm-6">
+                <!-- Sản phẩm 5 -->
+                <div class="item">
+                    <div class="image-container">
+                        <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                            <img class="img-fluid" src="/images/trangchu/Laptop/2.jpg" alt="Product">
+                        </a>
+                        <div class="item-action-behaviors">
+                            <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                            <a class="item-mail" href="javascript:void(0)">Mail</a>
+                            <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                            <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="what-product-is">
+                            <ul class="bread-crumb">
+                                <li class="has-separator">
+                                    <a asp-controller="Product" asp-action="Phone">Laptop</a>
+                                </li>
+                                <li >
+                                    <a asp-controller="Product" asp-action="IPhone">Macbook</a>
+                                </li>
+
+                            </ul>
+                            <h6 class="item-title">
+                                <a asp-controller="Product" asp-action="Details">Macbook Air 2023</a>
+                            </h6>
+                            <div class="item-description">
+                                <p>Chiếc MacBook Air 15 inch 2023 được trang bị hệ thống ba micro và sáu loa, bao gồm cả loa siêu trầm force canceling và âm thanh không gian, mang đến trải nghiệm âm thanh gây ấn tượng. Với độ mỏng chỉ 11.5mm và trọng lượng 3.3 pounds (xấp xỉ 1.36 kg), đây là chiếc laptop 15-inch mỏng nhất hiện tại trên thị trường.</p>
+                            </div>
+                            <div class="item-stars">
+                                <div class='star' title="4.5 out of 5 - based on 23 Reviews">
+                                    <span style='width:67px'></span>
+                                </div>
+                                <span>(23)</span>
+                            </div>
+                        </div>
+                        <div class="price-template">
+                            <div class="item-new-price">
+                                50.000.000<sup>đ</sup>
+                            </div>
+                            <div class="item-old-price">
+                                55.000.000<sup>đ</sup>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tag sale">
+                        <span>SALE</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-item col-lg-3 col-md-6 col-sm-6">
+                <!-- Sản phẩm 6 -->
+                <div class="item">
+                    <div class="image-container">
+                        <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                            <img class="img-fluid" src="/images/trangchu/Laptop/3.jpg" alt="Product">
+                        </a>
+                        <div class="item-action-behaviors">
+                            <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                            <a class="item-mail" href="javascript:void(0)">Mail</a>
+                            <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                            <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="what-product-is">
+                            <ul class="bread-crumb">
+                                <li class="has-separator">
+                                    <a asp-controller="Product" asp-action="Phone">Laptop</a>
+                                </li>
+                                <li >
+                                    <a asp-controller="Product" asp-action="IPhone">Macbook</a>
+                                </li>
+
+                            </ul>
+                            <h6 class="item-title">
+                                <a asp-controller="Product" asp-action="Details">Macbook Pro 2022 Gold</a>
+                            </h6>
+                            <div class="item-description">
+                                <p>MacBook Pro M2 2022 được trang bị loa kép (2 kênh) cùng công nghệ Wide Stereo và Dolby Atmos, cho chất lượng âm thanh tuyệt hảo. Bàn phím Magic mang lại trải nghiệm đánh máy thoải mái, yên tĩnh và nhạy bén. Touch Bar đặt các lệnh bạn cần nhất vào đúng nơi bạn cần, giúp tiết kiệm thời gian và thao tác gõ phím.</p>
+                            </div>
+                            <div class="item-stars">
+                                <div class='star' title="4.5 out of 5 - based on 23 Reviews">
+                                    <span style='width:67px'></span>
+                                </div>
+                                <span>(23)</span>
+                            </div>
+                        </div>
+                        <div class="price-template">
+                            <div class="item-new-price">
+                                88.000.000<sup>đ</sup>
+                            </div>
+                            <div class="item-old-price">
+                                90.000.000<sup>đ</sup>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-item col-lg-3 col-md-6 col-sm-6">
+                <!-- Sản phẩm 7 -->
+                <div class="item">
+                    <div class="image-container">
+                        <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                            <img class="img-fluid" src="/images/trangchu/Accessory/1.jpg" alt="Product">
+                        </a>
+                        <div class="item-action-behaviors">
+                            <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                            <a class="item-mail" href="javascript:void(0)">Mail</a>
+                            <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                            <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="what-product-is">
+                            <ul class="bread-crumb">
+                                <li class="has-separator">
+                                    <a asp-controller="Product" asp-action="Phone">Phụ kiện</a>
+                                </li>
+                                <li >
+                                    <a asp-controller="Product" asp-action="IPhone">Sạc nhanh</a>
+                                </li>
+
+                            </ul>
+                            <h6 class="item-title">
+                                <a asp-controller="Product" asp-action="Details">
+                                    Sạc nhanh Mazer 33w
+                                </a>
+                            </h6>
+                            <div class="item-description">
+                                <p>
+                                    Củ sạc nhanh Mazer Infinite Boots Super Mini Pro 33W hỗ trợ hai cổng USB-C PD 3.0 và USB-A Quick Charge 3.0 với công suất tới 33W. Điều này, sẽ giúp bạn kết nối linh hoạt cáp sạc iPhone, Samsung, OPPO, Xiaomi,...
+                                </p>
+                            </div>
+                            <div class="item-stars">
+                                <div class='star' title="4.5 out of 5 - based on 23 Reviews">
+                                    <span style='width:67px'></span>
+                                </div>
+                                <span>(23)</span>
+                            </div>
+                        </div>
+                        <div class="price-template">
+                            <div class="item-new-price">
+                                $55.00
+                            </div>
+                            <div class="item-old-price">
+                                $60.00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-item col-lg-3 col-md-6 col-sm-6">
+                <!-- Sản phẩm 8 -->
+                <div class="item">
+                    <div class="image-container">
+                        <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                            <img class="img-fluid" src="/images/trangchu/Accessory/2.jpg" alt="Product">
+                        </a>
+                        <div class="item-action-behaviors">
+                            <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                            <a class="item-mail" href="javascript:void(0)">Mail</a>
+                            <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                            <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="what-product-is">
+                            <ul class="bread-crumb">
+                                <li class="has-separator">
+                                    <a asp-controller="Product" asp-action="Phone">Phụ kiện</a>
+                                </li>
+                                <li >
+                                    <a asp-controller="Product" asp-action="IPhone">Anker</a>
+                                </li>
+                            </ul>
+                            <h6 class="item-title">
+                                <a asp-controller="Product" asp-action="Details">
+                                    Cục sạc 20w Anker Nano không dây
+                                </a>
+                            </h6>
+                            <div class="item-description">
+                                <P>Anker Nano được thiết kế với công suất đầu ra 20W để phù hợp với đầu vào tối đa của iPhone 12, vì vậy có thể cung cấp chính xác lượng điện năng mà iPhone của bạn cần.</P>
+                            </div>
+                            <div class="item-stars">
+                                <div class='star' title="4.5 out of 5 - based on 23 Reviews">
+                                    <span style='width:67px'></span>
+                                </div>
+                                <span>(23)</span>
+                            </div>
+                        </div>
+                        <div class="price-template">
+                            <div class="item-new-price">
+                                200.999<sup>đ</sup>
+                            </div>
+                            <div class="item-old-price">
+                                399.000<sup>đ</sup>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tag discount">
+                        <span>-15%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Các dòng chứa sản phẩm /- -->
+        <!-- Đánh số trang  -->
+        <div class="pagination-area">
+            <div class="pagination-number">
+                <ul>
+                    <li style="display: none">
+                        <a asp-controller="Product" asp-action="Phone" title="Previous">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a asp-controller="Product" asp-action="Phone">1</a>
+                    </li>
+                    <li>
+                        <a asp-controller="Product" asp-action="Phone">2</a>
+                    </li>
+                    <li>
+                        <a asp-controller="Product" asp-action="Phone">3</a>
+                    </li>
+                    <li>
+                        <a asp-controller="Product" asp-action="Phone">...</a>
+                    </li>
+                    <li>
+                        <a asp-controller="Product" asp-action="Phone">10</a>
+                    </li>
+                    <li>
+                        <a asp-controller="Product" asp-action="Phone" title="Next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Đánh số trang  -->
+    </div>
+</div>
+<!--Nội dung trang sản phẩm mới -->
+

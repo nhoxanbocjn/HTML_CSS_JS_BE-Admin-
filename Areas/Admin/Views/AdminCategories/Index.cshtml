@@ -1,0 +1,90 @@
+﻿@using PagedList.Core.Mvc
+@model PagedList.Core.IPagedList<TechWeb.Models.Category>
+@{
+	int CurrentPage = ViewBag.CurrentPage;
+	ViewData["Title"] = "Danh sách danh mục" + CurrentPage;
+	Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2 class="pageheader-title">Danh sách danh mục: trang @CurrentPage</h2>
+<div class="card">
+	<h5 class="card-header">Danh Sách</h5>
+	<div class="card-body p-0">
+		<div class="row m-b-30">
+			<div class="col-lg-12 text-right">
+				<div class="m-r-20">
+					<a class="btn btn-rounded btn-primary" asp-area="Admin" asp-controller="AdminCategories" asp-action="Create">
+						<i class=" fas fa-plus-circle m-r-10"></i><span>Thêm mới danh mục  </span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="table-responsive">
+			<table class="table">
+				<thead class="bg-light">
+					<tr class="border-0">
+						<th class="border-0">ID</th>
+						<th class="border-0">Tên danh mục</th>
+						<th class="border-0">Mô tả</th>
+						<th class="border-0">Trạng Thái</th>
+						<th class="border-0">Thao tác</th>
+					</tr>
+				</thead>
+				<tbody>
+					@if (Model != null)
+					{
+						foreach (var item in Model)
+						{
+							<tr>
+								<td>@item.CatId</td>
+								<td>@item.CatName</td>
+								<td>@item.Description </td>
+								<td>
+									@if (item.Published)
+									{
+										<div class="d-flex align-items-center">
+											<div class="badge-dot badge-success  m-r-10"></div>
+											<div>Hiệu Lực</div>
+										</div>
+									}
+									else
+									{
+										<div class="d-flex align-items-center">
+											<div class="badge-dot badge-danger  m-r-10"></div>
+											<div>Vô Hiệu </div>
+										</div>
+
+
+									}
+								</td>
+								<td>
+									<a class="btn btn-success" asp-area="Admin" asp-controller="AdminCategories" asp-action="Details" asp-route-id="@item.CatId">Chi tiết</a>
+									<a class="btn btn-warning" asp-area="Admin" asp-controller="AdminCategories" asp-action="Edit" asp-route-id="@item.CatId">Sửa</a>
+									<a class="btn btn-danger" asp-area="Admin" asp-controller="AdminCategories" asp-action="Delete" asp-route-id="@item.CatId">Xóa</a>
+
+								</td>
+							</tr>
+						}
+					}
+
+
+				</tbody>
+			</table>
+			<div aria-label="Page navigation example">
+				<ul class="pagination">
+					<pager class="pager-container" list="@Model" asp-area="Admin" asp-controller="AdminCategories" asp-action="Index" />
+				</ul>
+			</div>
+			@*			<nav aria-label="Page navigation example">
+			<ul class="pagination">
+			<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+			<li class="page-item"><a class="page-link" href="#">1</a></li>
+			<li class="page-item active"><a class="page-link " href="#">2</a></li>
+			<li class="page-item"><a class="page-link" href="#">3</a></li>
+			<li class="page-item"><a class="page-link" href="#">Next</a></li>
+			</ul>
+			</nav>*@
+		</div>
+	</div>
+</div>

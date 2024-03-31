@@ -1,0 +1,56 @@
+﻿@model TechWeb.Models.Account
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-header">
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a asp-area="Admin" asp-controller="AdminAccounts" asp-action="Index" class="breadcrumb-item">Quản lý tài khoản quảnn trị</a>
+            <span class="breadcrumb-item active">Thông tin tài khoản</span>
+        </nav>
+    </div>
+</div>
+<div class="card">
+    <h5 class="card-header">Thông Tin Quyền Truy Cập</h5>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered first">
+                <tbody>
+                    <tr>
+                        <td>ID:</td>
+                        <td class="">@Model.AccountId</td>
+                    </tr>
+                    <tr>
+                        <td>Họ tên:</td>
+                        <td>@Model.FullName</td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td>@Model.Email</td>
+                    </tr>
+                    <tr>
+                        <td>SĐT:</td>
+                        <td>@Model.Phone</td>
+                    </tr>
+                    <tr>
+                        <td>Lần đăng nhập cuối:</td>
+                        <td>@Model.LastLogin</td>
+                    </tr>
+                    <tr>
+                        <td>Tên quyền truy cập:</td>
+                        <td>@Model.Role.RoleName</td>
+                    </tr>
+                    <tr>
+                    <tr>
+                        <td>Hiệu lực</td>
+                        <td>@Model.Active</td>
+                    </tr>
+                    <tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

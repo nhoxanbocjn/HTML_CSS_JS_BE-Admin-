@@ -1,0 +1,191 @@
+﻿@{
+    ViewData["Title"] = "Thông tin tài khoản";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/profile.css" rel="stylesheet" />
+<style>
+    .full-layer-outer-header {
+        background-color: black;
+    }
+
+    .mega-menu {
+        margin-left: 630px;
+        width: 20%;
+        padding-right: 20px;
+        padding-left: 20px;
+        text-align: center;
+    }
+</style>
+<!-- Giới thiệu trang thông tin tài khoản  -->
+<div class="page-style-a">
+    <div class="container">
+        <div class="page-intro">
+            <h2>Thông tin tài khoản</h2>
+            <!--Thông tin bread-crumb -->
+            <ul class="bread-crumb">
+                <li class="has-separator">
+                    <i class="ion ion-md-home"></i>
+                    <a asp-controller="Home" asp-action="Index">Trang chủ</a>
+                </li>
+                <!--Phần Thông tin bread-crumb được đánh dấu -->
+                <li class="is-marked">
+                    <a asp-controller="MyProfile" asp-action="Index">Thông tin tài khoản </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Giới thiệu trang thông tin tài khoản  -->
+
+<div class="u-s-p-b-60">
+
+    <!--====== Phần nội dung chính ======-->
+    <div class="section__content">
+        <div class="dash">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-12">
+                        <!--====== Dashboard ======-->
+                        <!-- MENU ĐIỀU HƯỚNG CỦA TRANG TÀI KHOẢN -->
+                        <div class="dash__box dash__box--bg-white dash__box--shadow u-s-m-b-30">
+                            <div class="dash__pad-1">
+
+                                <ul class="dash__f-list">
+                                    <li>
+
+                                        <a  asp-controller="MyProfile" asp-action="Manage">Quản lí tài khoản</a>
+                                    </li>
+                                    <li>
+
+                                        <a class="dash-active" asp-controller="MyProfile" asp-action="Index">Hồ sơ</a>
+                                    </li>
+
+                                    <li>
+
+                                        <a asp-controller="MyProfile" asp-action="My_Order">Đơn hàng của tôi</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- MENU ĐIỀU HƯỚNG CỦA TRANG TÀI KHOẢN -->
+                        <!-- ĐƠN ĐẶT, ĐƠN HUỶ, WISHLIST -->
+                        <div class="dash__box dash__box--bg-white dash__box--shadow dash__box--w">
+                            <div class="dash__pad-1">
+                                <ul class="dash__w-list">
+                                    <li>
+                                        <div class="dash__w-wrap">
+
+                                            <span class="dash__w-icon dash__w-icon-style-1"> <i class="fa-solid fa-cart-shopping"></i></span><br>
+
+                                            <span class="dash__w-text">40</span>
+
+                                            <span class="dash__w-name">Đơn đặt</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dash__w-wrap">
+
+                                            <span class="dash__w-icon dash__w-icon-style-2"><i class="fa-solid fa-xmark"></i></span><br>
+
+                                            <span class="dash__w-text"> 0</span>
+
+                                            <span class="dash__w-name"> Đơn huỷ</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dash__w-wrap">
+
+                                            <span class="dash__w-icon dash__w-icon-style-3"><i class="fa-solid fa-heart"></i></span><br>
+
+                                            <span class="dash__w-text">0</span>
+
+                                            <span class="dash__w-name">Wishlist</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- ĐƠN ĐẶT, ĐƠN HUỶ, WISHLIST -->
+                        <!--====== Dashboard ======-->
+
+                    </div>
+
+                    <!-- THÔNG TIN TÀI KHOẢN -->
+                    <div class="col-lg-9 col-md-12">
+                        <div class="dash__box dash__box--shadow dash__box--radius dash__box--bg-white u-s-m-b-30">
+                            <div class="dash__pad-2">
+                                <h1 class="dash__h1 u-s-m-b-14"><strong>Hồ sơ <span style="color: black;">sơ</span></strong></h1>
+                                <div class="row">
+                                    <!-- Họ tên- -->
+                                    <div class="col-lg-4 u-s-m-b-30">
+                                        <h2 class="dash__h2 u-s-m-b-8">Họ tên</h2>
+
+                                        <span class="dash__text">The Goat</span>
+                                    </div>
+                                    <!-- Email- -->
+                                    <div class="col-lg-4 u-s-m-b-30">
+                                        <h2 class="dash__h2 u-s-m-b-8">E-mail</h2>
+
+                                        <span class="dash__text">abc@gmail.com</span>
+                                        <div class="dash__link dash__link--secondary">
+
+                                            <a asp-controller="MyProfile" asp-action="Edit" id="thaydoi">Thay đổi</a>
+                                        </div>
+                                    </div>
+                                    <!-- Số điện thoại- -->
+                                    <div class="col-lg-4 u-s-m-b-30">
+                                        <h2 class="dash__h2 u-s-m-b-8">Số điện thoại</h2>
+
+                                        <span class="dash__text">(+84) 123456789</span>
+                                        <div class="dash__link dash__link--secondary">
+
+                                            <a asp-controller="MyProfile" asp-action="Edit" id="thaydoi">Thay đổi</a>
+                                        </div>
+                                    </div>
+                                    <!-- Ngày sinh- -->
+                                    <div class="col-lg-4 u-s-m-b-30">
+
+                                        <h2 class="dash__h2 u-s-m-b-8">Sinh nhật</h2>
+
+                                        <span class="dash__text">27-04-2003</span>
+                                    </div>
+                                    <!--Giới tính- -->
+                                    <div class="col-lg-4 u-s-m-b-30">
+                                        <h2 class="dash__h2 u-s-m-b-8">Giới tính</h2>
+
+                                        <span class="dash__text">Nam</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 bt">
+                                        <!-- Trở thành thành viên -->
+                                        <div class="dash__link dash__link--secondary u-s-m-b-30">
+
+                                            <a href="#" id="member">Trở thành thành viên The Goat?</a>
+                                        </div>
+                                        <!-- Sửa hồ sơ -->
+                                        <div class="u-s-m-b-16">
+
+                                            <a class="dash__custom-link btn--e-transparent-brand-b-2" asp-controller="MyProfile" asp-action="Edit" id="chinhsuahoso_button">Chỉnh sửa Hồ sơ</a>
+                                        </div>
+                                        <!-- Đổi mật khẩu -->
+                                        <div>
+
+                                            <a class="dash__custom-link btn--e-brand-b-2" href="#" id="doimatkhau_button">Đổi Mật khẩu</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- THÔNG TIN TÀI KHOẢN -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== Phần nội dung chính ======-->
+</div>
+
+
+

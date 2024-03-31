@@ -1,0 +1,337 @@
+﻿
+@{
+    ViewData["Title"] = "Blog Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Đoạn giới thiệu trang blog -->
+<div class="page-style-a">
+    <div class="container">
+        <div class="page-intro">
+            <h2>Blog</h2>
+            <!--Thông tin bread-crumb -->
+            <ul class="bread-crumb">
+                <li class="has-separator">
+                    <i class="ion ion-md-home"></i>
+                    <a asp-controller="Home" asp-action="Index">Trang chủ</a>
+                </li>
+                <!--Phần Thông tin bread-crumb được đánh dấu -->
+                <li class="is-marked">
+                    <a asp-controller="Blog" asp-action="Index">Blog</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Đoạn giới thiệu -->
+
+<!-- Trang blog -->
+
+<div class="page-blog u-s-p-t-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-9">
+				<!-- Các Blog-Posts -->
+                <!-- Đoạn Blog-1 -->
+                <div class="blog-post u-s-m-b-80">
+                    <div class="blog-post-wrapper u-s-m-b-26">
+                        <a class="blog-post-anchor" asp-controller="Blog" asp-action="Detail1">
+                            <img class="img-fluid" src="~/images/trangchu/trangblog/1.png" alt="Blog post 1">
+                        </a>
+                    </div>
+                              <!-- Tiêu đề blog-->
+                    <h1 class="blog-post-heading u-s-m-b-13">
+                        <a asp-controller="Blog" asp-action="Detail1">Thị trường công nghệ Việt Nam có tiên tiến bằng nước ngoài</a>
+                    </h1>
+                              <!-- Ngày thàng và người đăng blog -->
+
+                    <div class="blog-post-info u-s-m-b-13">
+                        <span class="blog-post-preposition">Bởi</span>
+                        <a class="blog-post-author-name" asp-controller="Blog" asp-action="Detail1">Admin</a>
+                        <span class="blog-post-info-separator">/</span>
+                        <a class="blog-post-comment" asp-controller="Blog" asp-action="Detail1">Bình luận (6)</a>
+                        <span class="blog-post-info-separator">/</span>
+                        <span class="blog-post-published-date">
+                            <span>14</span>/
+                            <span>03</span>/
+                            <span>2024</span>
+                        </span>
+                    </div>
+                    <!-- Mô tả blog -->
+                        <div>
+
+                        <p class="blog-post-paragraph u-s-m-b-16" style="text-align: justify;">
+
+                            Trong thời đại công nghệ 4.0 phát triển mạnh mẽ, thị trường công nghệ Việt Nam không ngừng chứng tỏ sức hút và tiềm năng của mình. So với các quốc gia nước ngoài, liệu thị trường công nghệ Việt Nam đã thực sự tiên tiến hay chưa? Hãy cùng điểm qua một số số liệu và thực tế để có cái nhìn tổng quan về tình hình hiện tại.
+
+                        </p>
+                        <a asp-controller="Blog" asp-action="Detail1" class="blog-post-read-more">Đọc thêm</a>
+                    </div>
+                </div>
+       
+            <!-- Đoạn Blog-2 -->
+                <div class="blog-post u-s-m-b-80">
+                    <div class="blog-post-wrapper u-s-m-b-26">
+                        <a class="blog-post-anchor" asp-controller="Blog" asp-action="Detail1">
+                            <img class="img-fluid" src="~/images/trangchu/trangblog/2.png" alt="Blog post 2">
+                        </a>
+                    </div>
+                    <h1 class="blog-post-heading u-s-m-b-13">
+                        <a asp-controller="Blog" asp-action="Detail1">Tại sao giới trẻ lại có xu hướng thay đổi điện thoại liên tục dù chưa hỏng?</a>
+                    </h1>
+                    <div class="blog-post-info u-s-m-b-13">
+                        <span class="blog-post-preposition">Bởi</span>
+                        <a class="blog-post-author-name" asp-controller="Blog" asp-action="Detail1">Admin</a>
+                        <span class="blog-post-info-separator">/</span>
+                        <a class="blog-post-comment" asp-controller="Blog" asp-action="Detail1">Bình luận (4)</a>
+                        <span class="blog-post-info-separator">/</span>
+                        <span class="blog-post-published-date">
+                            <span>29</span>/
+                            <span>02</span>/
+                            <span>2024</span>
+                        </span>
+                    </div>
+                    <p class="blog-post-paragraph u-s-m-b-16" style="text-align: justify;">
+                        việc thay đổi điện thoại liên tục của giới trẻ đã trở thành một hiện tượng phổ biến. Dưới đây là một số lý do mà giới trẻ thường có xu hướng thay đổi điện thoại dù chúng chưa hỏng
+                    </p>
+                    <a asp-controller="Blog" asp-action="Detail1" class="blog-post-read-more">Đọc thêm</a>
+                </div>
+            <!-- Đoạn Blog-3-->
+                <div class="blog-post u-s-m-b-80">
+                    <div class="blog-post-wrapper u-s-m-b-26">
+                        <a class="blog-post-anchor" asp-controller="Blog" asp-action="Detail2">
+                            <img class="img-fluid" src="~/images/trangchu/trangblog/3.png" alt="Blog post 3">
+                        </a>
+                    </div>
+
+                    <h1 class="blog-post-heading u-s-m-b-13">
+                        <a asp-controller="Blog" asp-action="Detail2">Cách tiết kiệm pin cho chiếc điện thoại của bạn</a>
+                    </h1>
+                    <div class="blog-post-info u-s-m-b-13">
+                        <span class="blog-post-preposition">Bởi</span>
+                        <a class="blog-post-author-name" asp-controller="Blog" asp-action="Detail2">Admin</a>
+                        <span class="blog-post-info-separator">/</span>
+                        <a class="blog-post-comment" asp-controller="Blog" asp-action="Detail2">Bình luận (2)</a>
+                        <span class="blog-post-info-separator">/</span>
+                        <span class="blog-post-published-date">
+                            <span>14</span>/
+                            <span>01</span>/
+                            <span>2024</span>
+                        </span>
+                    </div>
+                    <p class="blog-post-paragraph u-s-m-b-16" style="text-align: justify;">
+                        Việc tiết kiệm pin cho thiết bị di động là một vấn đề quan trọng mà nhiều người quan tâm. Dưới đây là ba cách tiết kiệm pin tốt nhất mà bạn có thể áp dụng để kéo dài thời lượng sử dụng pin của điện thoại di động của mình
+                    </p>
+                    <a asp-controller="Blog" asp-action="Detail2" class="blog-post-read-more">Đọc thêm</a>
+                </div>
+            <!-- Đoạn Blog-4-->
+                <div class="blog-post u-s-m-b-80">
+                    <div class="blog-post-wrapper u-s-m-b-26">
+                        <a class="blog-post-anchor" asp-controller="Blog" asp-action="Detail2">
+                            <img class="img-fluid" src="~/images/trangchu/trangblog/4.png" alt="Blog post 4">
+                        </a>
+                    </div>
+                    <h1 class="blog-post-heading u-s-m-b-13">
+                        <a asp-controller="Blog" asp-action="Detail1">Câu chuyện khởi nghiệp của The Goat</a>
+                    </h1>
+                    <div class="blog-post-info u-s-m-b-13">
+                        <span class="blog-post-preposition">Bởi</span>
+                        <a class="blog-post-author-name" asp-controller="Blog" asp-action="Detail1">Admin</a>
+                        <span class="blog-post-info-separator">/</span>
+                        <a class="blog-post-comment" asp-controller="Blog" asp-action="Detail1">Bình luận (0)</a>
+                        <span class="blog-post-info-separator">/</span>
+                        <span class="blog-post-published-date">
+                            <span>10</span>/
+                            <span>04</span>/
+                            <span>2023</span>
+                        </span>
+                    </div>
+                    <p class="blog-post-paragraph u-s-m-b-16" style="text-align: justify;">
+                        Từ khi còn là những sinh viên của trường Đại học Kinh Tế TP. Hồ Chí Minh, sáu sinh viên nọ đã tập hợp lại với mục tiêu chung: khởi nghiệp và tạo ra một doanh nghiệp thành công. Với tinh thần sáng tạo và nhiệt huyết, họ quyết định kinh doanh bán điện thoại trên một nền tảng thương mại điện tử nổi tiếng - The Goat.
+                    </p>
+                    <a asp-controller="Blog" asp-action="Detail1" class="blog-post-read-more">Đọc thêm</a>
+                </div>
+                <!-- Blog-Posts /- -->
+                <!-- đánh số trang blog -->
+                <div class="blog-pagination u-s-m-b-80">
+                    <ul class="blog-pg-list">
+                        <li>
+                            <a asp-controller="Blog" asp-action="Index" class="bl-pg-link d-none">Quay lại</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Blog" asp-action="Index" class="bl-pg-link bl-pg-link-hover-a bl-pg-link-is-active">1</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Blog" asp-action="Index" class="bl-pg-link bl-pg-link-hover-a">2</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Blog" asp-action="Index" class="bl-pg-link bl-pg-link-hover-a">3</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Blog" asp-action="Index" class="bl-pg-link bl-pg-link-hover-gap">......</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Blog" asp-action="Index" class="bl-pg-link bl-pg-link-hover-a">4</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Blog" asp-action="Index" class="bl-pg-link bl-pg-link-hover-b">Tiếp</a>
+                        </li>
+                    </ul>
+                </div>
+            <!-- đánh số trang blog -->
+            </div>
+            <div class="col-lg-3 col-md-3">
+                <!-- Blog-Sidebar-Tìm kiếm -->
+                <div class="bl-sidebar-widget u-s-m-b-50">
+                    <h3 class="bl-sidebar-title-h3 u-s-m-b-20">Tìm kiếm</h3>
+                    <form class="group-text-blog-search">
+                        <label class="sr-only" for="blog-search">Tìm kiếm trên blog</label>
+                        <input type="text" id="blog-search" class="text-field" placeholder="Ấn để tìm kiếm">
+                        <button type="submit" class="button fas fa-search"></button>
+                    </form>
+                </div>
+                <!-- Blog-Sidebar-Tìm kiếm /- -->
+                <!-- Blog-Thanh Danh mục -->
+                <div class="bl-sidebar u-s-m-b-50">
+                    <h3 class="bl-sidebar-title-h3 u-s-m-b-20">Danh mục</h3>
+                    <ul class="bl-sidebar-list">
+                        <li>
+                            <a asp-controller="Blog" asp-action="Detail1">Tin Công nghệ</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Blog" asp-action="Index">Khám phá</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Blog" asp-action="Index">Thị Trường</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Blog" asp-action="Index">Tuyển dụng</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Blog" asp-action="Index">The Goat</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Blog-Thanh Danh mục /- -->
+                <!-- Blog-Sidebar-Xu hướng -->
+                <div class="bl-sidebar u-s-m-b-50">
+
+                    <h3 class="bl-sidebar-title-h3 u-s-m-b-20">Xu hướng tuần qua</h3>
+                    <ul class="bl-sidebar-list">
+                        <li>
+                            <div class="recent-post-info">
+                                <a class="" asp-controller="Blog" asp-action="Detail2">Cách tiết kiệm pin cho chiếc điện thoại của bạn</a>
+                                <span class="recent-post-date">
+                                    <span>14</span>/
+                                    <span>01</span>/
+                                    <span>2024</span>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="recent-post-info">
+                                <a class="" asp-controller="Blog" asp-action="Detail1">Tại sao giới trẻ lại có xu hướng thay đổi điện thoại liên tục dù chưa hỏng?</a>
+                                <span class="recent-post-date">
+                                    <span>29</span>/
+                                    <span>02</span>/
+                                    <span>2024</span>
+                                </span>
+                            </div>
+                        </li>
+		    
+
+                    </ul>
+                </div>
+            <!-- Blog-Sidebar-Xu hướng -->
+            <!-- Blog-Sidebar về các blog gần đây /- -->
+
+                <div class="bl-sidebar u-s-m-b-50">
+                    <h3 class="bl-sidebar-title-h3 u-s-m-b-20">Bài viết mới</h3>
+                    <div class="recent-post u-s-m-b-18">
+                        <div class="recent-post-image">
+                            <a class="" asp-controller="Blog" asp-action="Detail1">
+                                <img src="~/images/trangchu/trangblog/1.png" alt="recent post 1">
+                            </a>
+                        </div>
+                    <!-- blog được post gần đây 1 /- -->
+
+                        <div class="recent-post-info">
+                            <a class="" asp-controller="Blog" asp-action="Detail1">Thị trường công nghệ Việt Nam có tiên tiến bằng nước ngoài</a>
+                            <span class="recent-post-date">
+                                <span>14</span>/
+                                <span>03</span>/
+                                <span>2024</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="recent-post u-s-m-b-18">
+                        <div class="recent-post-image">
+                            <a class="" asp-controller="Blog" asp-action="Detail1">
+                                <img src="~/images/trangchu/trangblog/2.png" alt="recent post 2">
+                            </a>
+                        </div>
+                    <!-- blog được post gần đây 2 /- -->
+
+                        <div class="recent-post-info">
+                            <a class="" asp-controller="Blog" asp-action="Detail1">Tại sao giới trẻ lại có xu hướng thay đổi điện thoại liên tục dù chưa hỏng?</a>
+                            <span class="recent-post-date">
+                                <span>29</span>/
+                                <span>02</span>/
+                                <span>2024</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="recent-post u-s-m-b-18">
+                        <div class="recent-post-image">
+                            <a class="" asp-controller="Blog" asp-action="Detail1">
+                                <img src="~/images/trangchu/trangblog/3.png" alt="recent post 3">
+                            </a>
+                        </div>
+                    <!-- blog được post gần đây 3 /- -->
+
+                        <div class="recent-post-info">
+                            <a class="" asp-controller="Blog" asp-action="Detail2">Cách tiết kiệm pin cho chiếc điện thoại của bạn</a>
+                            <span class="recent-post-date">
+                                <span>14</span>/
+                                <span>01</span>/
+                                <span>2024</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="recent-post u-s-m-b-18">
+                        <div class="recent-post-image">
+                            <a class="" asp-controller="Blog" asp-action="Detail1">
+                                <img src="~/images/trangchu/trangblog/4.png" alt="recent post 4">
+                            </a>
+                        </div>
+                    <!-- blog được post gần đây 4 /- -->
+
+                        <div class="recent-post-info">
+                            <a class="" asp-controller="Blog" asp-action="Detail2">Câu chuyện khởi nghiệp của The Goat</a>
+                            <span class="recent-post-date">
+                                <span>10</span>/
+                                <span>04</span>/
+                                <span>2023</span>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Blog-Sidebar về các blog gần đây /- -->
+                <!-- các Blog-Sidebar-Tag -->
+                <div class="bl-sidebar u-s-m-b-50">
+                    <h3 class="bl-sidebar-title-h3 u-s-m-b-20">Tags</h3>
+                    <a asp-controller="Blog" asp-action="Index" class="bl-tag u-s-m-b-8">congnghe</a>
+                    <a asp-controller="Blog" asp-action="Index" class="bl-tag u-s-m-b-8">sangtao</a>
+                    <a asp-controller="Blog" asp-action="Index" class="bl-tag u-s-m-b-8">dienthoai</a>
+                    <a asp-controller="Blog" asp-action="Index" class="bl-tag u-s-m-b-8">iphone</a>
+                    <a asp-controller="Blog" asp-action="Index" class="bl-tag u-s-m-b-8">brand</a>
+                    <a asp-controller="Blog" asp-action="Index" class="bl-tag u-s-m-b-8">world</a>
+                    <a asp-controller="Blog" asp-action="Index" class="bl-tag u-s-m-b-8">thegoat</a>
+                </div>
+                <!-- các Blog-Sidebar-Tag /- -->
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Blog-Page /- -->

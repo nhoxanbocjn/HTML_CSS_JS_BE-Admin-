@@ -1,0 +1,306 @@
+﻿.g-dropdown {
+    z-index: 1000;
+}
+
+.mega-menu {
+    margin-left: 650px;
+    width: 18%;
+    padding-right: 55px;
+    text-align: center;
+}
+
+    /* -----------------------header - blog ------ */
+    .mega-menu .mega-1-colm ul {
+        margin: 0;
+        padding: 0;
+    }
+
+        .mega-menu.mega-1-colm ul > li {
+            display: block;
+            list-style: none;
+        }
+
+            .mega-menu.mega-1-colm ul > li > a {
+                font-size: 13px;
+                display: block;
+                padding: 7px 0;
+                transition: all 0.3s ease-out 0s;
+            }
+
+                .mega-menu.mega-1-colm ul > li > a:hover {
+                    padding-left: 5px;
+                }
+
+/* ----------chinh mau top header ------------- */
+
+.full-layer-outer-header {
+    background-color: #1e1e27;
+}
+
+.full-layer-bottom-header {
+    background-color: white;
+}
+
+.full-layer-mid-header {
+    background-color: white;
+}
+
+header {
+    /* position: fixed; */
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+}
+
+/* .default-height{
+margin-top: 200px;
+} */
+
+bottom-nav {
+    z-index: 1000;
+}
+
+/* them header blog */
+.mega-menuMOI {
+    background: #ffffff none repeat scroll 0 0;
+    border: 1px solid #ececec;
+    box-shadow: 0 1px 2px rgba(86, 86, 90, 0.5);
+    /* left: 0; */
+    padding: 20px 30px;
+    position: absolute;
+    text-align: left;
+    top: 120%;
+    transform-origin: 0 0 0;
+    transition: all 0.3s ease 0s;
+    width: 45%;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    margin-left: -200px;
+}
+
+    .mega-menuMOI.mega-3-colm ul {
+        margin: 0;
+        padding: 0;
+        float: left;
+        width: 33.33%;
+    }
+
+        .mega-menuMOI.mega-3-colm ul > li {
+            display: block;
+            list-style: none;
+        }
+
+            .mega-menuMOI.mega-3-colm ul > li > a {
+                font-size: 13px;
+                display: block;
+                padding: 7px 0;
+                transition: all 0.3s ease-out 0s;
+            }
+
+                .mega-menuMOI.mega-3-colm ul > li > a:hover {
+                    padding-left: 5px;
+                }
+
+.g-nav > li:hover > a + .mega-menuMOI {
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+}
+
+/* ---------hieu ung chu super sale HEAER ------- */
+div.at-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.at-item {
+    color: #3079ed;
+    font-weight: bold;
+    font-size: 3em;
+    animation-name: text-shadow-multicolor;
+    animation-duration: 1.2s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    font-size: 14px;
+    /* shorthand
+    animation: text-shadow-multicolor 1.2s ease 0s infinite normal none;*/
+}
+
+@keyframes text-shadow-multicolor {
+    0% {
+        text-shadow: 0 0px 15px #f0f;
+    }
+
+    33% {
+        text-shadow: 0 0px 15px #0ff;
+    }
+
+    66% {
+        text-shadow: 0 0px 10px #0f0;
+    }
+
+    100% {
+        text-shadow: 0 0px 10px #ff0;
+    }
+}
+
+/* ---HEADER-- */
+
+.full-layer-mid-header {
+    height: 100px;
+}
+
+/*-----------DANG KY THU FOOTER--- */
+.newsletter,.nl {
+    width: cacl(100%);
+    margin-bottom: 50px;
+    /* margin-left: 30px; 
+    margin-right: 30px;  */
+    padding: 10px;
+    border: 1px solid rgb(150, 145, 145);
+    background-color: whitesmoke;
+}
+
+.newsletter_text {
+    padding-top: 30px;
+    padding-left: 20px;
+    height: 120px;
+}
+
+    .newsletter_text h4 {
+        margin-bottom: 0px;
+        line-height: 24px;
+        text-align: left;
+    }
+
+    .newsletter_text p {
+        margin-bottom: 0px;
+        line-height: 1.7;
+        color: black;
+        text-align: left;
+    }
+
+.newsletter_form {
+    height: 120px;
+}
+
+#newsletter_email {
+    width: 300px;
+    height: 46px;
+    background: #ffffff;
+    border: solid 1px black;
+    padding-left: 20px;
+}
+
+    #newsletter_email:focus {
+        border: solid 1px #7f7f7f !important;
+        box-shadow: none !important;
+    }
+
+:focus {
+    outline: none !important;
+}
+
+#newsletter_email::-webkit-input-placeholder {
+    font-size: 14px !important;
+    font-weight: 400;
+    color: #b9b4c7 !important;
+}
+
+#newsletter_email:-moz-placeholder
+/* older Firefox*/ {
+    font-size: 14px !important;
+    font-weight: 400;
+    color: #b9b4c7 !important;
+}
+
+#newsletter_email::-moz-placeholder
+/* Firefox 19+ */ {
+    font-size: 14px !important;
+    font-weight: 400;
+    color: #b9b4c7 !important;
+}
+
+#newsletter_email:-ms-input-placeholder {
+    font-size: 14px !important;
+    font-weight: 400;
+    color: #b9b4c7 !important;
+}
+
+#newsletter_email::input-laceholder {
+    font-size: 14px !important;
+    font-weight: 400;
+    color: #b9b4c7 !important;
+}
+
+.newsletter_submit_btn {
+    width: 160px;
+    height: 46px;
+    border: none;
+    background-color: black;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+    .newsletter_submit_btn:hover {
+        background: red !important;
+    }
+
+.footer {
+    padding: 20px;
+    margin-top: 50px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.mid-footer-wrapper {
+    border: 1px solid rgb(134, 131, 131);
+    padding: 20px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.bottom-footer-wrapper {
+    background-color: black;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.social-media-list li a {
+    color: white;
+}
+/* Responsive header*/
+#dau-trang {
+    display: none;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 567px) {
+    #dau-trang {
+        display: none;
+    }
+
+    #giua-trang {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 566px) {
+    #giua-trang {
+        display: none;
+    }
+
+    #dau-trang {
+        display: block;
+    }
+}

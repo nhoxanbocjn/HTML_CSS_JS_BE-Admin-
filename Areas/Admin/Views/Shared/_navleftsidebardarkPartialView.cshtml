@@ -1,0 +1,55 @@
+﻿<div class="nav-left-sidebar sidebar-dark">
+    <!-- Taọ menu list-->
+    <div class="menu-list">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <!-- Nút menu chỉ xuất hiện khi thu nhỏ màn hình -->
+            <a class="d-xl-none d-lg-none" href="#">Menu</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+               <!--Icon cho nút menu để khi thu nhỏ thì bẩm để xóa xuống các chức -->
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!--Từng thanh điều khiển tời các chức năng  -->
+                <ul class="navbar-nav flex-column">
+                    <li class="nav-item ">
+                        <!--dashboard  -->
+                        <a class="nav-link" asp-area="Admin" asp-controller="Home" asp-action="Index"><i class="fas fa-fw fa-chart-pie"></i>Dashboard <span class="badge badge-success">6</span></a>
+                        <div id="submenu-1" class="collapse submenu" style="">
+                          
+                        </div>
+                    </li>
+                    <!--Quản lý sản phẩm   -->
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Index" asp-controller="AdminProducts" asp-area="Admin"><i class="fab fa-fw fa-wpforms"></i> Quản Lý Sản Phẩm</a>
+                    </li>
+                    <li class="nav-item">
+                        <!--Quản lý danh mục-->
+                        <a class="nav-link" asp-action="Index" asp-controller="AdminCategories" asp-area="Admin"><i class="fas fa-fw fa-columns"></i>Quản Lý Danh Mục</a>
+                    
+                    </li>
+                    <!--Quản lý đơn hàng   -->
+                    <li class="nav-item ">
+                        <a class="nav-link"><i class="fas fa-fw fa-file"></i>Quản Lý Đơn Hàng</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <!--Quản lý khách hàng   -->
+                        <a class="nav-link" asp-action="Index" asp-controller="AdminCustomers" asp-area="Admin">
+                            <i class="fas fa-user   "></i>Quản Lý Khách Hàng
+                        </a>
+                    </li>
+                    <!--Quản lý quyền truy cập   -->
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Index" asp-controller="AdminRoles" asp-area="Admin" ><i class="fas fa-fw fa-inbox"></i>Quản Lý Quyền Truy Cập</a>
+                    </li>
+                    <!--Quản lý tài khoản quản trị   -->
+                  <li class="nav-item">
+                        <a class="nav-link" asp-action="Index" asp-controller="AdminAccounts" asp-area="Admin"><i class="fa fa-fw fa-user-circle"></i>Quản Lý Tài Khoản</a>
+                        
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>

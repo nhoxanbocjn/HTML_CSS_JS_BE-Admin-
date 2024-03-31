@@ -1,0 +1,149 @@
+﻿@using PagedList.Core.Mvc
+@model PagedList.Core.IPagedList<TechWeb.Models.Product>
+
+@{
+	int CurrentPage = ViewBag.CurrentPage;
+	ViewData["Title"] = "Danh sách sản phẩm" + CurrentPage;
+	Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<h2 class="pageheader-title">Danh Sách Sản Phẩm : trang @CurrentPage</h2>
+<div class="card">
+	<h5 class="card-header">Danh Sách</h5>
+	<div class="card-body p-0">
+		<di class="row m-b-30">
+			<!--Thanh tiềm kiếm sản phẩm -->
+				<div class="col-md-8">
+					<div class="row">
+					<!--Thanh tiềm kiếm sản phẩm -->
+						<div class="col-md-6">
+						<input id="keyword" name="keyword" type="text" class="form-control" placeholder="Tìm kiếm sản phẩm">
+						</div>
+					<!--Thanh tiềm kiếm theo danh mục -->
+						<div class="col-md-4">
+							<select class="custom-select" id="txtCatID" name="txtCatID" asp-items="ViewBag.DanhMuc">
+								<option selected>Chọn danh mục</option>
+								<option value="0">Chọn tất cả</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			<!--Nút thêm sản phẩm -->
+				<div class="col-lg-4 text-right m-r-5">
+				<a class="btn btn-primary btn-rounded" asp-area="Admin" asp-controller="AdminProducts" asp-action="Create"><i class="fas fa-plus-circle m-r-10	"></i><span>Thêm sản phẩm</span></a>
+				</div>
+			<!--Bảng quản lý sản phẩm -->
+		</div>
+		<div class="table-responsive">
+			<table class="table">
+				<thead class="bg-light">
+					<tr class="border-0">
+						<th class="border-0">ID</th>
+						<th class="border-0">Tên sản phẩm</th>
+						<th class="border-0">Danh Mục</th>
+						<th class="border-0">Giá</th>
+						<th class="border-0">Tồn kho</th>
+						<th class="border-0">Trạng Thái</th>
+						<th class="border-0">Thao Tác</th>
+					</tr>
+				</thead>
+				<tbody id="records_table">
+				<!--Khai báo cho từng sản phẩm -->
+					@if (Model != null)
+					{
+						foreach (var item in Model)
+						{
+							<tr>
+								<td>@item.ProductId</td>
+								<td>@item.ProductName</td>
+								<td>@item.Cat.CatName </td>
+								<td>@item.Price.Value.ToString("#,##0") VNĐ</td>
+								<td>@item.UnitsInStock</td>
+								<td>
+									@if (item.UnitsInStock	>0)
+									{
+										<div class="d-flex align-items-center">
+											<div class="badge-dot badge-success  m-r-10"></div>
+											<div>Còn bán </div>
+										</div>
+									}
+									else
+									{
+										<div class="d-flex align-items-center">
+											<div class="badge-dot badge-danger  m-r-10"></div>
+											<div>Hết hàng </div>
+										</div>
+
+
+									}
+								</td>
+							<!--ba nút thao tác sản phẩm -->
+								<td>
+									<a class="btn btn-success" asp-area="Admin" asp-controller="AdminProducts" asp-action="Details" asp-route-id="@item.ProductId">Chi tiết</a>
+									<a class="btn btn-warning" asp-area="Admin" asp-controller="AdminProducts" asp-action="Edit" asp-route-id="@item.ProductId">Sửa</a>
+									<a class="btn btn-danger" asp-area="Admin" asp-controller="AdminProducts" asp-action="Delete" asp-route-id="@item.ProductId">Xóa</a>
+
+								</td>
+							</tr>
+						}
+					}
+
+
+				</tbody>
+			</table>
+			<div aria-label="Page navigation example">
+				<ul class="pagination">
+					<pager class="pager-container" list="@Model" asp-area="Admin" asp-controller="AdminProducts" asp-route-CatID="@ViewBag.CurrentCateID" asp-action="Index" />
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+@section Scripts{
+	<script>
+		$(document).ready(function () {
+			jQuery("#txtCatID").change(function () {
+				var catID = jQuery(this).children(":selected").attr("value");
+				catID = parseFloat(catID);
+				$('#txtCatID option')
+					.removeAttr('selected');
+				$("#txtCatID > [value=" + catID + "]").attr("selected", "true");
+				$.ajax({
+					url: '/Admin/AdminProducts/Filtter',
+					datatype: "json",
+					type: "GET",
+					data: {
+						CatID: catID
+					},
+					async: true,
+					success: function (results) {
+						if (results.status == "success") {
+							window.location.href = results.redirectUrl;
+						}
+					},
+					error: function (xhr) {
+						alert('error');
+					}
+				});
+			});
+
+			$("#keyword").keyup(function () {
+				var strkeyword = $('#keyword').val();
+				$.ajax({
+					url: '/Admin/Search/FindProduct/',
+					datatype: "json",
+					type: "POST",
+					data: { keyword: strkeyword },
+					async: true,
+					success: function (results) {
+						$("#records_table").html("");
+						$("#records_table").html(results);
+					},
+					error: function (xhr) {
+						alert('error');
+					}
+				});
+			});
+		});
+	</script>
+
+}

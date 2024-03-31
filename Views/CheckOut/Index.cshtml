@@ -1,0 +1,968 @@
+﻿@{
+    ViewData["Title"] = "CheckOut Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Phần giới thiệu trnag thanh toán -->
+<div class="page-style-a">
+    <div class="container">
+        <div class="page-intro">
+            <h2>Thanh Toán</h2>
+                  <!--Thông tin bread-crumb -->
+            <ul class="bread-crumb">
+                <li class="has-separator">
+                    <i class="ion ion-md-home"></i>
+                    <a asp-controller="Home" asp-action="Index">Trang chủ</a>
+                </li>
+                <!--Phần Thông tin bread-crumb được đánh dấu -->
+                <li class="is-marked">
+                    <a asp-controller="CheckOut" asp-action="Index">Thanh Toán</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Phần giới thiệu trnag thanh toán -->
+<!-- Phần nội dung trang thanh toán-->
+<div class="page-checkout u-s-p-t-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <!--Mục gấp thứ nhất -->
+                <div>
+                    <div class="message-open u-s-m-b-24">
+                        Phàn Hồi Khách Hàng? <strong>
+                            <a class="u-c-brand" data-toggle="collapse" href="#showlogin"> Nhấn Vào Đây Để Đăng Nhập </a>
+                        </strong>
+                    </div>
+                    <div class="collapse u-s-m-b-24" id="showlogin">
+                        <!--Lời mừng -->
+                        <h6 class="collapse-h6">Chào mừng trở lại! Đăng nhập vào tài khoản của bạn.</h6>
+                        <h6 class="collapse-h6">Nếu bạn đã từng mua hàng với chúng tôi trước đây, vui lòng nhập thông tin chi tiết của bạn vào các ô bên dưới. Nếu bạn là khách hàng mới, vui lòng chuyển sang phần Thông tin Thanh toán & Vận chuyển.</h6>
+                        <!-- Form điền thông tin đăng nhập-->
+                        <form>
+                            <div class="group-inline u-s-m-b-13">
+
+                                <div class="group-1 u-s-p-r-16">
+                                    <label for="user-name-email">
+                                        Tên Đăng Nhập / Email <span class="astk">*</span>
+                                    </label>
+                                    <input type="text" id="user-name-email" class="text-field" placeholder="Tên Đăng Nhập / Email">
+                                </div>
+                                <div class="group-2">
+                                    <label for="password">
+                                        Mật Khẩu <span class="astk">*</span>
+                                    </label>
+                                    <input type="text" id="password" class="text-field" placeholder="Mật Khẩu">
+                                </div>
+                            </div>
+                            <div class="u-s-m-b-13">
+                                <button type="submit" class="button button-outline-secondary">Đăng Nhập</button>
+                                <input type="checkbox" class="check-box" id="remember-me-token">
+                                <label class="label-text" for="remember-me-token">Nhớ Tài Khoản</label>
+                            </div>
+                            <div class="page-anchor">
+                                <a href="#" class="u-c-brand">Quên Mật Khẩu?</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--Mục gấp thứ nhất -->
+
+                <frm>
+                    <div class="row">
+                        <!-- Một nữa là thông tin khách hàng để  thanh toán và ship hàng  -->
+                        <div class="col-lg-6">
+                            <h4 class="section-h4">THÔNG TIN THANH TOÁN</h4>
+                            <!-- Form thông tin  -->
+                            <!-- Họ tên  -->
+                            <div class="group-inline u-s-m-b-13">
+                                <div class="group-1 u-s-p-r-16">
+                                    <label for="first-name">
+                                        Họ <span class="astk">*</span>
+                                    </label>
+                                    <input type="text" id="first-name" class="text-field">
+                                </div>
+                                <div class="group-2">
+                                    <label for="last-name">
+                                        Tên <span class="astk">*</span>
+                                    </label>
+                                    <input type="text" id="last-name" class="text-field">
+                                </div>
+                            </div>
+                            <!-- Quốc gia-->
+                            <div class="u-s-m-b-13">
+                                <label for="select-country">
+                                    Quốc gia <span class="astk">*</span>
+                                </label>
+                                <div class="select-box-wrapper">
+                                    <select class="select-box" id="select-country">
+                                        <option selected="selected" value="">Chọn Quốc Gia...</option>
+                                        <option value="">United Kingdom (UK)</option>
+                                        <option value="">United States (US)</option>
+                                        <option value="">United Arab Emirates (UAE)</option>
+                                        <option value="">VietNam</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Địa chỉ  -->
+                            <div class="street-address u-s-m-b-13">
+                                <label for="req-st-address">
+                                    Địa chỉ <span class="astk">*</span>
+                                </label>
+                                <input type="text" id="req-st-address" class="text-field" placeholder="Số Nhà và Tên Đường">
+                                <label class="sr-only" for="opt-st-address"></label>
+                                <input type="text" id="opt-st-address" class="text-field" placeholder="Tên Cơ Quan">
+                            </div>
+                            <!-- Phường-->
+                            <div class="u-s-m-b-13">
+                                <label for="town-city">
+                                    Phường <span class="astk">*</span>
+                                </label>
+                                <input type="text" id="town-city" class="text-field">
+                            </div>
+                            <div class="u-s-m-b-13">
+                                 <!-- Quận -->
+                                <label for="select-state">
+                                    Quận <span class="astk"> *</span>
+                                </label>
+                                <div class="select-box-wrapper">
+                                    <select class="select-box" id="select-state">
+                                        <option selected="selected" value="">Chọn Quận...</option>
+                                        <option value="">Quận 1</option>
+                                        <option value="">Quận 2</option>
+                                        <option value="">Quận 3</option>
+                                        <option value="">Quận 4</option>
+                                        <option value="">Quận 5</option>
+                                        <option value="">Quận 6</option>
+                                        <option value="">Quận 7</option>
+                                        <option value="">Quận 8</option>
+                                        <option value="">Quận 9</option>
+                                        <option value="">Quận 10</option>
+                                        <option value="">Quận 11</option>
+                                        <option value="">Quận 12</option>
+                                        <option value="">Quận Bình Thạnh</option>
+                                        <option value="">Quận Gò Vấp</option>
+                                        <option value="">Quận Tân Bình</option>
+                                        <option value="">Quận Tân Phú</option>
+                                        <option value="">Quận Bình Tân</option>
+                                        <option value="">Quận Bình Chánh</option>
+                                        <option value="">Thành Phố Thủ Đức</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Mã post code -->
+                            <div class="u-s-m-b-13">
+                                <label for="postcode">
+                                    Postcode / Zip <span class="astk">*</span>
+                                </label>
+                                <input type="text" id="postcode" class="text-field">
+                            </div>
+                            <!-- Thông tin email và SĐT  -->
+                            <div class="group-inline u-s-m-b-13">
+                                <div class="group-1 u-s-p-r-16">
+                                    <label for="email">
+                                        Email <span class="astk">*</span>
+                                    </label>
+                                    <input type="text" id="email" class="text-field">
+                                </div>
+                                <div class="group-2">
+                                    <label for="phone">
+                                        Số Điện Thoại <span class="astk">*</span>
+                                    </label>
+                                    <input type="text" id="phone" class="text-field">
+                                </div>
+                            </div>
+                            <div class="u-s-m-b-30">
+                                <input type="checkbox" class="check-box" id="create-account">
+                                <label class="label-text" for="create-account">Tạo Tài Khoản</label>
+                            </div>
+                            <!-- Điền thông tin giao hàng-->
+                            <h4 class="section-h4">THÔNG TIN GIAO HÀNG</h4>
+                            <div class="u-s-m-b-24">
+                                <input type="checkbox" class="check-box" id="ship-to-different-address" data-toggle="collapse" data-target="#showdifferent">
+                                <label class="label-text" for="ship-to-different-address">Giao Hàng Đến Địa Chỉ Khác?</label>
+                            </div>
+                            <div class="collapse" id="showdifferent">
+                                <div class="group-inline u-s-m-b-13">
+                                    <div class="group-1 u-s-p-r-16">
+                                        <label for="first-name-extra">
+                                            Họ <span class="astk">*</span>
+                                        </label>
+                                        <input type="text" id="first-name-extra" class="text-field">
+                                    </div>
+                                    <div class="group-2">
+                                        <label for="last-name-extra">
+                                            Tên <span class="astk">*</span>
+                                        </label>
+                                        <input type="text" id="last-name-extra" class="text-field">
+                                    </div>
+                                </div>
+                                <div class="u-s-m-b-13">
+                                    <label for="select-country-extra">
+                                        Country <span class="astk">*</span>
+                                    </label>
+                                    <div class="select-box-wrapper">
+                                        <select class="select-box" id="select-country-extra">
+                                            <option selected="selected" value="">Chọn Quốc Gia...</option>
+                                            <option value="">United Kingdom (UK)</option>
+                                            <option value="">United States (US)</option>
+                                            <option value="">United Arab Emirates (UAE)</option>
+                                            <option value="">VietNam</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="street-address u-s-m-b-13">
+                                    <label for="req-st-address-extra">
+                                        Địa Chỉ <span class="astk">*</span>
+                                    </label>
+                                    <input type="text" id="req-st-address-extra" class="text-field" placeholder="Số Nhà Và Tên Đường">
+                                    <label class="sr-only" for="opt-st-address-extra"></label>
+                                    <input type="text" id="opt-st-address-extra" class="text-field" placeholder="Tên Cơ Quan">
+                                </div>
+                                <div class="u-s-m-b-13">
+                                    <label for="town-city">
+                                        Phường <span class="astk">*</span>
+                                    </label>
+                                    <input type="text" id="town-city" class="text-field">
+                                </div>
+                                <div class="u-s-m-b-13">
+                                    <label for="select-state">
+                                        Quận <span class="astk"> *</span>
+                                    </label>
+                                    <div class="select-box-wrapper">
+                                        <select class="select-box" id="select-state">
+                                            <option selected="selected" value="">Chọn Quận...</option>
+                                            <option value="">Quận 1</option>
+                                            <option value="">Quận 2</option>
+                                            <option value="">Quận 3</option>
+                                            <option value="">Quận 4</option>
+                                            <option value="">Quận 5</option>
+                                            <option value="">Quận 6</option>
+                                            <option value="">Quận 7</option>
+                                            <option value="">Quận 8</option>
+                                            <option value="">Quận 9</option>
+                                            <option value="">Quận 10</option>
+                                            <option value="">Quận 11</option>
+                                            <option value="">Quận 12</option>
+                                            <option value="">Quận Bình Thạnh</option>
+                                            <option value="">Quận Gò Vấp</option>
+                                            <option value="">Quận Tân Bình</option>
+                                            <option value="">Quận Tân Phú</option>
+                                            <option value="">Quận Bình Tân</option>
+                                            <option value="">Quận Bình Chánh</option>
+                                            <option value="">Thành Phố Thủ Đức</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="u-s-m-b-13">
+                                    <label for="postcode">
+                                        Postcode / Zip <span class="astk">*</span>
+                                    </label>
+                                    <input type="text" id="postcode" class="text-field">
+                                </div>
+                                <div class="group-inline u-s-m-b-13">
+                                    <div class="group-1 u-s-p-r-16">
+                                        <label for="email">
+                                            Email <span class="astk">*</span>
+                                        </label>
+                                        <input type="text" id="email" class="text-field">
+                                    </div>
+                                    <div class="group-2">
+                                        <label for="phone">
+                                            Số Điện Thoại <span class="astk">*</span>
+                                        </label>
+                                        <input type="text" id="phone-extra" class="text-field">
+                                    </div>
+                                </div>
+                                <!-- kết Form /- -->
+                            </div>
+                            <div>
+                                <label for="order-notes">Ghi Chú Đơn Hàng</label>
+                                <textarea class="text-area" id="order-notes" placeholder="Ghi chú về đơn hàng của bạn tại đây."></textarea>
+                            </div>
+                        </div>
+                        <!-- Billing-&-Shipping-Details /- -->
+                        <!-- Xác nhận thanh toán -->
+                        <div class="col-lg-6">
+                            <h4 class="section-h4">XÁC NHẬN ĐƠN HÀNG</h4>
+                            <!-- Phần sản phẩm sẽ mua -->
+                            <div class="table-wrapper u-s-m-b-35" style="max-height: 200px; overflow-y: auto;">
+                                <table id="cartTable">
+                                    <tbody>
+                                        <!--Sản phẩm 1 -->
+                                        <tr>
+                                            <td>
+                                                <div class="cart-anchor-image">
+                                                    <a asp-controller="Product" asp-action="Details">
+                                                        <img src="~/images/cart/iphone15plus.jpg" alt="Product">
+                                                        <h6>Iphone 15 Pro Max</h6>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="cart-price"> 15.000.000đ </div>
+                                            </td>
+                                            <td>
+                                                <div class="cart-quantity">
+                                                    <div class="quantity">
+                                                        <input type="text" class="quantity-text-field" value="1">
+                                                        <a class="plus-a" data-max="1000">&#43;</a>
+                                                        <a class="minus-a" data-min="1">&#45;</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="action-wrapper">
+                                                    <button class="button button-outline-secondary fas fa-trash"></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!--Sản phẩm 2 -->
+                                        <tr>
+                                            <td>
+                                                <div class="cart-anchor-image">
+                                                    <a asp-controller="Product" asp-action="Details">
+                                                        <img src="~/images/cart/laptop-asus.jpg" alt="Product">
+                                                        <h6>LapTop</h6>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="cart-price"> 17.000.000đ </div>
+                                            </td>
+                                            <td>
+                                                <div class="cart-quantity">
+                                                    <div class="quantity">
+                                                        <input type="text" class="quantity-text-field" value="1">
+                                                        <a class="plus-a" data-max="1000">&#43;</a>
+                                                        <a class="minus-a" data-min="1">&#45;</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="action-wrapper">
+                                                    <button class="button button-outline-secondary fas fa-trash"></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!--Sản phẩm 3 -->
+                                        <tr>
+                                            <td>
+                                                <div class="cart-anchor-image">
+                                                    <a asp-controller="Product" asp-action="Details">
+                                                        <img src="~/images/cart/redmi.jpg" alt="Product">
+                                                        <h6>Xiaomi Note 9 </h6>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="cart-price"> 3.500.000đ </div>
+                                            </td>
+                                            <td>
+                                                <div class="cart-quantity">
+                                                    <div class="quantity">
+                                                        <input type="text" class="quantity-text-field" value="1">
+                                                        <a class="plus-a" data-max="1000">&#43;</a>
+                                                        <a class="minus-a" data-min="1">&#45;</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="action-wrapper">
+                                                    <button class="button button-outline-secondary fas fa-trash"></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!--Sản phẩm 4 -->
+                                        <tr>
+                                            <td>
+                                                <div class="cart-anchor-image">
+                                                    <a asp-controller="Product" asp-action="Details">
+                                                        <img src="~/images/cart/laptop-dell.jpg" alt="Product">
+                                                        <h6>Dell Inspiron 15</h6>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="cart-price"> 20.500.000đ </div>
+                                            </td>
+                                            <td>
+                                                <div class="cart-quantity">
+                                                    <div class="quantity">
+                                                        <input type="text" class="quantity-text-field" value="1">
+                                                        <a class="plus-a" data-max="1000">&#43;</a>
+                                                        <a class="minus-a" data-min="1">&#45;</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="action-wrapper">
+                                                    <button class="button button-outline-secondary fas fa-trash"></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Định dạng Khung hiển thị khuyến mãi -->
+                            <div id="promotion-wrapper">
+                                <style>
+                                    #promotion-wrapper {
+                                        background-color: #f5f5f5;
+                                        padding: 20px;
+                                        border: 1px solid #ddd;
+                                        border-radius: 4px;
+                                        margin-bottom: 24px;
+                                    }
+
+                                        #promotion-wrapper h3 {
+                                            font-size: 20px;
+                                            margin-bottom: 10px;
+                                        }
+
+                                    #promotion-select {
+                                        padding: 5px 10px;
+                                        font-size: 16px;
+                                        border: 1px solid #ddd;
+                                        border-radius: 4px;
+                                        margin-right: 10px;
+                                    }
+
+                                    #apply-promotion-button {
+                                        padding: 10px 20px;
+                                        font-size: 16px;
+                                        background-color: red;
+                                        color: #fff;
+                                        border: none;
+                                        border-radius: 4px;
+                                        cursor: pointer;
+                                    }
+
+                                        #apply-promotion-button:hover {
+                                            background-color: tomato;
+                                        }
+                                </style>
+                                <!--Chọn khuến mãi -->
+                                <h3>Chọn khuyến mãi:</h3>
+                                <select id="promotion-select" onchange="updateDiscount()">
+                                    <option value="0">Không có khuyến mãi</option>
+                                    <option value="100000">Giảm giá 100.000đ</option>
+                                    <option value="200000">Giảm giá 200.000đ</option>
+                                    <!-- Thêm các khuyến mãi khác vào đây -->
+                                </select>
+
+                                <button id="apply-promotion-button" onclick="applyPromotion()">Áp dụng</button>
+                            </div>
+                            <div>
+                                <style>
+                                    .message-open {
+                                        background-color: #f5f5f5;
+                                        padding: 10px;
+                                        border: 1px solid #ddd;
+                                        border-radius: 4px;
+                                        margin-bottom: 24px;
+                                        font-size: 18px;
+                                    }
+
+                                        .message-open strong {
+                                            font-weight: bold;
+                                        }
+
+                                        .message-open a {
+                                            color: #007bff;
+                                            text-decoration: none;
+                                        }
+
+                                    .collapse-h6 {
+                                        font-size: 16px;
+                                        font-weight: bold;
+                                        margin-top: 10px;
+                                    }
+                                </style>
+                                               <!--Khung chọn mã khuyễn mãi-->
+                                <div class="message-open u-s-m-b-24">
+                                    Sử Dụng Mã Giảm Giá? <strong>
+                                        <a class="u-c-brand" data-toggle="collapse" href="#showcoupon">Nhấn Vào Đây Để Nhập Mã</a>
+                                    </strong>
+                                </div>
+                                <div class="collapse u-s-m-b-24" id="showcoupon">
+                                    <h6 class="collapse-h6"> Nhập Mã Phiếu Giảm Giá Của Bạn (Nếu Có). </h6>
+                                    <div class="coupon-field">
+                                        <label class="sr-only" for="coupon-code">Apply Coupon</label>
+                                        <input id="coupon-code" type="text" class="text-field" placeholder="Mã Giảm Giá">
+                                        <button type="submit" class="button">Áp Dụng</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="calculation u-s-m-b-60">
+                                <div class="table-wrapper-2">
+                                    <table>
+                                        <tbody>
+                                            <!--Tổng tiền hàng -->
+                                            <tr>
+                                                <td>
+                                                    <h3 class="calc-h3 u-s-m-b-0">Tổng Tiền Hàng</h3>
+                                                </td>
+                                                <td id="totalPrice">
+                                                    <span class="calc-text">0đ</span>
+                                                </td>
+                                            </tr>
+                                            <!--Tiền vận chuyển -->
+                                            <tr>
+                                                <td>
+                                                    <h3 class="calc-h3 u-s-m-b-8">Phí Vận Chuyển</h3>
+                                                <td id="shippingFee">
+                                                    <span class="calc-text">0đ</span>
+                                                </td>
+                                            </tr>
+                                            <!--Tiền giảm giá -->
+                                            <tr>
+                                                <td>
+                                                    <h3 class="calc-h3 u-s-m-b-8">Tổng Cộng Voucher Giảm Giá</h3>
+                                                </td>
+                                                <td id="discountAmount">
+
+                                                    <span class="calc-text">0đ</span>
+                                                </td>
+                                            </tr>
+                                            <!--Tổng chi trả -->
+                                            <tr>
+                                                <td>
+                                                    <h3 class="calc-h3 u-s-m-b-0">Tống Thanh Toán</h3>
+                                                </td>
+                                                <td id="totalPayment">
+                                                    <span class="calc-text">0đ</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+
+                            </div>
+                            <!-- Chọn Phương thức thanh toán - -->
+                            <h4 class="section-h4">PHƯƠNG THỨC THANH TOÁN</h4>
+                            <div class="u-s-m-b-13">
+                                <input type="radio" class="radio-box" name="payment-method" id="cash-on-delivery">
+                                <label class="label-text" for="cash-on-delivery">Thanh Toán Khi Nhận Hàng (COD)</label>
+                            </div>
+                            <div class="u-s-m-b-13">
+                                <input type="radio" class="radio-box" name="payment-method" id="credit-card-stripe">
+                                <label class="label-text" for="credit-card-stripe">Thanh Toán Bằng Thẻ Tín Dụng</label>
+                            </div>
+                            <div class="u-s-m-b-13">
+                                <input type="radio" class="radio-box" name="payment-method" id="paypal">
+                                <label class="label-text" for="paypal">Thanh Toán Bằng Thẻ Nội Địa</label>
+                            </div>
+                            <div class="u-s-m-b-13">
+                                <input type="checkbox" class="check-box" id="accept">
+                                <label class="label-text no-color" for="accept">
+                                    Tôi Đồng Ý Với <a href="terms-and-conditions.html" class="u-c-brand">Điều Khoản Dịch Vụ</a>
+                                </label>
+                            </div>
+
+                            <div>
+                                <button type="submit" class="button button-outline-secondary dathang" id="orderButton">ĐẶT HÀNG</button>
+                            </div>
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    const orderButton = document.getElementById("orderButton");
+
+                                    orderButton.addEventListener("click", function () {
+                                        alert("Đã đặt hàng thành công");
+                                    });
+                                });
+                            </script>
+
+                            <style>
+                                .dathang {
+                                    padding: 10px 20px;
+                                    font-size: 16px;
+                                    background-color: red;
+                                    color: #fff;
+                                    border: none;
+                                    border-radius: 4px;
+                                    cursor: pointer;
+                                }
+
+                                .dathang {
+                                    background-color: orangered;
+                                }
+                            </style>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Phần nội dung trang thanh toán-->
+<br />
+<br />
+<!-- Các sản phẩm mua kèm theo -->
+<section class="section-maker">
+    <div class="container">
+        <div class="sec-maker-header text-center">
+            <h3 class="sec-maker-h3">SẢN PHẨM MUA KÈM</h3>
+        </div>
+        <div class="slider-fouc">
+            <!--Hiện tối đa 4 sản phẩm và có nút slide dể trượt qua  -->
+            <div class="products-slider owl-carousel" data-item="4">
+                <!-- Sản phẩm 1  -->
+
+                <div class="item">
+                    <div class="image-container">
+                        <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                            <img class="img-fluid" src="~/images/anhsp/tainghe.jpg" alt="Product">
+                        </a>
+                        <!-- Các nút khi hover vào ảnh sản phẩm  -->
+                        <div class="item-action-behaviors">
+                            <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                            <a class="item-mail" href="javascript:void(0)">Mail</a>
+                            <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                            <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                    <!--Thông tin sản phẩm  -->
+
+                    <div class="item-content">
+                        <div class="what-product-is">
+                            <ul class="bread-crumb">
+                                <li class="has-separator">
+                                    <a asp-controller="Product" asp-action="Phone">Tai nghe</a>
+                                </li>
+                                <li >
+                                    <a asp-controller="Product" asp-action="iPhone">Airpod</a>
+                                </li>
+                            </ul>
+                            <h6 class="item-title">
+                                <a asp-controller="Product" asp-action="Details"> Tai nghe Apple AirPods 3rd gen lightning charge </a>
+                            </h6>
+                            <div class="item-stars">
+                                <div class='star' title="4.5 out of 5 - based on 82 Reviews">
+                                    <span style='width:67px'></span>
+                                </div>
+                                <span>(82)</span>
+                            </div>
+                        </div>
+                        <!-- Giá  -->
+                        <div class="price-template">
+                            <div class="item-new-price"> 4.090.000₫ </div>
+                            <div class="item-old-price"> 5.390.000₫ </div>
+                        </div>
+                        <div style="text-align:end">
+                            <span>Đã bán:</span>
+                            <span class="data-sales">100</span>
+                        </div>
+                    </div>
+                    <!-- Nhãn Hot  -->
+
+                    <div class="tag hot">
+                        <span>HOT</span>
+                    </div>
+                </div>
+                <!-- Sản phẩm 2  -->
+                <div class="item">
+                    <div class="image-container">
+                        <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                            <img class="img-fluid" src="~/images/anhsp/oplung.jpg" alt="Product">
+                        </a>
+                        <div class="item-action-behaviors">
+                            <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                            <a class="item-mail" href="javascript:void(0)">Mail</a>
+                            <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                            <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="what-product-is">
+                            <ul class="bread-crumb">
+                                <li class="has-separator">
+                                    <a asp-controller="Product" asp-action="Phone">Phụ kiện</a>
+                                </li>
+                                <li >
+                                    <a asp-controller="Product" asp-action="iPhone">Ốp lưng</a>
+                                </li>
+                            </ul>
+                            <h6 class="item-title">
+                                <a asp-controller="Product" asp-action="Details">Ốp Lưng Trong Suốt MagSafe cho iPhone 15 Pro Max</a>
+                            </h6>
+                            <div class="item-stars">
+                                <div class='star' title="4.4 out of 5 - based on 17 Reviews">
+                                    <span style='width:67px'></span>
+                                </div>
+                                <span>(20)</span>
+                            </div>
+                        </div>
+                        <div class="price-template">
+                            <div class="item-new-price"> 990.000₫ </div>
+                            <div class="item-old-price"> 1.429.000₫ </div>
+                        </div>
+                        <div style="text-align:end">
+                            <span>Đã bán:</span>
+                            <span class="data-sales">25</span>
+                        </div>
+                    </div>
+                    <div class="tag hot">
+                        <span>HOT</span>
+                    </div>
+                </div>
+                <!-- Sản phẩm 2  -->
+                <div class="item">
+                    <div class="image-container">
+                        <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                            <img class="img-fluid" src="~/images/anhsp/cusac.jpg" alt="Product">
+                        </a>
+                        <div class="item-action-behaviors">
+                            <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                            <a class="item-mail" href="javascript:void(0)">Mail</a>
+                            <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                            <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="what-product-is">
+                            <ul class="bread-crumb">
+                                <li class="has-separator">
+                                    <a asp-controller="Product" asp-action="Phone">Phụ kiện</a>
+                                </li>
+                                <li >
+                                    <a asp-controller="Product" asp-action="iPhone">Cục sạc</a>
+                                </li>
+                            </ul>
+                            <h6 class="item-title">
+                                <a asp-controller="Product" asp-action="Details">Sạc Apple 20W USB-C Power Adapter</a>
+                            </h6>
+                            <div class="item-stars">
+                                <div class='star' title="4.4 out of 5 - based on 45 Reviews">
+                                    <span style='width:67px'></span>
+                                </div>
+                                <span>(45)</span>
+                            </div>
+                        </div>
+                        <div class="price-template">
+                            <div class="item-new-price"> 459.000₫ </div>
+                            <div class="item-old-price"> 790.000₫ </div>
+                        </div>
+                        <div style="text-align:end">
+                            <span>Đã bán:</span>
+                            <span class="data-sales">62</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sản phẩm 2  -->
+                <div class="item">
+                    <div class="image-container">
+                        <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                            <img class="img-fluid" src="~/images/anhsp/daysac.jpg" alt="Product">
+                        </a>
+                        <div class="item-action-behaviors">
+                            <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                            <a class="item-mail" href="javascript:void(0)">Mail</a>
+                            <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                            <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <div class="what-product-is">
+                            <ul class="bread-crumb">
+                                <li class="has-separator">
+                                    <a asp-controller="Product" asp-action="Phone">Phụ kiện </a>
+                                </li>
+                                <li >
+                                    <a asp-controller="Product" asp-action="iPhone">Dây sạc</a>
+                                </li>
+
+                            </ul>
+                            <h6 class="item-title">
+                                <a asp-controller="Product" asp-action="Details">Cáp Apple Type-C to Type-C 2M MLL82ZP</a>
+                            </h6>
+                            <div class="item-stars">
+                                <div class='star' title="4.8 out of 5 - based on 40 Reviews">
+                                    <span style='width:72px'></span>
+                                </div>
+                                <span>(40)</span>
+                            </div>
+                        </div>
+                        <div class="price-template">
+                            <div class="item-new-price"> 650,000₫ </div>
+                            <div class="item-old-price"> 790.000₫ </div>
+                        </div>
+                        <div style="text-align:end">
+                            <span>Đã bán:</span>
+                            <span class="data-sales">47</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Các sản phẩm mua kèm theo -->
+<!-- Nội dung chính của trang thanh toán -->
+@*// Hàm tính tổng giá tiền*@
+<script>
+    $(document).ready(function () {
+        // Hàm tính tổng giá tiền
+        function calculateTotalPrice() {
+            var totalPrice = 0;cả
+            // Lặp qua từng hàng của bảng giỏ hàng
+            $("#cartTable tbody tr").each(function () {
+                var priceStr = $(this).find(".cart-price").text().trim(); // Lấy giá sản phẩm
+                var price = parseFloat(priceStr.replace(/\D/g, "")); // Chuyển đổi giá thành số, loại bỏ ký tự không phải số
+                var quantity = parseInt($(this).find(".quantity-text-field").val()); // Lấy số lượng sản phẩm
+                totalPrice += price * quantity; // Tổng giá tiền của sản phẩm (giá * số lượng)
+            });
+            return totalPrice;
+        }
+
+        // Hàm cập nhật tổng giá tiền và tổng thanh toán
+        function updateTotals() {
+            var totalPrice = calculateTotalPrice(); // Tính tổng giá tiền
+            $("#totalPrice .calc-text").text(totalPrice.toLocaleString() + "đ"); // Hiển thị tổng giá tiền
+
+            // Cập nhật tổng thanh toán
+            updateTotalPayment();
+        }
+
+        // Hàm cập nhật tổng thanh toán
+        function updateTotalPayment() {
+            var totalPayment = calculateTotalPrice(); // Lấy tổng giá tiền
+            $("#totalPayment .calc-text").text(totalPayment.toLocaleString() + "đ"); // Hiển thị tổng thanh toán
+        }
+
+        // Gọi hàm updateTotals để cập nhật tổng giá tiền và tổng thanh toán khi trang được tải
+        updateTotals();
+
+        // Lắng nghe sự kiện khi số lượng sản phẩm thay đổi (thêm hoặc bớt)
+        $(".quantity-text-field").on("change", function () {
+            updateTotals(); // Cập nhật tổng giá tiền và tổng thanh toán khi số lượng sản phẩm thay đổi
+        });
+
+        // Lắng nghe sự kiện khi nhấn nút tăng số lượng
+        $(document).on("click", ".plus-a", function () {
+            var $quantityField = $(this).siblings(".quantity").find(".quantity-text-field");
+            var maxQuantity = parseInt($(this).data("max")); // Lấy số lượng tối đa cho phép
+            var currentQuantity = parseInt($quantityField.val()); // Lấy số lượng hiện tại
+            if (currentQuantity < maxQuantity) {
+                $quantityField.val(currentQuantity + 1); // Tăng số lượng lên 1
+                updateTotals(); // Cập nhật tổng giá tiền và tổng thanh toán
+            }
+        });
+
+        // Lắng nghe sự kiện khi nhấn nút giảm số lượng
+        $(document).on("click", ".minus-a", function () {
+            var $quantityField = $(this).siblings(".quantity").find(".quantity-text-field");
+            var minQuantity = parseInt($(this).data("min")); // Lấy số lượng tối thiểu cho phép
+            var currentQuantity = parseInt($quantityField.val()); // Lấy số lượng hiện tại
+            if (currentQuantity > minQuantity) {
+                $quantityField.val(currentQuantity - 1); // Giảm số lượng đi 1
+                updateTotals(); // Cập nhật tổng giá tiền và tổng thanh toán
+            }
+        });
+
+        // Lắng nghe sự kiện khi thay đổi mã giảm giá
+        $("#promotion-select").on("change", function () {
+            updateTotals(); // Cập nhật tổng giá tiền và tổng thanh toán khi thay đổi mã giảm giá
+        });
+    });
+
+
+</script>
+@*//Xóa thùng rác*@
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Chọn các nút xóa
+        var deleteButtons = document.querySelectorAll('.fa-trash');
+
+        deleteButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                var row = this.closest('tr'); // tìm tag cha
+                var price = row.querySelector('.cart-price').textContent.trim();// lấy giá trị về giá
+                var totalPriceElement = document.getElementById('totalPrice');
+                var totalPaymentElement = document.getElementById('totalPayment');
+
+                var totalPriceText = totalPriceElement.textContent.trim();
+                var totalPrice = parseInt(totalPriceText.replace('đ', '').replace(/\D/g, ''), 10); // chuyển tổng giá về dạng số
+
+                // Xóa dòng đó
+                row.remove();
+
+                // Cập nhật tổng giá
+                totalPrice -= parseInt(price.replace('đ', '').replace(/\D/g, ''), 10);
+                totalPriceElement.textContent = formatCurrency(totalPrice);
+
+                // Cập nhật tổng chi trả
+                var totalPayment = calculateTotalPayment();
+                totalPaymentElement.textContent = formatCurrency(totalPayment);
+            });
+        });
+
+        //Hàm để định dạng loại tiền tệ
+                function formatCurrency(amount) {
+            return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
+        }
+
+        // Hàm tính tổng giá
+        function calculateTotalPayment() {
+            const totalPrice = parseInt(document.getElementById('totalPrice').textContent.trim().replace('đ', '').replace(/\D/g, ''), 10);
+            const discountAmount = parseInt(document.getElementById('discountAmount').textContent.trim().replace('đ', '').replace(/\D/g, ''), 10);
+            const totalPayment = Math.max(totalPrice - discountAmount, 0); // Ensure totalPayment is never negative
+            return totalPayment;
+        }
+    });
+</script>
+@*// Áp dụng mã giảm giả*@
+<script>
+
+    // TÍnh tổng giá
+    function calculateTotalPrice() {
+        let totalPrice = 0;
+        const cartItems = document.querySelectorAll('#cartTable tbody tr');
+        cartItems.forEach(function (item) {
+            const priceStr = item.querySelector('.cart-price').textContent.trim();
+            const price = parseFloat(priceStr.replace('đ', '').replace(/\D/g, '').trim());
+            const quantity = parseInt(item.querySelector('.quantity-text-field').value.trim());
+            totalPrice += price * quantity;
+        });
+        return totalPrice;
+    }
+
+    // cập nhật tổng chi trả
+
+    function calculateTotalPayment() {
+        const totalPrice = calculateTotalPrice();
+        const discountAmount = parseFloat(document.getElementById('discountAmount').textContent.trim().replace('đ', '').replace(/\D/g, '').trim());
+        const totalPayment = Math.max(totalPrice - discountAmount, 0); // Ensure totalPayment is never negative
+        return totalPayment;
+    }
+
+    // cập nhật tổng giá
+    function updateTotals() {
+        const totalPrice = calculateTotalPrice();
+        const totalPayment = calculateTotalPayment();
+
+        document.getElementById('totalPrice').textContent = totalPrice.toLocaleString() + 'đ';
+        document.getElementById('totalPayment').textContent = totalPayment.toLocaleString() + 'đ';
+    }
+
+    //Hàm áp dụng giảm giá
+    function applyPromotion() {
+        const selectElement = document.getElementById('promotion-select');
+        const selectedValue = parseFloat(selectElement.options[selectElement.selectedIndex].value);
+        document.getElementById('discountAmount').textContent = selectedValue.toLocaleString() + 'đ';
+        updateTotals(); // Update totals only after applying promotion
+    }
+
+
+    // Quan sát sự thay Đổi số lượng
+    const quantityInputs = document.querySelectorAll('.quantity-text-field');
+    quantityInputs.forEach(function (input) {
+        input.addEventListener('input', function () {
+            updateTotals();
+        });
+    });
+
+    // Cập nhật tổng giá
+    updateTotals();
+</script>

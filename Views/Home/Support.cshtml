@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewData["Title"] = "Hỗ Trợ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Đoạn giới thiệu trang hỗ trợ-->
+<div class="page-style-a">
+    <div class="container">
+        <div class="page-intro">
+            <h2>FAQ</h2>
+            <!--Thông tin bread-crumb -->
+            <ul class="bread-crumb">
+                <li class="has-separator">
+                 
+                    <i class="ion ion-md-home"></i>
+                    <a asp-controller="Home" asp-action="Index">Trang Chủ</a>
+                </li>
+                <!--Phần Thông tin bread-crumb được đánh dấu -->
+                <li class="is-marked">
+                    <a asp-controller="Home" asp-action="Support">FAQ</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Đoạn giới thiệu trang hỗ trợ-->
+<!-- Nội dung chính của trang  -->
+<div class="page-faq u-s-p-t-80">
+    <div class="container">
+        <div class="faq u-s-m-b-50">
+            <h1>Các <span style="color: #ff0000;">Câu Hỏi</span> Thường Gặp</h1>
+            <style>
+                .page-faq .faq h1 {
+                    text-align: center; /* Căn giữa tiêu đề */
+
+                    font-size: 36px; /* Kích thước lớn hơn */
+                    font-weight: bold;
+                    margin-bottom: 30px; /* Khoảng cách dưới */
+                }
+            </style>
+        </div>
+        <div class="u-s-m-b-50">
+            <!-- Câu hỏi 1   -->
+
+            <div class="f-a-q u-s-m-b-30">
+                <!-- Thanh gạt mở câu hỏi    -->
+                <a data-toggle="collapse" href="#faq-1" id="question1">Làm cách nào để tôi nhận được mã giảm giá từ THE GOAT ? </a>
+                <div class="collapse show" id="faq-1">
+                    <!-- Nôi dung câu trả lời   -->
+                    <p class="faq__text">Để nhận được mã giảm giá từ The Goat, hãy thực hiện các bước sau:</p>
+                    <!-- dùng Strong để làm nôi bật câu trả lời   -->
+                    <p class="faq__text"><strong>1. Trở thành thành viên của The Goat:</strong> Điền thông tin của bạn tại mục "Đăng kí thành viên" ở cuối trang, sau đó nhấn nút "Đăng kí"
+
+                    <p class="faq__text"><strong>2. Chờ đợi thông báo từ chúng tôi:</strong> Mã giảm giá sẽ được đính kèm tại các sự kiện giảm giá tiếp theo và Retrodx sẽ email thông báo đến bạn.</p>
+                </div>
+            </div>
+            <!-- Câu hỏi 2   -->
+            <div class="f-a-q u-s-m-b-30">
+                <a data-toggle="collapse" href="#faq-2" id="question2">Phí vận chuyển được tính như thế nào ?</a>
+                <div class="collapse" id="faq-2">
+                    <p class="faq__text">Chi phí vận chuyển của một đơn hàng được tính dựa trên <strong> 2 yếu tố:</strong></p>
+                    <p class="faq__text"><strong>1. Tổng khối lượng của đơn hàng:</strong> được tính dựa trên khối lượng sản phẩm mà The Goat đã tạo lập</p>
+                    <p class="faq__text"><strong>2. Khoảng cách giữa cửa hàng The Goat và Người mua:</strong> được tính dựa trên địa chỉ lấy hàng mặc định của Retrodx và địa chỉ nhận hàng của Người mua</p>
+                </div>
+            </div>
+            <!-- Câu hỏi 3   -->
+            <div class="f-a-q u-s-m-b-30">
+                <a data-toggle="collapse" href="#faq-3" id="question3">Làm thế nào để theo dõi đơn hàng ?</a>
+                <div class="collapse" id="faq-3">
+                    <p class="faq__text">Để theo dõi đơn hàng đã đặt, bạn cần:</p>
+                    <p class="faq__text"><strong>1. Nhận thông tin vận chuyển:</strong> Sau khi đơn hàng của bạn được xác nhận và gửi đi, bạn sẽ nhận được thông tin vận chuyển. Thông tin này sẽ được gửi qua email hoặc tin nhắn văn bản.</p>
+                    <p class="faq__text"><strong>2. Theo dõi đơn hàng: </strong>Trong thông tin vận chuyển, bạn sẽ nhận được mã theo dõi. Bạn có thể sử dụng mã này để theo dõi tình trạng của đơn hàng trên trang web của dịch vụ vận chuyển.</p>
+                </div>
+            </div>
+            <!-- Câu hỏi 4   -->
+            <div class="f-a-q u-s-m-b-30">
+                <a data-toggle="collapse" href="#faq-4" id="question4">Quy trình hoàn trả sản phẩm như thế nào ?</a>
+                <div class="collapse" id="faq-4">
+                    <p>
+                        Chúng tôi cam kết cung cấp dịch vụ đổi trả hàng đơn giản và thuận tiện. Vui lòng đọc kỹ chính sách đổi trả hàng của chúng tôi để biết thông tin chi tiết về điều kiện và quy trình đổi trả <span style="text-decoration: underline; color: red;">tại đây</span>
+                    </p>
+
+                </div>
+            </div>
+            <!-- Câu hỏi 5  -->
+            <div class="f-a-q u-s-m-b-30">
+                <a data-toggle="collapse" href="#faq-5" id="question5">Làm thế nào để liên hệ Chăm sóc Khách hàng (CSKH) ?</a>
+                <div class="collapse" id="faq-5">
+                    <p class="faq__text"><strong>1. Phương tiện liên hệ:</strong> The Goat hỗ trợ liên hệ thông qua nhiều kênh khác nhau để đảm bảo khách hàng sẽ thuận tiện nhất khi cần hỗ trợ. Bạn có thể liên hệ với The Goat qua email, số điện thoại hoặc trực tiếp tại cửa hàng.</p>
+                    <p class="faq__text"><strong>2. Tìm thông tin liên hệ </strong>Để biết thêm chi tiết hoặc đặt câu hỏi, vui lòng xem trang <strong>"Liên hệ" </strong>trên trang web của The Goat. Tại đó, bạn sẽ tìm thấy thông tin cụ thể để liên hệ với bộ phận dịch vụ khách hàng của The Goat.</p>
+                    <p class="faq__text"><strong> The Goat</strong> cam kết cung cấp dịch vụ hỗ trợ khách hàng chuyên nghiệp và nhanh chóng. Nếu bạn cần bất kỳ trợ giúp hoặc giải đáp thắc mắc nào, vui lòng liên hệ với chúng tôi. Đội ngũ chăm sóc khách hàng của The Goat sẽ luôn sẵn sàng để giúp đỡ bạn mọi lúc, mọi nơi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Nội dung chính của trang  -->

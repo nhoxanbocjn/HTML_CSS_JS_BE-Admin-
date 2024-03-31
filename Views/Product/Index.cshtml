@@ -1,0 +1,976 @@
+﻿@model IEnumerable<TechWeb.Models.Product>
+
+@{
+    ViewData["Title"] = "ProDuct Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ <link rel="stylesheet" href="css/product.css">
+    <!-- icon -->
+    <style>
+        /* Ẩn biểu tượng dropdown khi màn hình lớn */
+        .dropdown-btn {
+            display: none;
+        }
+            /* Hiển thị biểu tượng dropdown chỉ khi màn hình nhỏ */
+            .dropdown-btn {
+                display: inline-block;
+            }
+        
+
+        /* Hiển thị danh sách khi .dropdown-active được thêm vào */
+        .category-list.dropdown-active {
+            display: block;
+        }
+        button.facet-link {
+            border: none;
+            background-color: white;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/c1744beaa1.js" crossorigin="anonymous"></script>
+<!--giới thiệu trang sản phẩm -->
+<div class="page-style-a">
+    <div class="container">
+        <div class="page-intro">
+            <h2>Sản phẩm</h2>
+            <!--Thông tin bread-crumb -->
+            <ul class="bread-crumb">
+                <li class="has-separator">
+                    <i class="ion ion-md-home"></i>
+                    <a asp-controller="Home" asp-action="Index">Trang chủ</a>
+                </li>
+                  <!--Phần Thông tin bread-crumb được đánh dấu -->
+                <li class="is-marked">
+                    <a asp-controller="Product" asp-action="Index">Sản phẩm</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--Nội dung giới thiệu trang sản phẩm -->
+<!--Nội dung giới thiệu trang sản phẩm -->
+
+<div class="page-shop u-s-p-t-80">
+    <div class="container">
+        <!-- Phần giới thiệu -->
+        <div class="shop-intro">
+            <h3>Sản phẩm</h3>
+        </div>
+        <!-- Phần giới thiệu -->
+        <div class="row">
+            <!-- Thanh thông tin danh mục sản phẩm bên trái-->
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <!-- Danh mục sản phẩm  -->
+                <div class="v-menu v-close">
+                    <span class="v-title">
+                        <i class="ion ion-md-menu"></i>
+                        Danh mục sản phẩm
+                        <i class="fas fa-angle-down"></i>
+                    </span>
+                    <nav>
+                        <div class="v-wrapper">
+                            <ul class="v-list animated fadeIn">
+                                <!--Danh mục điện thoại-->
+                                <li class="js-backdrop">
+                                    <a asp-controller="Product" asp-action="Phone">
+                                        <i class="fa-solid fa-mobile-button"></i>
+                                        Điện thoại
+                                        <i class="ion ion-ios-arrow-forward"></i>
+                                    </a>
+                                    <button class="v-button ion ion-md-add"></button>
+                                    <div class="v-drop-right" style="width: 200px;">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <ul class="v-level-2">
+                                                    <li>
+                                                        <a asp-controller="Product" asp-action="Iphone">iPhone</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <ul class="v-level-2">
+                                                    <li>
+                                                        <a asp-controller="Product" asp-action="SamSung">Samsung</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <ul class="v-level-2">
+                                                    <li>
+                                                        <a asp-controller="Product" asp-action="Iphone">Xiaomi</a>
+                                                    </li>       
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!--Danh mục laptop-->
+                                <li class="js-backdrop">
+                                    <a asp-controller="Product" asp-action="Phone">
+                                        <i class=" fa-solid fa-laptop"></i>
+                                        Laptop
+                                        <i class="ion ion-ios-arrow-forward"></i>
+                                    </a>
+                                    <button class="v-button ion ion-md-add"></button>
+                                    <div class="v-drop-right" style="width: 200px;">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <ul class="v-level-2">
+                                                    <li>
+                                                        <a asp-controller="Product" asp-action="Iphone">Macbook</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <ul class="v-level-2">
+                                                    <li>
+                                                        <a asp-controller="Product" asp-action="Iphone">ASUS</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <ul class="v-level-2">
+                                                    <li>
+                                                        <a asp-controller="Product" asp-action="Iphone">Dell</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <ul class="v-level-2">
+                                                    <li>
+                                                        <a asp-controller="Product" asp-action="Iphone">HP</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <!--Danh mục tablet-->
+                                <li class="js-backdrop">
+                                    <a asp-controller="Product" asp-action="Phone">
+                                        <i class="fa-solid fa-tablet-screen-button"></i>
+                                        Tablet
+                                        <i class="ion ion-ios-arrow-forward"></i>
+                                    </a>
+                                    <button class="v-button ion ion-md-add"></button>
+                                    <div class="v-drop-right" style="width: 200px;">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <ul class="v-level-2">
+                                                    <li>
+                                                        <a asp-controller="Product" asp-action="Iphone">iPad</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <ul class="v-level-2">
+                                                    <li>
+                                                        <a style="width:200px" asp-controller="Product" asp-action="Iphone">Samsung Tab</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <ul class="v-level-2">
+                                                    <li>
+                                                        <a style="width: 200px" asp-controller="Product" asp-action="Iphone">Xiaomi Pad</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!--Danh mục tai nghe-->
+                                <li class="js-backdrop">
+                                    <a asp-controller="Product" asp-action="Phone">
+                                        <i class="fa-solid fa-headphones"></i>
+                                        Tai nghe
+                                        <i class="ion ion-ios-arrow-forward"></i>
+                                    </a>
+                                    <button class="v-button ion ion-md-add"></button>
+                                    <div class="v-drop-right" style="width: 200px;">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <ul class="v-level-2">
+                                                    <li>
+                                                        <a style="width:200px" asp-controller="Product" asp-action="Iphone">Tai nghe Bluetooth</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <ul class="v-level-2">
+                                                    <li>
+                                                        <a style="width: 200px" asp-controller="Product" asp-action="Iphone">Tai nghe có dây</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                 <!--Danh mục phụ kiện -->
+                                <li class="js-backdrop">
+                                    <a asp-controller="Product" asp-action="Phone">
+                                        <i class="fa-solid fa-keyboard"></i>
+                                        Phụ kiện
+                                        <i class="ion ion-ios-arrow-forward"></i>
+                                    </a>
+                                    <button class="v-button ion ion-md-add"></button>
+                                    <div class="v-drop-right" style="width: 200px;">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <ul class="v-level-2">
+                                                    <li>
+                                                        <a style="width: 200px;" asp-controller="Product" asp-action="Iphone">Phụ kiện điện thoại</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <ul class="v-level-2">
+                                                    <li>
+                                                        <a style="width: 200px" asp-controller="Product" asp-action="Iphone">Phụ kiện máy tính</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <ul class="v-level-2">
+                                                    <li>
+                                                        <a style="width: 200px;" asp-controller="Product" asp-action="Iphone">Phụ kiện tablet</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <br />
+                <!--Lọc theo hãng sản xuất-->
+                <div class="facet-filter-associates">
+                    <h3 class="title-name">Hãng sản xuất</h3>
+                    <form id="dong-sp" class="facet-form" action="#" method="post">
+                        <div class="associate-wrapper" style="max-height:90px">
+                            <input type="checkbox" class="check-box" id="cbs-1" value="Apple">
+                            <label class="label-text" for="cbs-1">
+                                Apple
+                            </label>
+                            <input type="checkbox" class="check-box" id="cbs-2" value="Samsung">
+                            <label class="label-text" for="cbs-2">
+                                Samsung
+                            </label>
+                            <input type="checkbox" class="check-box" id="cbs-3" value="Xiaomi">
+                            <label class="label-text" for="cbs-3">
+                                Xiaomi
+                            </label>
+                            <input type="checkbox" class="check-box" id="cbs-4" value="Dell">
+                            <label class="label-text" for="cbs-4">
+                                Dell
+                            </label>
+                            <input type="checkbox" class="check-box" id="cbs-5" value="ASUS">
+                            <label class="label-text" for="cbs-5">
+                                ASUS
+                            </label>
+                            <input type="checkbox" class="check-box" id="cbs-6" value="HP">
+                            <label class="label-text" for="cbs-6">
+                                HP
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <!--Lọc theo dòng sản phẩm /-->
+                <!--Lọc theo trạng thái sản phẩm-->
+                <div class="facet-filter-associates">
+                    <h3 class="title-name">Trạng thái</h3>
+                    <form id="trang-thai" class="facet-form" action="#" method="post">
+                        <div class="associate-wrapper">
+                            <input type="checkbox" class="check-box" id="cbs-7" value="NEW">
+                            <label class="label-text" for="cbs-7">
+                                Mới nhất
+                            </label>
+                            <input type="checkbox" class="check-box" id="cbs-8" value="HOT">
+                            <label class="label-text" for="cbs-8">
+                                Phổ biến
+                            </label>
+                            <input type="checkbox" class="check-box" id="cbs-9" value="SALE">
+                            <label class="label-text" for="cbs-9">
+                                Giảm giá
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <!--Lọc theo trạng thái sản phẩm /-->
+                <!--Lọc theo cấu hình-->
+                <div class="facet-filter-associates">
+                    <h3 class="title-name">Cấu hình</h3>
+                    <form id="cau-hinh" class="facet-form" action="#" method="post">
+                        <div class="associate-wrapper">
+                            <input type="checkbox" class="check-box" id="cbs-10" value="512GB">
+                            <label class="label-text" for="cbs-10">
+                                512GB
+                            </label>
+                            <input type="checkbox" class="check-box" id="cbs-11" value="256GB">
+                            <label class="label-text" for="cbs-11">
+                                256GB
+                            </label>
+                            <input type="checkbox" class="check-box" id="cbs-12" value="128GB">
+                            <label class="label-text" for="cbs-12">
+                                128GB
+                            </label>
+                            <input type="checkbox" class="check-box" id="cbs-13" value="64GB">
+                            <label class="label-text" for="cbs-13">
+                                64GB
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <!--Lọc theo cấu hình /-->
+                <!-- Lọc theo giá -->
+                <div class="facet-filter-by-price">
+                    <h3 class="title-name">Khoảng giá</h3>
+                    <div class="facet-form">
+                        <input type="text" id="min-price" placeholder="đ TỪ" style="float:left; width:100px; font-size:14px">
+                        <input type="text" id="max-price" placeholder="đ ĐẾN" style="float: right; width: 100px; font-size: 14px">
+                        <br />
+                        <br />
+                        <button type="submit" id="filter-btn" class="button button-primary">Áp dụng</button>
+                    </div>
+                </div>
+                <!-- Lọc theo giá /- -->
+                <!-- Lọc theo sao đánh giá -->
+                <div class="facet-filter-by-rating">
+                    <h3 class="title-name">Đánh giá</h3>
+                    <div class="facet-form">
+                        <!-- 5 Stars -->
+                        <button class="facet-link" data-rating="5">
+                            <div class="item-stars">
+                                <div class="star">
+                                    <span style="width: 75px"></span>
+                                </div>
+                            </div>
+                            <span class="total-fetch-items">5 sao</span>
+                        </button>
+                        <!-- 5 Stars /- -->
+                        <!-- 4 & Up Stars -->
+                        <button class="facet-link" data-rating="4">
+                            <div class="item-stars">
+                                <div class="star">
+                                    <span style="width: 60px"></span>
+                                </div>
+                            </div>
+                            <span class="total-fetch-items">trở lên</span>
+                        </button>
+                        <!-- 4 & Up Stars /- -->
+                        <!-- 3 & Up Stars -->
+                        <button class="facet-link" data-rating="3">
+                            <div class="item-stars">
+                                <div class="star">
+                                    <span style="width: 45px"></span>
+                                </div>
+                            </div>
+                            <span class="total-fetch-items">trở lên</span>
+                        </button>
+                        <!-- 3 & Up Stars /- -->
+                        <!-- 2 & Up Stars -->
+                        <button class="facet-link" data-rating="2">
+                            <div class="item-stars">
+                                <div class="star">
+                                    <span style="width: 30px"></span>
+                                </div>
+                            </div>
+                            <span class="total-fetch-items">trở lên</span>
+                        </button>
+                        <!-- 2 & Up Stars /- -->
+                        <!-- 1 & Up Stars -->
+                        <button class="facet-link" data-rating="1">
+                            <div class="item-stars">
+                                <div class="star">
+                                    <span style="width: 15px"></span>
+                                </div>
+                            </div>
+                            <span class="total-fetch-items">trở lên</span>
+                        </button>
+                        <!-- 1 & Up Stars /- -->
+                    </div>
+                </div>
+                <button type="button" id="clear-filter-btn" class="button button-primary" style="width: 100%">Xóa bộ lọc</button>
+
+                <!-- Danh mục sản phẩm  /- -->
+            </div>
+            <!-- Thanh thông tin danh mục sản phẩm bên trái-->
+            <!-- Thông tin sản phẩm bên phải -->
+            <div class="col-lg-9 col-md-9 col-sm-12">
+                <!-- Thanh trang -->
+
+                <div class="page-bar clearfix">
+                    <div class="shop-settings">
+                        <a id="list-anchor" class="active">
+                            <i class="fas fa-th-list"></i>
+                        </a>
+                        <a id="grid-anchor">
+                            <i class="fas fa-th"></i>
+                        </a>
+                    </div>
+                    <!-- Sắp xếp sản phẩm -->
+                     <div class="toolbar-sorter">
+                        <div class="select-box-wrapper">
+                            <label class="sr-only" for="sort-by">Sắp xếp theo</label>
+                            <select class="select-box" id="sort-by">
+                                <option selected="selected" value="no-sort">Sắp xếp theo: Ban đầu </option>
+                                <option value="sales_high_to_low">Sắp xếp theo: Bán chạy nhất</option>
+                                <option value="price_low_to_high">Sắp xếp theo: Giá thấp nhất</option>
+                                <option value="price_high_to_low">Sắp xếp theo: Giá cao nhất</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Sắp xếp sản phẩm -->
+
+                </div>
+                <!-- Thanh trang /- -->
+                <!-- Thông tin các sản phẩm-->
+
+                <div style="clear:both" class="row product-container list-style">
+                    <!--sản phẩm 1-->
+                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                        <div class="item">
+                            <!--Ảnh sản phẩm-->
+                            <div class="image-container">
+                                <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                    <img class="img-fluid" src="~/images/product/product2@4x.jpg" alt="Product">
+                                </a>
+                                <!--Các hành động: xem nhanh, mail, thêm vào danh sách yêu thích, thêm vào giỏ hàng-->
+                                <div class="item-action-behaviors">
+                                    <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                    <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                    <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                    <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <div class="what-product-is">
+                                    <!--Đường dẫn sản phẩm-->
+                                    <ul class="bread-crumb">
+                                        <li class="has-separator">
+                                            <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                        </li>
+                                        <li>
+                                            <a asp-controller="Product" asp-action="Iphone">iPhone</a>
+                                        </li>
+                                    </ul>
+                                    <!--Tên sản phẩm-->
+                                    <h6 class="item-title">
+                                        <a asp-controller="Product" asp-action="Details">Điện thoại Apple iPhone 15 Pro Max 512GB</a>
+                                    </h6>
+                                    <!--Mô tả ngắn về sản phẩm-->
+                                    <div class="item-description">
+                                        <p>
+                                            iPhone 15 Pro Max thiết kế mới với chất liệu titan chuẩn hàng không vũ trụ bền bỉ,
+                                            trọng lượng nhẹ, đồng thời trang bị nút Action và cổng sạc USB-C tiêu chuẩn giúp
+                                            nâng cao tốc độ sạc. Khả năng chụp ảnh đỉnh cao của iPhone 15 bản Pro Max đến từ
+                                            camera chính 48MP, camera UltraWide 12MP và camera telephoto có khả năng zoom quang học đến 5x.
+                                        </p>
+                                    </div>
+                                    <!--Số sao đánh giá và số lượt đánh giá-->
+                                    <div class="product-rating">
+                                        <div class='star' title="4.7 out of 5 - based on 28 Reviews">
+                                            <span style='width:69px'></span>
+                                        </div>
+                                        <span>(28)</span>
+                                    </div>
+                                </div>
+                                <!--Thông tin về giá -->
+                                <div class="price-template">
+                                    <div class="item-new-price">
+                                        32.190.000₫
+                                    </div>
+                                    <div class="item-old-price">
+                                        34.999.000₫
+                                    </div>
+                                </div>
+                                <!--Số lượt bán-->
+                                <div style="text-align:end">
+                                    <span>Đã bán:</span>
+                                    <span class="data-sales">40</span>
+                                </div>
+                            </div>
+                            <!--Thẻ đánh dấu trạng thái-->
+
+                            <div class="tag new">
+                                <span>NEW</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--sản phẩm 2-->
+                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                        <div class="item">
+                            <div class="image-container">
+                                <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                    <img class="img-fluid" src="~/images/product/iphone15plus.jpg" alt="Product">
+                                </a>
+                                <div class="item-action-behaviors">
+                                    <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                    <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                    <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                    <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <div class="what-product-is">
+                                    <ul class="bread-crumb">
+                                        <li class="has-separator">
+                                            <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                        </li>
+                                        <li>
+                                            <a asp-controller="Product" asp-action="Iphone">iPhone</a>
+                                        </li>
+                                    </ul>
+                                    <h6 class="item-title">
+                                        <a asp-controller="Product" asp-action="Details">Điện thoại Apple iPhone 15 Plus 512GB </a>
+                                    </h6>
+                                    <div class="item-description">
+                                        <p>
+                                            iPhone 15 Plus được đánh giá cao bởi màn hình Dynamic Island 6.7 inch với mặt kính
+                                            lưng pha màu ấn tượng, chip A16 Bionic mạnh mẽ cùng cổng sạc USB-C cho khả năng sạc
+                                            đầy nhanh chóng. Ngoài ra, phiên bản Plus thuộc series iPhone 15 còn sở hữu 5 phiên
+                                            bản màu pastel thanh lịch phù hợp với nhiều đối tượng khách hàng
+                                        </p>
+                                    </div>
+                                    <div class="item-stars">
+                                        <div class='star' title="2.8 out of 5 - based on 42 Reviews">
+                                            <span style='width:42px'></span>
+                                        </div>
+                                        <span>(42)</span>
+                                    </div>
+                                </div>
+                                <div class="price-template">
+                                    <div class="item-new-price">
+                                        27,700,000₫
+                                    </div>
+                                    <div class="item-old-price">
+                                        32,990,000₫
+                                    </div>
+                                </div>
+                                <div style="text-align:end">
+                                    <span>Đã bán:</span>
+                                    <span class="data-sales">48</span>
+                                </div>
+                                <div class="tag new">
+                                    <span>NEW</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--sản phẩm 3-->
+                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                        <div class="item">
+                            <div class="image-container">
+                                <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                    <img class="img-fluid" src="~/images/product/iphone14plus.jpg" alt="Product">
+                                </a>
+                                <div class="item-action-behaviors">
+                                    <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                    <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                    <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                    <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <div class="what-product-is">
+                                    <ul class="bread-crumb">
+                                        <li class="has-separator">
+                                            <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                        </li>
+                                        <li>
+                                            <a asp-controller="Product" asp-action="Iphone">iPhone</a>
+                                        </li>
+                                    </ul>
+                                    <h6 class="item-title">
+                                        <a asp-controller="Product" asp-action="Details">Điện thoại Apple iPhone 14 Plus 256GB</a>
+                                    </h6>
+                                    <div class="item-description">
+                                        <p>
+                                            iPhone 14 Plus sở hữu màn hình Super Retina XDR OLED thiết kế tai thỏ,
+                                            kích thước 6.7 inch, kết hợp công nghệ True Tone, HDR, Haptic Touch.
+                                            Camera kép 12MP cải thiện khả năng chụp thiếu sáng, camera trước
+                                            True Depth 12MP tự động lấy nét.
+                                        </p>
+                                    </div>
+                                    <div class="item-stars">
+                                        <div class='star' title="5 out of 5 - based on 60 Reviews">
+                                            <span style='width:75px'></span>
+                                        </div>
+                                        <span>(60)</span>
+                                    </div>
+                                </div>
+                                <div class="price-template">
+                                    <div class="item-new-price">
+                                        22,300,000₫
+                                    </div>
+                                    <div class="item-old-price">
+                                        25,999,000₫
+                                    </div>
+                                </div>
+                                <div style="text-align:end">
+                                    <span>Đã bán:</span>
+                                    <span class="data-sales">87</span>
+                                </div>
+                            </div>
+                            <div class="tag hot">
+                                <span>HOT</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--sản phẩm 4-->
+                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                        <div class="item">
+                            <div class="image-container">
+                                <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                    <img class="img-fluid" src="~/images/product/samsungZfold.jpg" alt="Product">
+                                </a>
+                                <div class="item-action-behaviors">
+                                    <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                    <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                    <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                    <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <div class="what-product-is">
+                                    <ul class="bread-crumb">
+                                        <li class="has-separator">
+                                            <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                        </li>
+                                        <li>
+                                            <a asp-controller="Product" asp-action="SamSung">Samsung</a>
+                                        </li>
+                                    </ul>
+                                    <h6 class="item-title">
+                                        <a asp-controller="Product" asp-action="Details"> Điện thoại Samsung Galaxy Z Fold5 5G 512GB</a>
+                                    </h6>
+                                    <div class="item-description">
+                                        <p>
+                                            Samsung Galaxy Z Fold5 khẳng định vị thế điện thoại gập tiên phong, mạnh dạn bứt phá ranh giới cũ,
+                                            dẫn đầu với công nghệ bản lề Flex tiên tiến. Thiết bị còn mở ra loạt trải nghiệm thông minh toàn diện
+                                            nhất thông qua màn hình lớn, hiệu năng vượt trội, tương thích bút S-Pen.
+                                        </p>
+                                    </div>
+                                    <div class="item-stars">
+                                        <div class='star' title="4.6 out of 5 - based on  R65eviews">
+                                            <span style='width:67px'></span>
+                                        </div>
+                                        <span>(65)</span>
+                                    </div>
+                                </div>
+                                <div class="price-template">
+                                    <div class="item-new-price">
+                                        41.990.000đ
+                                    </div>
+                                    <div class="item-old-price">
+                                        44.990.000₫
+                                    </div>
+                                </div>
+                                <div style="text-align:end">
+                                    <span>Đã bán:</span>
+                                    <span class="data-sales">80</span>
+                                </div>
+                            </div>
+                            <div class="tag hot">
+                                <span>HOT</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--sản phẩm 5-->
+                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                        <div class="item">
+                            <div class="image-container">
+                                <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                    <img class="img-fluid" src="~/images/product/samsungZflip.jpg" alt="Product">
+                                </a>
+                                <div class="item-action-behaviors">
+                                    <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                    <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                    <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                    <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <div class="what-product-is">
+                                    <ul class="bread-crumb">
+                                        <li class="has-separator">
+                                            <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                        </li>
+                                        <li>
+                                            <a asp-controller="Product" asp-action="SamSung">Samsung</a>
+                                        </li>
+                                    </ul>
+                                    <h6 class="item-title">
+                                        <a asp-controller="Product" asp-action="Details"> Điện Thoại Samsung Galaxy Z Flip4 256GB</a>
+                                    </h6>
+                                    <div class="item-description">
+                                        <p>
+                                            Nhỏ gọn và tinh tế, Samsung Galaxy Z Flip4 là chiếc smartphone sinh ra dành cho các tín đồ thời trang.
+                                            Cơ chế gập duyên dáng, bộ màu sắc nhẹ nhàng và loạt chức năng quay chụp sẽ làm say lòng những người yêu cái đẹp
+                                        </p>
+                                    </div>
+                                    <div class="item-stars">
+                                        <div class='star' title="4.7 out of 5 - based on 74 Reviews">
+                                            <span style='width:69px'></span>
+                                        </div>
+                                        <span>(74)</span>
+                                    </div>
+                                </div>
+                                <div class="price-template">
+                                    <div class="item-new-price">
+                                        15.690.000đ
+                                    </div>
+                                    <div class="item-old-price">
+                                        20.990.000₫
+                                    </div>
+                                </div>
+                                <div style="text-align:end">
+                                    <span>Đã bán:</span>
+                                    <span class="data-sales">88</span>
+                                </div>
+                            </div>
+                            <div class="tag hot">
+                                <span>HOT</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--sản phẩm 6-->
+                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                        <div class="item">
+                            <div class="image-container">
+                                <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                    <img class="img-fluid" src="~/images/product/xiaomi-14-pre.jpg" alt="Product">
+                                </a>
+                                <div class="item-action-behaviors">
+                                    <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                    <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                    <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                    <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <div class="what-product-is">
+                                    <ul class="bread-crumb">
+                                        <li class="has-separator">
+                                            <a asp-controller="Product" asp-action="Phone">Điện thoại</a>
+                                        </li>
+                                        <li>
+                                            <a asp-controller="Product" asp-action="Iphone">Xiaomi</a>
+                                        </li>
+                                    </ul>
+                                    <h6 class="item-title">
+                                        <a asp-controller="Product" asp-action="Details">Điện thoại Xiaomi 13T Pro 5G (12GB - 512GB) </a>
+                                    </h6>
+                                    <div class="item-description">
+                                        <p>
+                                            Xiaomi 13T Pro là flagship mới nhất nhà Xiaomi, mạnh mẽ ấn tượng với chip
+                                            MediaTek Dimensity 9200+, cùng với đó là RAM 12GB và bộ nhớ trong lên tới 512GB.
+                                            Đặc biệt, khả năng chụp ảnh đỉnh cao nhờ cụm camera siêu chất, viên pin lớn 5000mAh cùng sạc nhanh 120W.
+                                        </p>
+                                    </div>
+                                    <div class="item-stars">
+                                        <div class='star' title="4.5 out of 5 - based on 52 Reviews">
+                                            <span style='width:68px'></span>
+                                        </div>
+                                        <span>(40)</span>
+                                    </div>
+                                </div>
+                                <div class="price-template">
+                                    <div class="item-new-price">
+                                        14.690.000đ
+                                    </div>
+                                    <div class="item-old-price">
+                                        16.990.000đ
+                                    </div>
+                                </div>
+                                <div style="text-align:end">
+                                    <span>Đã bán:</span>
+                                    <span class="data-sales">50</span>
+                                </div>
+                            </div>
+                            <div class="tag sale">
+                                <span>SALE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--sản phẩm 7-->
+                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                        <div class="item">
+                            <div class="image-container">
+                                <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                    <img class="img-fluid" src="~/images/product/laptop-asus.jpg" alt="Product">
+                                </a>
+                                <div class="item-action-behaviors">
+                                    <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                    <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                    <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                    <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <div class="what-product-is">
+                                    <ul class="bread-crumb">
+                                        <li class="has-separator">
+                                            <a asp-controller="Product" asp-action="Phone">Laptop</a>
+                                        </li>
+                                        <li>
+                                            <a asp-controller="Product" asp-action="Iphone">ASUS</a>
+                                        </li>
+                                    </ul>
+                                    <h6 class="item-title">
+                                        <a asp-controller="Product" asp-action="Details">Laptop Asus Zenbook 14 OLED UM3402YA-KM405W 512GB </a>
+                                    </h6>
+                                    <div class="item-description">
+                                        <p>
+                                            Laptop Asus Zenbook 14 OLED UM3402YA-KM405W sở hữu sức mạnh đỉnh cao với vi xử lý
+                                            AMD Ryzen 5 - 7530 2.0 GHz, RAM 16GB LPDDR4X ổn định trong mọi tác vụ.
+                                            Với ổ SSD 512GB M.2 NVMe™ PCIe® 3.0, Zenbook 14 đảm bảo dung lượng lớn để lưu trữ dữ liệu.
+                                        </p>
+                                    </div>
+                                    <div class="item-stars">
+                                        <div class='star' title="4.7 out of 5 - based on 35 Reviews">
+                                            <span style='width:69px'></span>
+                                        </div>
+                                        <span>(35)</span>
+                                    </div>
+                                </div>
+                                <div class="price-template">
+                                    <div class="item-new-price">
+                                        20.490.000đ
+                                    </div>
+                                </div>
+                                <div style="text-align:end">
+                                    <span>Đã bán:</span>
+                                    <span class="data-sales">48</span>
+                                </div>
+                            </div>
+                            <div class="tag hot">
+                                <span>HOT</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--sản phẩm 8-->
+                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                        <!--sản phẩm 9-->
+                        <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                            <div class="item">
+                                <div class="image-container">
+                                    <a class="item-img-wrapper-link" asp-controller="Product" asp-action="Details">
+                                        <img class="img-fluid" src="~/images/product/laptop-dell.jpg" alt="Product">
+                                    </a>
+                                    <div class="item-action-behaviors">
+                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Xem nhanh</a>
+                                        <a class="item-mail" href="javascript:void(0)">Mail</a>
+                                        <a class="item-addwishlist" href="javascript:void(0)">Thêm vào yêu thích</a>
+                                        <a class="item-addCart" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                    </div>
+                                </div>
+                                <div class="item-content">
+                                    <div class="what-product-is">
+                                        <ul class="bread-crumb">
+                                            <li class="has-separator">
+                                                <a asp-controller="Product" asp-action="Phone">Laptop</a>
+                                            </li>
+                                            <li>
+                                                <a asp-controller="Product" asp-action="Iphone">Dell</a>
+                                            </li>
+                                        </ul>
+                                        <h6 class="item-title">
+                                            <a asp-controller="Product" asp-action="Details">
+                                                Laptop Dell Inspiron 16 5630 (H6KRV) - 512GB
+                                            </a>
+                                        </h6>
+                                        <div class="item-description">
+                                            <p>
+                                                Laptop Dell Inspiron 16 5630 - H6KRV sở hữu CPU Intel Core i5-1340P
+                                                cho khả năng phản hồi tốt và đa nhiệm mượt mà. Kết hợp với bộ đôi
+                                                RAM 16GB và ổ cứng 512GB, chiếc laptop cao cấp này sẽ là một lựa chọn
+                                                vô cùng hợp lý cho giới doanh nhân hay nhân viên văn phòng.
+                                            </p>
+                                        </div>
+                                        <div class="item-stars">
+                                            <div class='star' title="4.4 out of 5 - based on 21 Reviews">
+                                                <span style='width:67px'></span>
+                                            </div>
+                                            <span>(21)</span>
+                                        </div>
+                                    </div>
+                                    <div class="price-template">
+                                        <div class="item-new-price">
+                                            26,500,000₫
+                                        </div>
+                                        <div class="item-old-price">
+                                            27,990,000₫
+                                        </div>
+                                    </div>
+                                    <div style="text-align:end">
+                                        <span>Đã bán:</span>
+                                        <span class="data-sales">65</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <!-- Thông tin sản phẩm bên phải /- -->
+                <!-- Phân trang sản phẩm -->
+            <div class="pagination-area">
+                <div class="pagination-number">
+                    <ul>
+                        <li style="display: none">
+                            <a asp-controller="Product" asp-action="Index" title="Previous">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a asp-controller="Product" asp-action="Index">1</a>
+                        </li>
+                        <li>
+                            <a href="shop-v1-root-category-2.html">2</a>
+                        </li>   
+                        <li>
+                            <a asp-controller="Product" asp-action="Index">3</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Product" asp-action="Index">...</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Product" asp-action="Index">10</a>
+                        </li>
+                        <li>
+                            <a asp-controller="Product" asp-action="Index" title="Next">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+                <!-- Phân trang sản phẩm -->
+        </div>
+
+    </div>
+</div>
+<!--Nội dung giới thiệu trang sản phẩm -->
