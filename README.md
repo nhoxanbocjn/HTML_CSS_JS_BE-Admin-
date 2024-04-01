@@ -23,7 +23,7 @@
   ###### Xuất hiện thêm trang thông tin ở đây
   ![image](https://github.com/ICWYM/TheGoat/assets/103774858/e0ca546c-e4fc-4b0f-af54-16f3a929bbc6)
   ###### Vào Trang Admin:
- Nếu muốn vao trang admin thì có 2 cách sau <br>
+ Nếu muốn vào trang admin thì có 2 cách sau <br>
  C1: Tạo một tài khoản sau đó /Admin ở dường dẫn<br>
  C2: nhập /Adminlogin ở đường dẫn sau đó nhập tk : admin@gmail.com mk:123456 
   
