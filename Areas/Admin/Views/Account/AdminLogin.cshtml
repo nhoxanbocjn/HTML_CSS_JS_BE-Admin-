@@ -1,0 +1,54 @@
+﻿@model TechWeb.Areas.Admin.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "AdminLogin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page-style-a">
+    <div class="container">
+        <div class="page-intro">
+            <h2>Account</h2>
+            <ul class="bread-crumb">
+                <li class="has-separator">
+                    <i class="ion ion-md-home"></i>
+                    <a href="home.html">Trang Chủ</a>
+                </li>
+                <li class="is-marked">
+                    <a href="account.html">Tài khoản Admin</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Login -->
+    <div class="col-lg-12">
+        <div class="login-wrapper">
+            <h2 class="account-h2 u-s-m-b-20">Đăng nhập</h2>
+            <form asp-action="AdminLogin" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="u-s-m-b-30">
+                    <label for="user-name-email">
+                        Email 
+                        <span class="astk">*</span>
+                    </label>
+                    <input type="text" id="user-name-email" class="text-field" asp-for="UserName" placeholder="Username / Email">
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+                <div class="u-s-m-b-30">
+                    <label for="login-password">
+                        Password
+                        <span class="astk">*</span>
+                    </label>
+                    <input type="password" id="login-password" class="text-field" asp-for="Password" placeholder="Mật Khẩu">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="m-b-45">
+                    <button class="button button-outline-secondary w-100">Đăng nhập</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

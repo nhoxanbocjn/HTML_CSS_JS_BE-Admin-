@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using TechWeb.Models;
 namespace TechWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class AdminAccountsController : Controller
     {
         private readonly DbTechContext _context;
@@ -169,5 +171,6 @@ namespace TechWeb.Areas.Admin.Controllers
         {
           return (_context.Accounts?.Any(e => e.AccountId == id)).GetValueOrDefault();
         }
+
     }
 }

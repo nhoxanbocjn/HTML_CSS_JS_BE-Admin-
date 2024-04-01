@@ -39,8 +39,8 @@ namespace TechWeb
                 {
                     p.Cookie.Name = "UserLoginCookie";
                     p.ExpireTimeSpan = TimeSpan.FromDays(1);
-                    p.LoginPath = "/dang-nhap.html";
-                    p.LogoutPath = "/dang-xuat/html";
+                    p.LoginPath = "/Login-Resgiter";
+                    p.LogoutPath = "/Logout";
                     p.AccessDeniedPath = "/not-found.html";
                 });
 

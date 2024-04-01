@@ -12,6 +12,7 @@ using TechWeb.ModelViews;
 
 namespace TechWeb.Controllers
 {
+
     public class AccountController : Controller     
     {
         // Khởi tạo Constructor 
@@ -394,115 +395,119 @@ namespace TechWeb.Controllers
         //        return View(model);
         //    }
         //}
-        public async Task<IActionResult> Login_Resgiter(Login_RegisterViewModel model)
-        {
-            try
-            {// Kiểm tra modelState.Isvalid xem có hợp lệ không 
-                if (ModelState.IsValid)
-                {       // TÌnh trang đăng nhập 
-                    if (model.LoginViewModel != null)
-                    {
-                        var loginModel = model.LoginViewModel;
-                        //Kiểm tra email 
-                        bool isEmail = Utilities.IsValidEmail(loginModel.UserName);
-                        if (!isEmail)
+            public async Task<IActionResult> Login_Resgiter(Login_RegisterViewModel model)
+            {
+                try
+                {// Kiểm tra modelState.Isvalid xem có hợp lệ không 
+                    if (ModelState.IsValid)
+                    {       // TÌnh trang đăng nhập 
+                        if (model.LoginViewModel != null)
                         {
-                            return View(model);
-                        }
-                        //Check Email
-                        var customer = _context.Customers.AsNoTracking().SingleOrDefault(x => x.Email.Trim() == loginModel.UserName);
-                        if (customer == null)
-                        {
-                            return RedirectToAction("Login_Resgiter", "Accounts");
-                        }
-                        // Kiểm tra Pasword và trạng thái
-                        string pass = (loginModel.Password + customer.Salt.Trim()).ToMD5();
+                            var loginModel = model.LoginViewModel;
+                            //Kiểm tra email 
+                            bool isEmail = Utilities.IsValidEmail(loginModel.UserName);
+                            if (!isEmail)
+                            {
+                                return View(model);
+                            }
+                            //Check Email
+                            var customer = _context.Customers.AsNoTracking().SingleOrDefault(x => x.Email.Trim() == loginModel.UserName);
+                            if (customer == null)
+                            {
+                                return RedirectToAction("Login_Resgiter", "Accounts");
+                            }
+                            // Kiểm tra Pasword và trạng thái
+                            string pass = (loginModel.Password + customer.Salt.Trim()).ToMD5();
 
-						if (customer.Password != pass || !customer.Active)
-                        {
-                            _notyfService.Success("Thông tin đăng nhập chưa chính xác");
-                            return View(model);
-                        }
+						    if (customer.Password != pass || !customer.Active)
+                            {
+                                _notyfService.Success("Thông tin đăng nhập chưa chính xác");
+                                return View(model);
+                            }
                         // Tạo Sesstion cho người dùng
+                        customer.LastLogin = DateTime.Now;
+                        _context.Update(customer);
+                        await _context.SaveChangesAsync();
                         HttpContext.Session.SetString("CustomerId", customer.CustomerId.ToString());
 
-                        var claims = new List<Claim>
-                {
-                    new Claim(ClaimTypes.Name, customer.FullName),
-                    new Claim("CustomerId", customer.CustomerId.ToString())
-                };
-                        // Nhận một số quyền nhất định
-                        ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, "login");
-                        ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
-                        await HttpContext.SignInAsync(claimsPrincipal);
-                        // Trả về trang tài khoản của tôi
-                        _notyfService.Success("Đăng nhập thành công");
-                        return RedirectToAction("Index", "MyProfile");
-                    }
-                    // Tình trạng đăng ký
-                    else if (model.RegistreViewModel != null)
-                    {
-
-                        var registerModel = model.RegistreViewModel;
-                        /*Salt nãy dùng để ví dụ như hai người có cùng mật khẩu nhưng khi hash MD5 thì sẽ không 
-                        bao giờ giống nhau do ta chèn thêm những kí từ trong Salt này
-                        */
-                        string salt = Utilities.GetRandomKey();
-                        Customer khachhang = new Customer
-                        {
-                            FullName = registerModel.FullName,
-                            Phone = registerModel.Phone.Trim().ToLower(),
-                            Email = registerModel.Email.Trim().ToLower(),
-                            Password = (registerModel.Password + salt.Trim()).ToMD5(),
-                            Active = true,
-                            Salt = salt,
-                            CreateDate = DateTime.Now
-                        };
-                        // Thêm  khách hàng vào CSDL
-                        try
-                        {
-                            _context.Add(khachhang);
-                            await _context.SaveChangesAsync();
-                            HttpContext.Session.SetString("CustomerId", khachhang.CustomerId.ToString());
-                        // Tiến hành nhận quyền như đăng nhập
                             var claims = new List<Claim>
                     {
-                        new Claim(ClaimTypes.Name, khachhang.FullName),
-                        new Claim("CustomerId", khachhang.CustomerId.ToString())
+                        new Claim(ClaimTypes.Name, customer.FullName),
+                        new Claim("CustomerId", customer.CustomerId.ToString())
                     };
+                            // Nhận một số quyền nhất định
                             ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, "login");
                             ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
                             await HttpContext.SignInAsync(claimsPrincipal);
-                            //Trả về trang chủ 
-                            _notyfService.Success("Đăng ký thành công");
-                            return RedirectToAction("Index", "Home");
+                            // Trả về trang tài khoản của tôi
+                            _notyfService.Success("Đăng nhập thành công");
+                            return RedirectToAction("Index", "MyProfile");
                         }
-                        catch
+                        // Tình trạng đăng ký
+                        else if (model.RegistreViewModel != null)
                         {
-                            return RedirectToAction("Index", "Home");
+
+                            var registerModel = model.RegistreViewModel;
+                            /*Salt nãy dùng để ví dụ như hai người có cùng mật khẩu nhưng khi hash MD5 thì sẽ không 
+                            bao giờ giống nhau do ta chèn thêm những kí từ trong Salt này
+                            */
+                            string salt = Utilities.GetRandomKey();
+                            Customer khachhang = new Customer
+                            {
+                                FullName = registerModel.FullName,
+                                Phone = registerModel.Phone.Trim().ToLower(),
+                                Email = registerModel.Email.Trim().ToLower(),
+                                Password = (registerModel.Password + salt.Trim()).ToMD5(),
+                                Active = true,
+                                Salt = salt,
+                                CreateDate = DateTime.Now,
+                                LastLogin = DateTime.Now
+                            };
+                            // Thêm  khách hàng vào CSDL
+                            try
+                            {
+                                _context.Add(khachhang);
+                                await _context.SaveChangesAsync();
+                                HttpContext.Session.SetString("CustomerId", khachhang.CustomerId.ToString());
+                            // Tiến hành nhận quyền như đăng nhập
+                                var claims = new List<Claim>
+                        {
+                            new Claim(ClaimTypes.Name, khachhang.FullName),
+                            new Claim("CustomerId", khachhang.CustomerId.ToString())
+                        };
+                                ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, "login");
+                                ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+                                await HttpContext.SignInAsync(claimsPrincipal);
+                                //Trả về trang chủ 
+                                _notyfService.Success("Đăng ký thành công");
+                                return RedirectToAction("Index", "Home");
+                            }
+                            catch
+                            {
+                                return RedirectToAction("Index", "Home");
+                            }
                         }
                     }
-                }
-                else
-                {
-                    // ModelState không hợp lệ
-                    var errors = ModelState.Values.SelectMany(v => v.Errors);
-                    foreach (var error in errors)
+                    else
                     {
-                        Console.WriteLine(error.ErrorMessage);
+                        // ModelState không hợp lệ
+                        var errors = ModelState.Values.SelectMany(v => v.Errors);
+                        foreach (var error in errors)
+                        {
+                            Console.WriteLine(error.ErrorMessage);
+                        }
+                        return View(model);
                     }
-                    return View(model);
                 }
-            }
-            catch (Exception ex)
-            {
-                // Log or handle exceptions
-                return RedirectToAction("Login_Resgiter", "Accounts");
-            }
+                catch (Exception ex)
+                {
+                    // Log or handle exceptions
+                    return RedirectToAction("Login_Resgiter", "Accounts");
+                }
 
-            // Default fallback return statement
-            return View(model);
-            }
+                // Default fallback return statement
+                return View(model);
+                }
         [HttpGet]
         // Đăng xuất
         public IActionResult Logout()
@@ -515,6 +520,17 @@ namespace TechWeb.Controllers
 
             // Redirect to the home page or any other desired page
             return RedirectToAction("Index", "Home");
+        }
+        public IActionResult SomeAdminAction()
+        {
+            if (!User.IsInRole("Admin"))
+            {
+                // Nếu người dùng không phải là admin, chuyển hướng hoặc từ chối truy cập
+                return RedirectToAction("Index", "Home"); // Ví dụ: Chuyển hướng đến trang từ chối truy cập
+            }
+
+            // Nếu là admin, tiếp tục xử lý
+            return View();
         }
 
     }
