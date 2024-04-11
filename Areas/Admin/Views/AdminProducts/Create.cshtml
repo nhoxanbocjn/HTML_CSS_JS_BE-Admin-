@@ -64,6 +64,16 @@
                             </select>
                         </div>
                         <div class="form-group col-6">
+                            <label class="font-weight-semibold" for="productName">Hãng</label>
+                            <select class="form-control" asp-for="Brand">
+                                <option value="">Chọn hãng</option>
+                                <option value="Apple">Apple</option>
+                                <option value="Samsung">Samsung</option>
+                                <option value="Huawei">Huawei</option>
+                                <!-- Thêm các option cho các hãng khác -->
+                            </select>
+                        </div>
+                        <div class="form-group col-6">
                             <label class="font-weight-semibold" for="productName">Hàng tồn kho</label>
                             <input type="text" class="form-control" asp-for="UnitsInStock">
                         </div>

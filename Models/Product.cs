@@ -45,6 +45,8 @@ public partial class Product
 
     public int UnitsInStock { get; set; }
 
+    public string? Brand { get; set; }
+
     public virtual Category? Cat { get; set; } = null!;
 
     public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();

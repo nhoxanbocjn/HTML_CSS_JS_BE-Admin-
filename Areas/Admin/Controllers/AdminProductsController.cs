@@ -57,8 +57,9 @@ namespace TechWeb.Areas.Admin.Controllers
             ViewBag.CurrentPage = pageNumber;
 
             ViewData["DanhMuc"] = new SelectList(_context.Categories, "CatId", "CatName");
-
+            
             return View(models);
+
         }
         // Mục đích nhầm lọc sản phẩm theo loại doanh mục
         public IActionResult Filtter(int CatID = 0)
@@ -107,7 +108,7 @@ namespace TechWeb.Areas.Admin.Controllers
         //Tạo mới sản phẩm
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductId,ProductName,ShortDesc,Description,CatId,Price,Discount,Thumb,Video,DateCreated,DateModified,BestSellers,HomeFlag,Active,Tags,Title,Alias,MetaDesc,MetaKey,UnitsInStock")] Product product, Microsoft.AspNetCore.Http.IFormFile fThumb)
+        public async Task<IActionResult> Create([Bind("ProductId,ProductName,ShortDesc,Description,Brand,CatId,Price,Discount,Thumb,Video,DateCreated,DateModified,BestSellers,HomeFlag,Active,Tags,Title,Alias,MetaDesc,MetaKey,UnitsInStock")] Product product, Microsoft.AspNetCore.Http.IFormFile fThumb)
         {
             if (ModelState.IsValid)
             {

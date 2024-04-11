@@ -30,7 +30,9 @@ namespace TechWeb.Areas.Admin.Controllers
 				.OrderByDescending(x => x.CreateDate);
 			PagedList<Customer> models = new PagedList<Customer>(lsCustomers, pageNumber, pageSize);
 			ViewBag.CurrentPage = pageNumber;
-			return View(models);
+            //int totalCustomers = _context.Customers.Count();
+            //ViewBag.TotalCustomers = totalCustomers; 
+            return View(models);
 		}
 
 		// GET: Admin/AdminCustomers/Details/5

@@ -85,6 +85,9 @@ public partial class DbTechContext : DbContext
             entity.Property(e => e.Address).HasMaxLength(255);
             entity.Property(e => e.Avatar).HasMaxLength(255);
             entity.Property(e => e.Birthday).HasColumnType("datetime");
+            entity.Property(e => e.Brand)
+                .HasMaxLength(12)
+                .IsUnicode(false);
             entity.Property(e => e.CreateDate).HasColumnType("datetime");
             entity.Property(e => e.Email)
                 .HasMaxLength(150)
@@ -175,6 +178,9 @@ public partial class DbTechContext : DbContext
 
             entity.Property(e => e.ProductId).HasColumnName("ProductID");
             entity.Property(e => e.Alias).HasMaxLength(255);
+            entity.Property(e => e.Brand)
+                .HasMaxLength(20)
+                .IsFixedLength();
             entity.Property(e => e.CatId).HasColumnName("CatID");
             entity.Property(e => e.DateCreated).HasColumnType("datetime");
             entity.Property(e => e.DateModified).HasColumnType("datetime");
